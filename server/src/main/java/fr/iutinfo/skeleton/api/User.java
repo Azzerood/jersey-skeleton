@@ -50,22 +50,7 @@ public class User implements Principal {
     }
 
     
-    public boolean isGoodPassword(String password) {
-        if (isAnonymous()) {
-            return false;
-        }
-        String hash = buildHash(password, getSalt());
-        return hash.equals(getPasswdHash());
-    }
-
-    public String getPasswdHash() {
-        return passwdHash;
-    }
-
-    public void setPasswdHash(String passwdHash) {
-        this.passwdHash = passwdHash;
-    }
-
+    
     @Override
     public boolean equals(Object arg) {
         if (getClass() != arg.getClass())
