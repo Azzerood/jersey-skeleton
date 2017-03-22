@@ -1,3 +1,7 @@
+function connection(login,mdp) {
+	console.log("dfsd");
+}
+
 function getUserBdd(name) {
 	getUserGeneric(name, "v1/user/");
 }
