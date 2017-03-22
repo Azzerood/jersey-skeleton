@@ -10,7 +10,7 @@ Donnez ici la liste des histoires utilisateurs que vous avez livrés durant ce s
 
 
 ## Ce que nous allons faire durant le prochain sprint
-
+Au prochain sprint, nous allons répartir les users stories les plus importante 
 
 ## PDCA 
 ### Qu'avons nous testé durant ce sprint ? 

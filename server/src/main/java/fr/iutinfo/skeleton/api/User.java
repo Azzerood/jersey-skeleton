@@ -12,56 +12,33 @@ import java.security.SecureRandom;
 
 public class User implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
-    private static User anonymous = new User(-1, "Anonymous", "anonym");
-    private String name;
-    private String alias;
-    private int id = 0;
-    private String email;
-    private String password;
-    private String passwdHash;
-    private String salt;
-    private String search;
+    private static User anonymous = new User("Anonymous", "anonym","p");
+    String login;
+    String password;
+    char role;
 
-    public User(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public User(String login, String password) {
+        this.login = login;
+        this.password = password;
+        this.role = 'p';
     }
-
-    public User(int id, String name, String alias) {
-        this.id = id;
-        this.name = name;
-        this.alias = alias;
-    }
-
-    public User() {
+    public User(String login, String password, char role){
+    	this.login = login;
+    	this.password = password;
+    	this.role = role;
     }
 
     public static User getAnonymousUser() {
         return anonymous;
     }
 
-    public String getEmail() {
-        return email;
+
+    public String getLogin() {
+        return login;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -69,16 +46,10 @@ public class User implements Principal {
     }
 
     public void setPassword(String password) {
-        passwdHash = buildHash(password, getSalt());
         this.password = password;
     }
 
-    private String buildHash(String password, String s) {
-        Hasher hasher = Hashing.sha256().newHasher();
-        hasher.putString(password + s, Charsets.UTF_8);
-        return hasher.hash().toString();
-    }
-
+    
     public boolean isGoodPassword(String password) {
         if (isAnonymous()) {
             return false;

@@ -7,11 +7,8 @@ import java.security.Principal;
 
 public class UserDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(UserDto.class);
-    private String name;
-    private String alias;
-    private int id = 0;
-    private String email;
-    private String password;
+    private String login;
+    private char role;
 
     public String getEmail() {
         return email;
@@ -52,5 +49,13 @@ public class UserDto implements Principal {
     public void setAlias(String alias) {
         this.alias = alias;
     }
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
 
 }

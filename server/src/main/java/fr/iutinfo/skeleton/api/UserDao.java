@@ -7,16 +7,16 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 import java.util.List;
 
 public interface UserDao {
-    @SqlUpdate("create table users (id integer primary key autoincrement, name varchar(100), alias varchar(100), email varchar(100), passwdHash varchar(64), salt varchar(64), search varchar(1024))")
+    @SqlUpdate("CREATE TABLE users (login    CHAR (20) PRIMARY KEY, password CHAR (20) NOT NULL, role     CHAR (1)  NOT NULL);")
     void createUserTable();
 
-    @SqlUpdate("insert into users (name,alias,email, passwdHash, salt, search) values (:name, :alias, :email, :passwdHash, :salt, :search)")
+    @SqlUpdate("insert into users (login) values (:login, :password)")
     @GetGeneratedKeys
     int insert(@BindBean() User user);
 
-    @SqlQuery("select * from users where name = :name")
+    @SqlQuery("select * from users where login = :login")
     @RegisterMapperFactory(BeanMapperFactory.class)
-    User findByName(@Bind("name") String name);
+    User findByName(@Bind("login") String login);
 
     @SqlQuery("select * from users where search like :name")
     @RegisterMapperFactory(BeanMapperFactory.class)
@@ -25,16 +25,16 @@ public interface UserDao {
     @SqlUpdate("drop table if exists users")
     void dropUserTable();
 
-    @SqlUpdate("delete from users where id = :id")
-    void delete(@Bind("id") int id);
+    @SqlUpdate("delete from users where login = :login")
+    void delete(@Bind("login") String login);
 
-    @SqlQuery("select * from users order by id")
+    @SqlQuery("select * from users order by login")
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<User> all();
 
-    @SqlQuery("select * from users where id = :id")
+    @SqlQuery("select * from users where login = :login")
     @RegisterMapperFactory(BeanMapperFactory.class)
-    User findById(@Bind("id") int id);
+    User findById(@Bind("login") String login);
 
     void close();
 }
