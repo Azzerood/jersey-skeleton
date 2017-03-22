@@ -1,0 +1,398 @@
+	* { margin:0; } /** gère l'alignement header/menu **/
+    p {  margin-left: 2%;display:block;} /** assure un décalge en cas d'oubli == plus de lisibilité **/
+	
+	/** POLICES **/
+	
+	@font-face { 
+    font-family: 'alfa';
+     src: url('fonts/alfa.ttf') format('truetype')
+	
+}
+	
+	@font-face {
+	font-family:'lobster';
+	 src: url('fonts/Lobster_1.3.otf') format('truetype');
+}
+
+@font-face { 
+    font-family: 'secret';
+     src: url('fonts/secret.ttf') format('truetype')
+	
+}
+@font-face { 
+    font-family: 'collegiate';
+     src: url('fonts/collegiate.ttf') format('truetype')
+	
+}
+
+@font-face { 
+    font-family: 'amble';
+     src: url('fonts/amble.ttf') format('truetype')
+	
+}
+
+@font-face { 
+    font-family: 'manuscrit';
+     src: url('fonts/LearningCurve_OT-webfont.eot');
+     src: url('fonts/LearningCurve_OT-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/LearningCurve_OT-webfont.woff') format('woff'),
+         url('fonts/LearningCurve_OT-webfont.ttf') format('truetype'),
+         url('fonts/LearningCurve_OT-webfont.svg#LearningCurveProRegular') format('svg');
+	
+}
+
+@font-face { 
+    font-family: 'hotel';
+     src: url('fonts/hotel.otf') format('truetype')
+}
+
+	
+@font-face { 
+    font-family: 'komikax';
+     src: url('fonts/komikax.ttf') format('truetype')
+	
+}	
+	
+	
+	body{
+	 background:radial-gradient( farthest-side ellipse, #ffffff, #51DDE2);
+	}
+	
+	header {
+	 width:100%;
+     min-width:1200px;
+	}
+	
+	/** PARTIE CENTRAL (page entieres sans les cotés **/
+	.page {
+	 width: 80%;
+	 margin-left: auto;
+	 margin-right: auto;
+	 min-height: 1500px;
+	 min-width:800px;
+	
+	}
+	.page img{
+	 display: block;
+     margin-left: auto;
+     margin-right: auto
+	}
+	p {
+	 text-indent:2em;
+	}
+	/** HEADER **/
+	
+	
+	#banniere {
+	 width:100%;
+	 min-width:1210px;
+	 text-align:center;
+	 min-height:350px;
+	 margin-left: auto;
+	 margin-right: auto;
+	 background:  #201F2E; /** #3b3b3b ancienne couleur **/ 
+	 background-position:top;
+	 background-repeat: no-repeat;
+	 overflow:visible;
+	}
+   #banniere h1 {
+     font-family:'alfa';
+	 font-size:80px;
+	 padding-top: 50px;
+	 color:#70007C;
+	 text-align:center;
+	 text-shadow: 2px 2px 2px #f2001c;
+   }
+
+   #banniere img{
+    vertical-align:middle;
+   }
+   
+  
+     /** MENU **/
+	
+	 #menu {
+	 background:#1F2A36;
+	 margin: auto auto;
+	 text-align:center;
+	 line-height:55px;
+	 height: 55px;
+	 margin-top: 00px;
+	 font-family: 'lobster';
+	 /*background: #1F2A36 ; #414546 ancienne couleur **/
+	 min-width:1170px;
+	}
+	
+	
+	
+	#menu li {
+	 vertical-align:middle;
+	 list-style-type : none;
+	 margin:10px;
+	 display : inline;
+	 padding: 8px 10px;
+	 font-size:20px; 
+	}
+	
+	#menu li a, #menu li a:visited {
+	 color:#08EC26;
+	 text-decoration:none;
+	 font-size:35px;
+	 padding-top : 10px;
+	 display : inline;
+	 text-align: center;
+	 text-shadow: 1px 1px 5px black; 
+	}
+	 
+	 	 
+	#menu li a:hover {
+    
+	 color:#ff0012;
+	 padding-top : 10px;
+	 font-size:33px;
+	 text-decoration: underline;
+     text-align: center;	 
+	}
+	
+/** menu latéral (liens réseau sociaux) **/
+
+
+	.links a{
+	 display: inline-block;
+	 border: none; 
+	}
+
+
+
+	#twitter{
+	 background: url("../images/twitter-light.png") no-repeat;
+	 display:block;
+	 position:fixed;
+	 left:0px;
+
+	}
+	#facebook{
+	 background: url("../images/facebook-light.png") no-repeat;
+	 display:block;
+	 position:fixed;
+	 right:0px;
+
+	}
+
+
+	.links a:hover img {
+	 visibility: hidden;
+	}
+
+
+
+/** PAGE CENTRE **/
+
+	.textcentre {
+	 border-radius: 5px; 
+	 text-align: left;
+	 word-wrap: normal;
+	 box-shadow: 5px 3px 6px #424242;
+	 background:radial-gradient(#ffffff, #90EFC9); /** A5BCC4 **/
+	 min-height:1200px;
+	 height:100%;
+	 margin-top: 50px;
+	 padding-bottom:30px;
+	 font-family:'amble'/*'arizona'*/ /*ou gooddog */, palatino;
+	 line-height:30px;
+	 font-size:30px;
+	 color:#40383a;
+	 display:block;
+	}
+	
+	.textcentre h1 {
+	 padding: 20px 20px ;
+	 background-color: #dc0404;
+	 font-family:'alfa' ,Impact;
+	 font-size: 40px;
+	 line-height:45px;
+	 color:#8c616a;
+	 background: rgb(74, 74, 74);
+	 border-color: rgb(45, 99, 36);
+	 text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5);
+	 margin:65px 0px 65px 0px ;
+	 box-shadow:1px 3px 4px black;
+	}
+	.textcentre h2 {
+	 margin-top:70px;
+	 margin-bottom:70px;
+	 margin-left:10px;
+	 font-family:"secret";
+	 font-size:40px;
+	 color:#2A2E2E;
+	 text-shadow: 1px 1px 1px black;
+	}
+
+
+
+	.textcentre h3 {
+	 margin-top:40px;
+  	 margin-bottom:30px;
+	 margin-left:15px;
+	 font-family:"collegiate";
+ 	 font-size:40px;
+	/*color:#00B9A0;*/
+	 text-decoration:underline;
+	 color:#17655d;
+	 text-shadow: 3px 4px 1px #cddcdd;
+	 line-height:50px;
+	}
+
+	.textcentre p {
+	 line-height:40px;
+	 margin-bottom:10px;
+	 margin-left: 50px;
+	 margin-right: 50px;
+	 text-align: justify;
+}
+	
+	.textcentre ul{
+	margin-right:50px;
+	}
+		
+		.textcentre li {
+		padding-top:20px;
+		 text-align:justify;
+		
+		 }
+		
+	.textcentre span {
+	color:#9E0959;
+	text-decoration:underline;
+	margin-right:15px;
+}	
+
+	.textcentre img {
+		display:block;
+		margin-top: 50px ;
+		margin-left: auto;
+		margin-right: auto;
+		height: 500px;
+		width: 800px;
+	}
+	
+	figcaption {
+	 text-align:center;
+	 font-family:'manuscrit';
+	 font-size:35px;
+	 
+	}
+
+	/** FOOTER **/
+	
+   
+   footer
+	 {
+	 background-position:bottom;
+	 margin: 20px auto 0px auto;
+	 background : #90EFC9 ;
+	 text-align:center;
+	 height: 150px;
+	 width:80%;
+	 font-family : 'manuscrit';
+	 font-size:40px;
+	 text-align: center;
+	 box-shadow: 1px 1px 5px black;
+	padding-top:20px;
+	min-width:800px;
+	 
+	 }
+	 
+	 footer p {
+	 margin-top: 25px;
+	 }
+	 
+	 footer a ,footer a:visited{
+	 min-height:80px;
+	 padding-left: 15px;
+	 text-decoration:none;
+	 font-size:55px;
+	 color:#183152 ;
+	 
+	 }
+	 
+	 footer a:hover {
+	 color:#00b4ff;
+	 font-size: 60px;
+	 text-decoration: underline;
+	 }
+	 
+	 /** Page A propos **/
+	 
+	 .apropos {
+	 padding-top: 40px;
+	 font-size: 1.2em;
+	}
+	 
+	 
+	 #introapropos p {
+	  font-family:'hotel';
+	  color:#ce4e01;
+	  padding-top:20px;
+	  text-align:center;
+	  padding-left:6px;
+	  padding-right:6px;
+	  font-size:40px;
+	 }
+	 
+	 .apropos h2 {
+	  background-color:#ffb21d;
+	  font-family:'komikax';
+	  font-size:25px;
+	  padding:15px;
+	  margin-top: 50px;
+	  margin-bottom:20px;
+	  margin-left:10px;
+	  color:#D7570D;
+	  box-shadow: 1px 2px 0px #cddcdd;
+
+	}
+ 
+ 
+	 .apropos p {
+	  font-family:'komikax';
+	  font-size:20px;
+	  line-height:35px;
+	  color:#454346;
+	}
+ //** PAGE CONTACTER **/
+ 
+ 
+ 
+	.contact  {
+	
+	}
+	.contact img{
+	 display:inline;
+	 margin-left:50px;
+	 margin-right:50px;
+	 margin-bottom:50px;
+	 width:100px;
+	 height:90px;
+	 vertical-align:middle;
+	}
+	.contact a:visited, .contact a{
+	margin:auto auto;
+	display:block;
+	 width:70%;
+	 margin-top:50px;
+	 padding-right:50px;
+	 text-decoration:none;
+	 font-family:'hotel';
+	 font-size:40px;
+	 color:#46424A;
+	 border-width:0px 0px 1px 0px;
+	 border-style:solid;
+	 border-color:black;
+	 vertical-align:middle;
+	}
+	.contact a:hover{
+	 color:#D75D01;
+	}
+
+	
