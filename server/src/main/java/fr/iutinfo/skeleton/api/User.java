@@ -12,10 +12,10 @@ import java.security.SecureRandom;
 
 public class User implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
-    private static User anonymous = new User("Anonymous", "anonym","p");
+    private static User anonymous = new User("Anonymous", "anonym",'p');
     String login;
-    String password;
-    char role;
+    private String password;
+    private char role;
 
     public User(String login, String password) {
         this.login = login;
@@ -23,8 +23,7 @@ public class User implements Principal {
         this.role = 'p';
     }
     public User(String login, String password, char role){
-    	this.login = login;
-    	this.password = password;
+    	this(login,password);
     	this.role = role;
     }
 
@@ -41,15 +40,18 @@ public class User implements Principal {
         this.login = login;
     }
 
-    public String getPassword() {
-        return this.password;
+
+    public char getRole(){
+    	return role;
+    }
+    public void setRole(char r){
+    	this.role = r;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    @Override
+    public String getName(){
+    	return login;
     }
-
-    
     
     @Override
     public boolean equals(Object arg) {
@@ -67,8 +69,8 @@ public class User implements Principal {
 
     public void initFromDto(UserDto dto) {
         this.setLogin(dto.getName());
-        this.setPassword(dto.getPassword());
-        this.role(dto.getRole());
+        //this.setPassword(dto.getPassword());
+        this.setRole(dto.getRole());
     }
 
     public UserDto convertToDto() {

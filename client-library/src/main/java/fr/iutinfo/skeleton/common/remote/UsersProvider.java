@@ -13,7 +13,7 @@ import java.util.List;
 public class UsersProvider {
 
     final static Logger logger = LoggerFactory.getLogger(UsersProvider.class);
-    private String baseUrl;
+    private static String baseUrl;
 
     public UsersProvider(String baseUrl) {
         this.baseUrl = baseUrl;
@@ -38,7 +38,7 @@ public class UsersProvider {
         }
     }
 
-    public UserDto addUser(UserDto user) {
+    public static UserDto addUser(UserDto user) {
         logger.debug("Create user : " + user.getName());
         Entity<UserDto> userEntity = Entity.entity(user, MediaType.APPLICATION_JSON);
 

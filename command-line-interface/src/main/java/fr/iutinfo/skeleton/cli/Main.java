@@ -41,9 +41,9 @@ public class Main {
 
     private static void addUser() {
         UserDto user = new UserDto();
-        user.setName(queryAndReadLine("Quel est ton nom ?"));
-        user.setEmail(queryAndReadLine("Quel est ton mail ?"));
-        usersProvider.addUser(user);
+        user.setLogin(queryAndReadLine("Quel est ton nom ?"));
+        user.setRole( ( queryAndReadLine("Quel est ton mail ?").charAt(0)) );
+        UsersProvider.addUser(user);
     }
 
     private static String menu() {
