@@ -1,5 +1,5 @@
-	* { margin:0; } /** gère l'alignement header/menu **/
-    p {  margin-left: 2%;display:block;} /** assure un décalge en cas d'oubli == plus de lisibilité **/
+	* { margin:0; } /** gï¿½re l'alignement header/menu **/
+    p {  margin-left: 2%;display:block;} /** assure un dï¿½calge en cas d'oubli == plus de lisibilitï¿½ **/
 	
 	/** POLICES **/
 	
@@ -55,7 +55,7 @@
 	
 	
 	body{
-	 background:radial-gradient( farthest-side ellipse, #ffffff, #51DDE2);
+	 background:#009914;
 	}
 	
 	header {
@@ -63,7 +63,7 @@
      min-width:1200px;
 	}
 	
-	/** PARTIE CENTRAL (page entieres sans les cotés **/
+	/** PARTIE CENTRAL (page entieres sans les cotï¿½s **/
 	.page {
 	 width: 80%;
 	 margin-left: auto;
@@ -90,18 +90,18 @@
 	 min-height:350px;
 	 margin-left: auto;
 	 margin-right: auto;
-	 background:  #201F2E; /** #3b3b3b ancienne couleur **/ 
+	 background:  #1F2A36;/** #201F2E; #3b3b3b ancienne couleur **/ 
 	 background-position:top;
 	 background-repeat: no-repeat;
 	 overflow:visible;
 	}
    #banniere h1 {
-     font-family:'alfa';
-	 font-size:80px;
-	 padding-top: 50px;
-	 color:#70007C;
+     font-family:'lobster';
+	 font-size:150px;
+	 padding-top: 100px;
+	 color:#08EC26;
 	 text-align:center;
-	 text-shadow: 2px 2px 2px #f2001c;
+	 /*text-shadow: 2px 2px 2px #f2001c;*/
    }
 
    #banniere img{
@@ -112,7 +112,7 @@
      /** MENU **/
 	
 	 #menu {
-	 background:#1F2A36;
+	 background:#0f151c;
 	 margin: auto auto;
 	 text-align:center;
 	 line-height:55px;
@@ -154,7 +154,7 @@
      text-align: center;	 
 	}
 	
-/** menu latéral (liens réseau sociaux) **/
+/** menu latï¿½ral (liens rï¿½seau sociaux) **/
 
 
 	.links a{
@@ -192,8 +192,8 @@
 	 border-radius: 5px; 
 	 text-align: left;
 	 word-wrap: normal;
-	 box-shadow: 5px 3px 6px #424242;
-	 background:radial-gradient(#ffffff, #90EFC9); /** A5BCC4 **/
+	 box-shadow: 5px 3px 6px#424242;
+	 background:#eaeaea; /** A5BCC4 **/
 	 min-height:1200px;
 	 height:100%;
 	 margin-top: 50px;
@@ -208,11 +208,11 @@
 	.textcentre h1 {
 	 padding: 20px 20px ;
 	 background-color: #dc0404;
-	 font-family:'alfa' ,Impact;
+	 font-family:'lobster';
 	 font-size: 40px;
 	 line-height:45px;
-	 color:#8c616a;
-	 background: rgb(74, 74, 74);
+	 color:#08EC26;
+	 background: #0f151c;
 	 border-color: rgb(45, 99, 36);
 	 text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5);
 	 margin:65px 0px 65px 0px ;
