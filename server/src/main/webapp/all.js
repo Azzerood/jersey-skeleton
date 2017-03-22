@@ -1,5 +1,9 @@
 function connection(login,mdp) {
-	console.log("dfsd");
+	console.log("login : " + login + " mdp : " + mdp );
+}
+
+function inscription(login,mdp1,mdp2,role) {
+	console.log("login : " + login + " mdp : " + mdp1 );
 }
 
 function getUserBdd(name) {
