@@ -71,62 +71,14 @@ public class User implements Principal {
         if (getClass() != arg.getClass())
             return false;
         User user = (User) arg;
-        return name.equals(user.name) && alias.equals(user.alias) && email.equals(user.email) && passwdHash.equals(user.getPasswdHash()) && salt.equals((user.getSalt()));
+        return login.equals(user.login);
     }
 
     @Override
     public String toString() {
-        return id + ": " + alias + ", " + name + " <" + email + ">";
+        return "<"+role+">"+login;
     }
 
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
-
-    public String getSalt() {
-        if (salt == null) {
-            salt = generateSalt();
-        }
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-
-    private String generateSalt() {
-        SecureRandom random = new SecureRandom();
-        Hasher hasher = Hashing.sha256().newHasher();
-        hasher.putLong(random.nextLong());
-        return hasher.hash().toString();
-    }
-
-    public void resetPasswordHash() {
-        if (password != null && !password.isEmpty()) {
-            setPassword(getPassword());
-        }
-    }
-
-    public boolean isInUserGroup() {
-        return !(id == anonymous.getId());
-    }
-
-    public boolean isAnonymous() {
-        return this.getId() == getAnonymousUser().getId();
-    }
-
-    public String getSearch() {
-        search = name + " " + alias + " " + email;
-        return search;
-    }
-
-    public void setSearch(String search) {
-        this.search = search;
-    }
 
     public void initFromDto(UserDto dto) {
         this.setLogin(dto.getName());

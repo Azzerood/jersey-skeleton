@@ -3,7 +3,41 @@ function connection(login,mdp) {
 }
 
 function inscription(login,mdp1,mdp2,role) {
-	console.log("login : " + login + " mdp : " + mdp1 );
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : "v1/user/",
+		dataType : "json",
+		data : JSON.stringify({
+			"name" : login,
+			"alias" : mdp1,
+			"email" : role,
+
+		}),
+		success : function(data, textStatus, jqXHR) {
+			console.log(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postUser error: ' + textStatus);
+		}
+	});
+
+	$.ajax
+	({
+		type: "GET",
+		url: "v1/user",
+		dataType: 'json',
+		beforeSend : function(req) {
+			req.setRequestHeader("Authorization", "Basic " + btoa($("#userlogin").val() + ":" + $("#passwdlogin").val()));
+		},
+		success: function (data) {
+			afficheUser(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			alert('error: ' + textStatus);
+		}
+	});
+
 }
 
 function getUserBdd(name) {
@@ -43,7 +77,7 @@ function getByAnnotation() {
      });
      } else {
      $.getJSON(url, function(data) {
-     	    afficheUser(data);
+     	    console.log(data);
         });
      }
  }
@@ -67,7 +101,7 @@ function postUserGeneric(name, alias, email, pwd, url) {
 			"id" : 0
 		}),
 		success : function(data, textStatus, jqXHR) {
-			afficheUser(data);
+			console.log(data);
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log('postUser error: ' + textStatus);

@@ -25,7 +25,7 @@ public class UserResource {
             logger.debug("Create table users");
             dao.createUserTable();
             dao.insert(new User( "toto", "toto",'p'));
-            dao.insert(new User("admin","admin",'a'))
+            dao.insert(new User("admin","admin",'a'));
         }
     }
 
