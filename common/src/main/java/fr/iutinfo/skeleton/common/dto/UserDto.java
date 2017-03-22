@@ -10,52 +10,27 @@ public class UserDto implements Principal {
     private String login;
     private char role;
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
-
-	public String getLogin() {
+    public String getLogin() {
 		return login;
 	}
 
 	public void setLogin(String login) {
 		this.login = login;
 	}
+
+	public char getRole() {
+		return role;
+	}
+
+	public void setRole(char role) {
+		this.role = role;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return login;
+	}
+	
 
 }

@@ -22,9 +22,10 @@ public class UserResource {
 
     public UserResource() throws SQLException {
         if (!tableExist("users")) {
-            logger.debug("Crate table users");
+            logger.debug("Create table users");
             dao.createUserTable();
-            dao.insert(new User(0, "Margaret Thatcher", "la Dame de fer"));
+            dao.insert(new User( "toto", "toto",'p'));
+            dao.insert(new User("admin","admin",'a'))
         }
     }
 
@@ -32,16 +33,15 @@ public class UserResource {
     public UserDto createUser(UserDto dto) {
         User user = new User();
         user.initFromDto(dto);
-        user.resetPasswordHash();
-        int id = dao.insert(user);
-        dto.setId(id);
+        String login = dao.insert(user);
+        dto.setLogin(login);
         return dto;
     }
 
     @GET
     @Path("/{name}")
-    public UserDto getUser(@PathParam("name") String name) {
-        User user = dao.findByName(name);
+    public UserDto getUser(@PathParam("login") String login) {
+        User user = dao.findByName(login);
         if (user == null) {
             throw new WebApplicationException(404);
         }
@@ -61,9 +61,9 @@ public class UserResource {
     }
 
     @DELETE
-    @Path("/{id}")
-    public void deleteUser(@PathParam("id") int id) {
-        dao.delete(id);
+    @Path("/{login}")
+    public void deleteUser(@PathParam("login") String login) {
+        dao.delete(login);
     }
 
 }
