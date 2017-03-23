@@ -4,13 +4,8 @@ function connection(login,mdp) {
 		contentType : 'application/json',
 		url : "v1/user/"+login,
 		dataType : "json",
-		data : JSON.stringify({
-			"login":login,
-			"password":mdp1,
-			"role":role,
-		}),
 		success : function(data, textStatus, jqXHR) {
-			console.log(data);
+			afficheUser(data);
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("error: " + textStatus);
@@ -30,13 +25,12 @@ function inscription(login,mdp1,mdp2,role) {
 			"role":role,
 		}),
 		success : function(data, textStatus, jqXHR) {
-			console.log(data);
+			console.log(data);		
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("error: " + textStatus);
 		}
 	});
-
 }
 
 function getUserBdd(name) {

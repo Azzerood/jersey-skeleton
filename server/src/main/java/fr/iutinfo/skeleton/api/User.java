@@ -13,7 +13,7 @@ import java.security.SecureRandom;
 public class User implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
     private static User anonymous = new User("Anonymous", "anonym","parent");
-    String login;
+    private String login;
     private String password;
     private String role;
     
@@ -75,7 +75,7 @@ public class User implements Principal {
     }
 
     public void initFromDto(UserDto dto) {
-        this.setLogin(dto.getName());
+        this.setLogin(dto.getLogin());
         this.setPassword(dto.getPassword());
         this.setRole(dto.getRole());
     }

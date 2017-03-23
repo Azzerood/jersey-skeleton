@@ -55,7 +55,7 @@
 	
 	
 	body{
-	 background:#009914;
+	 background:#FFEFB6;
 	}
 	
 	header {
@@ -99,7 +99,7 @@
      font-family:'lobster';
 	 font-size:150px;
 	 padding-top: 100px;
-	 color:#08EC26;
+	 color:#5F8CA3;
 	 text-align:center;
 	 /*text-shadow: 2px 2px 2px #f2001c;*/
    }
@@ -112,7 +112,7 @@
      /** MENU **/
 	
 	 #menu {
-	 background:#0f151c;
+	 background:#E2BC74	;
 	 margin: auto auto;
 	 text-align:center;
 	 line-height:55px;
@@ -135,7 +135,7 @@
 	}
 	
 	#menu li a, #menu li a:visited {
-	 color:#08EC26;
+	 color:#C72C48	;
 	 text-decoration:none;
 	 font-size:35px;
 	 padding-top : 10px;
@@ -147,7 +147,6 @@
 	 	 
 	#menu li a:hover {
     
-	 color:#ff0012;
 	 padding-top : 10px;
 	 font-size:33px;
 	 text-decoration: underline;
@@ -189,7 +188,7 @@
 /** PAGE CENTRE **/
 
 	.textcentre {
-	 border-radius: 5px; 
+	 border-radius: 10px; 
 	 text-align: left;
 	 word-wrap: normal;
 	 box-shadow: 5px 3px 6px#424242;
@@ -206,12 +205,13 @@
 	}
 	
 	.textcentre h1 {
+	 border-radius: 10px;
 	 padding: 20px 20px ;
 	 background-color: #dc0404;
 	 font-family:'lobster';
 	 font-size: 40px;
 	 line-height:45px;
-	 color:#08EC26;
+	 color:#54E6F6;
 	 background: #0f151c;
 	 border-color: rgb(45, 99, 36);
 	 text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5);
