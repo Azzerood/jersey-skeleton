@@ -18,3 +18,20 @@ table{
 .h1{
 	margin-left:-10%;
 }
+
+/*************************************************** Tableau de bord ***************************************************/
+
+.menu{
+	width:15%;
+	height:70%;
+	margin-top: 3%;
+	position: fixed;	
+}
+
+.container {
+	border-width: 1px;
+	border-style: dotted;
+	border-color: black;
+	height:100%;
+	position:relative;
+}
