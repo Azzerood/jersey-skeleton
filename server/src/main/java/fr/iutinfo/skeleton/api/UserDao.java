@@ -10,7 +10,7 @@ public interface UserDao {
     @SqlUpdate("CREATE TABLE users (login    CHAR (20) PRIMARY KEY, password CHAR (20) NOT NULL, role     CHAR (1)  NOT NULL);")
     void createUserTable();
 
-    @SqlUpdate("insert into users (login) values (:login, :password)")
+    @SqlUpdate("insert into users (login,password) values (:login, :password)")
     @GetGeneratedKeys
     String insert(@BindBean() User user);
 
