@@ -6,11 +6,13 @@ function connection(login,mdp) {
 		dataType : "json",
 		success : function(data, textStatus, jqXHR) {
 			afficheUser(data);
+			return data;
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 			console.log("error: " + textStatus);
 		}
 	});
+	return null;
 }
 
 function inscription(login,mdp1,mdp2,role) {
