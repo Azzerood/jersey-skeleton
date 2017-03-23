@@ -1,37 +1,45 @@
 @CHARSET "UTF-8";
-.cellule{
-	width :50%;
-	padding-left:9%;
-	padding-right:9%;
-	padding-top:5%;
-	padding-bottom:5%;
+
+.cellule {
+	width: 50%;
+	padding-left: 9%;
+	padding-right: 9%;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
-table{
-	width:60%;
+table {
+	width: 60%;
 }
 
-.control-label{
-	margin-left:-5%;
+.control-label {
+	margin-left: -5%;
 }
 
-.h1{
-	margin-left:-10%;
+.h1 {
+	margin-left: -10%;
 }
 
 /*************************************************** Tableau de bord ***************************************************/
-
-.menu{
-	width:15%;
-	height:70%;
-	margin-top: 3%;
-	position: fixed;	
-}
-
-.container {
-	border-width: 1px;
-	border-style: dotted;
-	border-color: black;
-	min-height:600px;
-	position:relative;
+@media ( min-width : 768px) {
+	.sidebar-nav .navbar .navbar-collapse {
+		padding: 0;
+		max-height: none;
+	}
+	.sidebar-nav .navbar ul {
+		float: none;
+		display: block;
+	}
+	.sidebar-nav .navbar li {
+		float: none;
+		display: block;
+	}
+	.sidebar-nav .navbar li a {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+	.container {
+		margin-left: 0%;
+	}
+	
 }
