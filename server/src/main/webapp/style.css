@@ -10,3 +10,7 @@
 table{
 	width:60%;
 }
+
+.control-label{
+	margin-left:-5%;
+}
