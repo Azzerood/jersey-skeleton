@@ -1,4 +1,4 @@
-package fr.iurinfo.skeleton.planning;
+package fr.iutinfo.skeleton.planning;
 
 import java.util.Calendar;
 import java.util.List;
