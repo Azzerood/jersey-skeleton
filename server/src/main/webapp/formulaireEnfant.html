@@ -63,7 +63,7 @@
 						</div>
 						
 						<div class="form-group"> 
-						<input type="checkbox" id="c5" value="Mercredi matin">Mercredi matin 
+						<input type="checkbox" id="cb5" value="Mercredi matin">Mercredi matin 
 						<input type="checkbox" id="c6" value="Mercredi après-midi">Mercredi après-midi
 						</div> 
 						
@@ -73,7 +73,7 @@
 						</div>
 						
 						<div class="form-group"> 
-						<input type="checkbox" id="cb9" value=Vendredi matin">Vendredi matin 
+						<input type="checkbox" id="cb9" value="Vendredi matin">Vendredi matin 
 						<input type="checkbox" id="cb10" value="Vendredi aprés-midi">Vendredi après-midi 
 						</div>
 						
@@ -124,7 +124,12 @@
 
     <script type="text/javascript">
 			$(document).ready(function() {
-				$("#inscription").click( function () { inscription( $('#login').val() , $('#mdp').val() , $('#mdp').val() , $('#role').val()) } );
+				$("#inscription").click( function () { 
+					var inputs = document.getElementsByTagName('input');
+					var cbCheck = checkCheck(inputs);
+					console.log(cbCheck);
+					
+				});
 			});
 
     </script>
