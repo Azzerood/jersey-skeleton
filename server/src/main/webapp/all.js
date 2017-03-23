@@ -35,6 +35,20 @@ function inscription(login,mdp1,mdp2,role) {
 	});
 }
 
+function checkCheck(inputs){
+	var listobj = [];
+	listobj = inputs;
+	var res = [];
+	for(var i = 0; i < inputs.length; i++) {
+	    if(listobj[i].type.toLowerCase() == 'checkbox') {
+	       if(listobj[i].checked == true){
+	    	  res.push(listobj[i].value);
+	       }
+	    }
+	}
+	return res;
+}
+
 function getUserBdd(name) {
 	getUserGeneric(name, "v1/user/");
 }

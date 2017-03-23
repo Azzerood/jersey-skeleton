@@ -2,89 +2,117 @@
 <html>
 <head>
 <title>Formulaire Parental</title>
-    <meta charset='utf-8'>
-    <!-- jQuery -->
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<meta charset='utf-8'>
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+<!-- bootstrap -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css">
 
-    <!-- Code local -->
-    <script src="all.js"></script>
+<!-- Code local -->
+<script src="all.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div class="container" id="container_parent">
 		<div class="page-header">
 			<h1>Formulaire parents</h1>
 		</div>
-			<table id="form_parent">
-				<tr>
-					<th><h1 class="h1">Parent A</h1></th>
-					<th><h1 class="h1">Parent B</h1></th>
-				</tr>
-				<!--   <tr>
-					<th>Contact</th>
-					<th>Contact</th>
-				</tr> -->
-				<tr class="ligne">
-					<td class="cellule"><label for="nom" class="control-label">Nom,
-							prénom</label><input type="text" class="form-control" name="nomA"></td>
-					<td class="cellule"><label for="nom" class="control-label">Nom,
-							prénom</label><input type="text" class="form-control" name="nomB"></td>
-				</tr>
-				<tr class="ligne">
-					<td class="cellule"><label for="adress" class="control-label">Adresse</label><input
-						type="text" class="form-control"  name="adresseA"></td>
-					<td class="cellule"><label for="adress" class="control-label">Adresse</label><input
-						type="text" class="form-control"  name="adresseB"></td>
-				</tr>
-				<tr class="ligne">
-					<td class="cellule"><label for="cp" class="control-label">Code postal
-							</label><input type="text" class="form-control" name="cpA"></td>
-					<td class="cellule"><label for="cp" class="control-label">Code postal
-							</label><input type="text" class="form-control"  name="cpB"></td>
-				</tr>
-				<tr class="ligne">
-					<td class="cellule"><label for="mail" class="control-label">N° de téléphone
-							</label><input type="number" class="form-control"  name="telephoneA"></td>
-					<td class="cellule"><label for="mail" class="control-label">N° de téléphone
-							</label><input type="number" class="form-control"  name="telephoneB"></td>
-				</tr>
-				<tr class="ligne">
-					<td class="cellule"><label for="mail" class="control-label">Adresse
-							Mail</label><input type="text" class="form-control"  name="mailA"></td>
-					<td class="cellule"><label for="mail" class="control-label">Adresse
-							Mail</label><input type="text" class="form-control" name="mailB"></td>
-				</tr>
+		
+		<label for="nom" class="control-label">Nom, prénom de
+				l'enfant</label> <input type="text" class="form-control" name="nomEnfant">
+		</div>
+		
+		<table id="form_parent">
+			<tr>
+				<th><h1 class="h1">Parent A</h1></th>
+				<th><h1 class="h1">Parent B</h1></th>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="nom" class="control-label">Nom,
+						prénom</label><input type="text" class="form-control" name="nomA"></td>
+				<td class="cellule"><label for="nom" class="control-label">Nom,
+						prénom</label><input type="text" class="form-control" name="nomB"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="adress" class="control-label">Adresse</label><input
+					type="text" class="form-control" name="adresseA"></td>
+				<td class="cellule"><label for="adress" class="control-label">Adresse</label><input
+					type="text" class="form-control" name="adresseB"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="cp" class="control-label">Code
+						postal </label><input type="text" class="form-control" name="cpA"></td>
+				<td class="cellule"><label for="cp" class="control-label">Code
+						postal </label><input type="text" class="form-control" name="cpB"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="numero" class="control-label">N°
+						de téléphone </label><input type="text" class="form-control"
+					name="telephoneA"></td>
+				<td class="cellule"><label for="numero" class="control-label">N°
+						de téléphone </label><input type="text" class="form-control"
+					name="telephoneB"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="mail" class="control-label">Adresse
+						Mail</label><input type="text" class="form-control" name="mailA"></td>
+				<td class="cellule"><label for="mail" class="control-label">Adresse
+						Mail</label><input type="text" class="form-control" name="mailB"></td>
+			</tr>
 
-				<tr class="ligne">
-					<td class="cellule"><label for="mail" class="control-label">Profession
-							</label><input type="text" class="form-control"  name="professionA"></td>
-					<td class="cellule"><label for="mail" class="control-label">Profession
-							</label><input type="text" class="form-control" name="professionB"></td>
-				</tr>
-				
-				<!-- <tr>
-					<th>Finance</th>
-					<th>Finance</th>
-				</tr>
-	
-				<tr class="ligne">
-					<td class="cellule"><label for="mail" class="control-label">Adresse
-							Mail</label><input type="text" class="form-control"  name="mail"></td>
-					<td class="cellule"><label for="mail" class="control-label">Adresse
-							Mail</label><input type="text" class="form-control"  name="mail"></td>
-				</tr>  -->
-			</table>
-		<button type="submit" id="connection" class="btn btn-success btn-block">Enregistrer</button>
-		<a href="inscription.html" class="btn btn-default btn-block">Créer un compte !</a> 
+			<tr class="ligne">
+				<td class="cellule"><label for="prof" class="control-label">Profession
+				</label><input type="text" class="form-control" name="professionA"></td>
+				<td class="cellule"><label for="prof" class="control-label">Profession
+				</label><input type="text" class="form-control" name="professionB"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="numero" class="control-label">N°
+						de CAF </label><input type="text" class="form-control" name="numeroCAFA"></td>
+				<td class="cellule"><label for="numero" class="control-label">N°
+						de CAF </label><input type="text" class="form-control" name="numeroCAFB"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="categorieCAF"
+					class="control-label">Categorie CAF </label><select
+					name="categorieCAFA">
+						<option value="catA">A</option>
+						<option value="catB">B</option>
+						<option value="catC">C</option>
+				</select></td>
+				<td class="cellule"><label for="categorieCAF"
+					class="control-label">Categorie CAF </label><select
+					name="categorieCAFB">
+						<option value="catA">A</option>
+						<option value="catB">B</option>
+						<option value="catC">C</option>
+				</select></td>
+
+			</tr>
+			
+			<tr>
+				<td class="cellule"><label for="dureeContrat"
+					class="control-label">Durée du contrat </label><input type="text"
+					class="form-control" name="dureeContrat"></td>
+				<td class="cellule"><label for="typeContrat"
+					class="control-label">Type de contrat </label><input type="text"
+					class="form-control" name="typeContrat"></td>
+			</tr>
+
+		</table>
+		<button type="submit"  id="connection"
+			class="btn btn-success btn-block">Enregistrer</button>
+		<a href="inscription.html" id="connection" class="btn btn-default btn-block">Créer
+			un compte !</a>
 	</div>
 
 	<script type="text/javascript">
-		
 		$(document).ready(function() {
 			$("#connection").click(function() {
 				toggle("cp");
