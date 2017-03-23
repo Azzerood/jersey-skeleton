@@ -151,7 +151,7 @@ public class Enfant {
 		this.setPrenom(getPrenom());
 	 }
 
-	public EnfantDto convertToDto() throws Exception {
+	public EnfantDto convertToDto(){
 		EnfantDto dto = new EnfantDto();
 		dto.setAdresse(getAdresse());
 		dto.setAllergies(getAllergies());

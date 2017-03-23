@@ -84,10 +84,10 @@ public class Creneau {
 		this.setStatus(dto.getStatus());
 	}
 	
-	public CreneauDto convertToDto() throws Exception {
+	public CreneauDto convertToDto()  {
 		CreneauDto dto = new CreneauDto();
 		dto.setDate(dto.getDate());
-		dto.setHeureDebut(dto.getHeureDebut());;
+		dto.setHeureDebut(dto.getHeureDebut());
 		dto.setHeureFin(dto.getHeureFin());
 		dto.setListEnfant(dto.getListEnfant());
 		dto.setStatus(dto.getStatus());
