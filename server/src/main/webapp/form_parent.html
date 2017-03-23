@@ -21,42 +21,63 @@
 			<h1>Formulaire</h1>
 		</div>
 		<center>
-		<table>	
-			<tr>
-				<th><h1>Parent A</h1></th>
-				<th><h1>Parent B</h1></th>
-			</tr>
-			<tr class="ligne">
-				<td class="cellule"><label for="nom" class="control-label">Nom prénom</label><input type="text" class="form-control" id="nom" name="nom"></td>
-				<td class="cellule"><label for="nom" class="control-label">Nom prénom</label><input type="text" class="form-control" id="nom" name="nom"></td>
-			</tr>
-			<tr class="ligne">
-				<td class="cellule"><label for="adress" class="control-label">Adresse</label><input type="text" class="form-control" id="adress" name="adress"></td>
-				<td class="cellule"><label for="adress" class="control-label">Adresse</label><input type="text" class="form-control" id="adress" name="adress"></td>
-			</tr>
-			<tr class="ligne">
-				<td class="cellule"><label for="cp" class="control-label">Cp Ville</label><input type="text" class="form-control" id="cp" name="cp"></td>
-				<td class="cellule"><label for="cp" class="control-label">Cp Ville</label><input type="text" class="form-control" id="cp" name="cp"></td>
-			</tr>
-			<tr class="ligne">
-				<td class="cellule"><label for="mail" class="control-label">Adresse Mail</label><input type="text" class="form-control" id="mail" name="mail"></td>
-				<td class="cellule"><label for="mail" class="control-label">Adresse Mail</label><input type="text" class="form-control" id="mail" name="mail"></td>
-			</tr>
-			<tr class="ligne">
-				<td class="cellule"><label for="cp" class="control-label">Cp Ville</label><input type="text" class="form-control" id="cp" name="cp"></td>
-				<td class="cellule"><label for="cp" class="control-label">Cp Ville</label><input type="text" class="form-control" id="cp" name="cp"></td>
-			</tr>
-		</table>
+			<table>
+				<tr>
+					<th><h1 class="h1">Parent A</h1></th>
+					<th><h1 class="h1">Parent B</h1></th>
+				</tr>
+				<tr>
+					<th>Contact</th>
+					<th>Contact</th>
+				</tr>
+				<tr id="ligne">
+					<td class="cellule"><label for="nom" class="control-label">Nom
+							prénom</label><input type="text" class="form-control" id="nom" name="nom"></td>
+					<td class="cellule"><label for="nom" class="control-label">Nom
+							prénom</label><input type="text" class="form-control" id="nom" name="nom"></td>
+				</tr>
+				<tr id="ligne">
+					<td class="cellule"><label for="adress" class="control-label">Adresse</label><input
+						type="text" class="form-control" id="adress" name="adress"></td>
+					<td class="cellule"><label for="adress" class="control-label">Adresse</label><input
+						type="text" class="form-control" id="adress" name="adress"></td>
+				</tr>
+				<tr id="ligne">
+					<td class="cellule"><label for="cp" class="control-label">Cp
+							Ville</label><input type="text" class="form-control" id="cp" name="cp"></td>
+					<td class="cellule"><label for="cp" class="control-label">Cp
+							Ville</label><input type="text" class="form-control" id="cp" name="cp"></td>
+				</tr>
+				<tr id="ligne">
+					<td class="cellule"><label for="mail" class="control-label">Adresse
+							Mail</label><input type="text" class="form-control" id="mail" name="mail"></td>
+					<td class="cellule"><label for="mail" class="control-label">Adresse
+							Mail</label><input type="text" class="form-control" id="mail" name="mail"></td>
+				</tr>
+				<tr>
+					<th>Finance</th>
+					<th>Finance</th>
+				</tr>
+	
+				<tr id="ligne">
+					<td class="cellule"><label for="mail" class="control-label">Adresse
+							Mail</label><input type="text" class="form-control" id="mail" name="mail"></td>
+					<td class="cellule"><label for="mail" class="control-label">Adresse
+							Mail</label><input type="text" class="form-control" id="mail" name="mail"></td>
+				</tr>
+			</table>
 		</center>
-		<!-- <button type="submit" id="connection" class="btn btn-success btn-block">Envoyer</button>
-		<a href="inscription.html" class="btn btn-default btn-block">Créer un compte !</a> -->
+		<button type="submit" id="connection" class="btn btn-success btn-block">Envoyer</button>
+		<a href="inscription.html" class="btn btn-default btn-block">Créer un compte !</a> 
 	</div>
 
 	<script type="text/javascript">
-			$(document).ready(function() {
-				$("#connection").click( function () { connection( $('#login').val() , $('#mdp').val() ) } );
+		
+		$(document).ready(function() {
+			$("#connection").click(function() {
+				toggle("cp");
 			});
-
-    </script>
+		});
+	</script>
 </body>
 </html>

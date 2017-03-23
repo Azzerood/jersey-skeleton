@@ -16,10 +16,14 @@ public class User implements Principal {
     String login;
     private String password;
     private String role;
+    
+    public User() {
+		// TODO Auto-generated constructor stub
+	}
 
     public User(String login, String password) {
         this.login = login;
-        this.setPassword(password);
+        this.password = password;
         this.role = "parent";
     }
     public User(String login, String password, String role){
@@ -70,19 +74,17 @@ public class User implements Principal {
         return true;
     }
 
-
-
     public void initFromDto(UserDto dto) {
         this.setLogin(dto.getName());
-        //this.setPassword(dto.getPassword());
+        this.setPassword(dto.getPassword());
         this.setRole(dto.getRole());
     }
 
     public UserDto convertToDto() {
         UserDto dto = new UserDto();
-        dto.setLogin(dto.getLogin());
-       // dto.setName(dto.getLogin());
-        dto.setRole(dto.getRole());
+        dto.setLogin(getLogin());
+        dto.setPassword(getPassword());
+        dto.setRole(getRole());
         return dto;
     }
 	public boolean isInUserGroup(String s) {

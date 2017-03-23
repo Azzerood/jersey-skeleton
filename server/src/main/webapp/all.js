@@ -1,12 +1,28 @@
 function connection(login,mdp) {
-	console.log("login : " + login + " mdp : " + mdp );
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : "v1/user/",
+		dataType : "json",
+		data : JSON.stringify({
+			"login":login,
+			"password":mdp1,
+			"role":role,
+		}),
+		success : function(data, textStatus, jqXHR) {
+			console.log(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log("error: " + textStatus);
+		}
+	});
 }
 
 function inscription(login,mdp1,mdp2,role) {
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
-		url : "v1/users/",
+		url : "v1/user/",
 		dataType : "json",
 		data : JSON.stringify({
 			"login":login,

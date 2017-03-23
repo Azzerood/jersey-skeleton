@@ -8,6 +8,7 @@ import java.security.Principal;
 public class UserDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(UserDto.class);
     private String login;
+    private String password;
     private String role;
 
     public String getLogin() {
@@ -25,12 +26,19 @@ public class UserDto implements Principal {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	
+//	public String getPassword() {
+//		return password;
+//	}
+//
+//	public void setPassword(String password) {
+//		this.password = password;
+//	}
 
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return login;
+		return null;
 	}
-	
 
 }
