@@ -9,7 +9,7 @@ public class Enfant {
 	private String prenom;
 	private Calendar dateNaissance;
 	private String adresse;
-	private int tempsAccueil;
+	private String tempsAccueil;
 	private String horraireAccueil;
 	private String periodeAdaptation;
 	private String allergies;
@@ -18,9 +18,9 @@ public class Enfant {
 	private String photo;
 	
 
-	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse, int tempsAccueil,
+	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse, String tempsAccueil,
 			String horraireAccueil, String periodeAdaptation, String allergies, String numeroUrgence,
-			String numeroMedecin, String photo) {:
+			String numeroMedecin, String photo) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
@@ -87,11 +87,11 @@ public class Enfant {
 		this.adresse = adresse;
 	}
 
-	public int getTempsAccueil() {
+	public String getTempsAccueil() {
 		return tempsAccueil;
 	}
 
-	public void setTempsAccueil(int tempsAccueil) {
+	public void setTempsAccueil(String tempsAccueil) {
 		this.tempsAccueil = tempsAccueil;
 	}
 
@@ -112,11 +112,11 @@ public class Enfant {
 	}
 
 	public String getNumeroParents() {
-		return numeroParents;
+		return numeroUrgence;
 	}
 
-	public void setNumeroParents(String numeroParents) {
-		this.numeroParents = numeroParents;
+	public void setNumeroParents(String numeroUrgence) {
+		this.numeroUrgence = numeroUrgence;
 	}
 
 	public String getNumeroMedecin() {
