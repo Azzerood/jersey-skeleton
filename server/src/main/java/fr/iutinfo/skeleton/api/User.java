@@ -85,4 +85,8 @@ public class User implements Principal {
         dto.setRole(dto.getRole());
         return dto;
     }
+	public boolean isInUserGroup(String s) {
+		return getRole() == s.charAt(0);
+	}
+	
 }

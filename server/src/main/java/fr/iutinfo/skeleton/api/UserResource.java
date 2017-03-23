@@ -31,7 +31,7 @@ public class UserResource {
 
     @POST
     public UserDto createUser(UserDto dto) {
-        User user = new User();
+        User user = new User(dto.getLogin(),"");
         user.initFromDto(dto);
         String login = dao.insert(user);
         dto.setLogin(login);

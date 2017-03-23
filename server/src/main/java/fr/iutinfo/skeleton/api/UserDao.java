@@ -12,7 +12,7 @@ public interface UserDao {
 
     @SqlUpdate("insert into users (login) values (:login, :password)")
     @GetGeneratedKeys
-    int insert(@BindBean() User user);
+    String insert(@BindBean() User user);
 
     @SqlQuery("select * from users where login = :login")
     @RegisterMapperFactory(BeanMapperFactory.class)
