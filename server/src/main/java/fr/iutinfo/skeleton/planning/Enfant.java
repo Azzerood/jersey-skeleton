@@ -1,7 +1,9 @@
 package fr.iutinfo.skeleton.planning;
 
 import java.util.Calendar;
-import java.util.List;
+
+import fr.iutinfo.skeleton.common.dto.CreneauDto;
+import fr.iutinfo.skeleton.common.dto.EnfantDto;
 
 public class Enfant {
 
@@ -17,7 +19,7 @@ public class Enfant {
 	private String numeroMedecin;
 	private String photo;
 	
-
+	public Enfant(){}
 	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse, String tempsAccueil,
 			String horraireAccueil, String periodeAdaptation, String allergies, String numeroUrgence,
 			String numeroMedecin, String photo) {
@@ -100,7 +102,7 @@ public class Enfant {
 	}
 
 	public void setHorraireAccueil(String horraireAccueil) {
-		this.horraireAccueil = horraireAccueil;
+		this.horraireAccueil = this.horraireAccueil+" "+horraireAccueil;
 	}
 
 	public String getAllergies() {
@@ -133,5 +135,35 @@ public class Enfant {
 
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+	
+	public void initFromDto(EnfantDto dto) throws Exception {
+		this.setAdresse(getAdresse());
+		this.setAllergies(getAllergies());
+		this.setDateNaissance(getDateNaissance());
+		this.setHorraireAccueil(getHorraireAccueil());
+		this.setNom(getNom());
+		this.setNumeroMedecin(getNumeroMedecin());
+		this.setPeriodeAdaptation(getPeriodeAdaptation());
+		this.setNumeroUrgence(getNumeroUrgence());
+		this.setPhoto(getPhoto());
+		this.setTempsAccueil(getTempsAccueil());
+		this.setPrenom(getPrenom());
+	 }
+
+	public EnfantDto convertToDto() throws Exception {
+		EnfantDto dto = new EnfantDto();
+		dto.setAdresse(getAdresse());
+		dto.setAllergies(getAllergies());
+		dto.setDateNaissance(getDateNaissance());
+		dto.setHorraireAccueil(getHorraireAccueil());
+		dto.setNom(getNom());
+		dto.setNumeroMedecin(getNumeroMedecin());
+		dto.setPeriodeAdaptation(getPeriodeAdaptation());
+		dto.setNumeroUrgence(getNumeroUrgence());
+		dto.setPhoto(getPhoto());
+		dto.setTempsAccueil(getTempsAccueil());
+		dto.setPrenom(getPrenom());
+		return dto;
 	}
 }

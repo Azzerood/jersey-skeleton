@@ -7,7 +7,7 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 import java.util.List;
 
 public interface UserDao {
-    @SqlUpdate("CREATE TABLE users (login    CHAR (20) PRIMARY KEY, password CHAR (20) NOT NULL, role     CHAR (1)  NOT NULL);")
+    @SqlUpdate("CREATE TABLE users (login CHAR (20) PRIMARY KEY, password CHAR (20) NOT NULL, role CHAR(20) NOT NULL);")
     void createUserTable();
 
     @SqlUpdate("insert into users (login,password,role) values (:login, :password, :role)")

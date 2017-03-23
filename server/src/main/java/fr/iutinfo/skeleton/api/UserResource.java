@@ -60,8 +60,7 @@ public class UserResource {
 			logger.debug("Search users with query: " + query);
 			users = dao.search("%" + query + "%");
 		}
-		return
-				users.stream().map(User::convertToDto).collect(Collectors.toList());
+		return users.stream().map(User::convertToDto).collect(Collectors.toList());
 	}
 
 	@DELETE
