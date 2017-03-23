@@ -24,8 +24,8 @@ public class UserResource {
         if (!tableExist("users")) {
             logger.debug("Create table users");
             dao.createUserTable();
-            dao.insert(new User( "toto", "toto",'p'));
-            dao.insert(new User("admin","admin",'a'));
+            dao.insert(new User( "toto", "toto","parent"));
+            dao.insert(new User("admin","admin","parent"));
         }
     }
 

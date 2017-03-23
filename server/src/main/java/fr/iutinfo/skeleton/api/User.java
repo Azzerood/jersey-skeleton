@@ -12,17 +12,17 @@ import java.security.SecureRandom;
 
 public class User implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
-    private static User anonymous = new User("Anonymous", "anonym",'p');
+    private static User anonymous = new User("Anonymous", "anonym","parent");
     String login;
     private String password;
-    private char role;
+    private String role;
 
     public User(String login, String password) {
         this.login = login;
-        this.password = password;
-        this.role = 'p';
+        this.setPassword(password);
+        this.role = "parent";
     }
-    public User(String login, String password, char role){
+    public User(String login, String password, String role){
     	this(login,password);
     	this.role = role;
     }
@@ -41,10 +41,10 @@ public class User implements Principal {
     }
 
 
-    public char getRole(){
+    public String getRole(){
     	return role;
     }
-    public void setRole(char r){
+    public void setRole(String r){
     	this.role = r;
     }
 
@@ -86,7 +86,13 @@ public class User implements Principal {
         return dto;
     }
 	public boolean isInUserGroup(String s) {
-		return getRole() == s.charAt(0);
+		return getRole().equals(s);
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }

@@ -40,7 +40,7 @@ public class LoginTest extends JerseyTest {
     @Test
     @Ignore // missing MVC template injection
     public void should_redirect_to_user_detail_with_good_authorization_header() {
-        h.createUserWithPassword("tclavier", "motdepasse", "graindesel");
+        h.createUserWithPassword("tclavier", "motdepasse");
         String authorization = "Basic " + Base64.encodeAsString("tclavier:motdepasse");
         Response response = target(path).request().header(AUTHORIZATION, authorization).get();
         int status = response.getStatus();
@@ -50,7 +50,7 @@ public class LoginTest extends JerseyTest {
     @Test
     @Ignore // missing MVC template injection
     public void should_set_cookie_with_user_with_good_authorization_header() {
-        h.createUserWithPassword("tclavier", "motdepasse", "graindesel");
+        h.createUserWithPassword("tclavier", "motdepasse");
         String authorization = "Basic " + Base64.encodeAsString("tclavier:motdepasse");
         Response response = target(path).request().header(AUTHORIZATION, authorization).get();
         assertEquals(1, response.getCookies().size());
@@ -67,7 +67,7 @@ public class LoginTest extends JerseyTest {
 
     @Test
     public void should_return_unauthorized_headers_with_authorization_header_on_same_user() {
-        h.createUserWithPassword("tclavier", "motdepasse", "graindesel");
+        h.createUserWithPassword("tclavier", "motdepasse");
         String authorization = "Basic " + Base64.encodeAsString("tclavier:motdepasse");
         Response response = target(path).queryParam("user", "tclavier").request().header(AUTHORIZATION, authorization).get();
         int status = response.getStatus();
@@ -78,7 +78,7 @@ public class LoginTest extends JerseyTest {
 
     @Test
     public void should_return_unauthorized_status_for_bad_user() {
-        h.createUserWithPassword("tclavier", "motdepasse", "graindesel");
+        h.createUserWithPassword("tclavier", "motdepasse");
         String authorization = "Basic " + Base64.encodeAsString("tclavier:pasdemotdepasse");
         int utilisateur = target(path).request().header(AUTHORIZATION, authorization).get().getStatus();
         assertEquals(UNAUTHORIZED.getStatusCode(), utilisateur);

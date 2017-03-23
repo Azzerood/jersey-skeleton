@@ -26,7 +26,7 @@ public class SecureResourceWhoAmITest extends JerseyTest {
     }
     @Test
     public void should_return_current_user_with_authorization_header() {
-        h.createUserWithPassword("tclavier", "motdepasse", "graindesel");
+        h.createUserWithPassword("tclavier", "motdepasse");
         String authorization = "Basic " + Base64.encodeAsString("tclavier:motdepasse");
         User utilisateur = target(url).request().header(AUTHORIZATION, authorization).get(User.class);
         assertEquals("tclavier", utilisateur.getName());
@@ -40,7 +40,7 @@ public class SecureResourceWhoAmITest extends JerseyTest {
 
     @Test
     public void should_return_anonymous_user_for_bad_user() {
-        h.createUserWithPassword("tclavier", "motdepasse", "graindesel");
+        h.createUserWithPassword("tclavier", "motdepasse");
         String authorization = "Basic " + Base64.encodeAsString("tclavier:pasdemotdepasse");
         User utilisateur = target(url).request().header(AUTHORIZATION, authorization).get(User.class);
         assertEquals("Anonymous", utilisateur.getName());
