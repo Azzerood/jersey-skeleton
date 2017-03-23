@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Jersey Skeleton</title>
+    <meta charset='utf-8'>
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Code local -->
+    <script src="all.js"></script>
+</head>
+<body>
+	<div class="container">
+			<div class="page-header">
+		    	<h1>Inscription</h1>
+		    </div>
+	    	<div class="row">
+	        	<div class="col-xs-6 col-xs-offset-3">
+					
+						<div class="form-group">
+							<label for="login" class="control-label">Login</label>
+							<input type="text" class="form-control" id="login" name="login" required="true">
+						</div>
+						<div class="form-group">
+							<label for="password" class="control-label">Mot de passe</label>
+							<input type="password" class="form-control" id="password1" name="mdp1" value="">
+						</div>
+						<div class="form-group">
+							<label for="password" class="control-label">Répéter Mot de passe</label>
+							<input type="password" class="form-control" id="password2" name="mdp2" value="">
+						</div>
+						<div class="form-group">
+							<label for="sel1">Rôle</label><br /> <select class="form-control" name="role" id="role">
+								<option value="admin">Administrateur</option>
+								<option value="client">Parent</option>
+								<option value="client">Salarie</option>
+							</select>
+						</div>
+				<button type="submit" id="inscription" class="btn btn-success btn-block">Envoyer</button>
+				<a href="index.html" class="btn btn-default btn-block">Retour</a>
+					
+				</div>
+			</div>
+		</div>
+
+    <script type="text/javascript">
+			$(document).ready(function() {
+				$("#inscription").click( function () { inscription( $('#login').val() , $('#mdp').val() , $('#mdp').val() , $('#role').val()) } );
+			});
+
+    </script>
+</body>
+</html>
