@@ -10,24 +10,55 @@ public class Enfant {
 	private Calendar dateNaissance;
 	private String adresse;
 	private int tempsAccueil;
-	private List<Creneau> horraireAccueil;
-	private List<String> allergies;
-	private String numeroParents;
+	private String horraireAccueil;
+	private String periodeAdaptation;
+	private String allergies;
+	private String numeroUrgence;
 	private String numeroMedecin;
 	private String photo;
 	
-	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse,List<Creneau> horraireAccueil){
+
+	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse, int tempsAccueil,
+			String horraireAccueil, String periodeAdaptation, String allergies, String numeroUrgence,
+			String numeroMedecin, String photo) {:
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.adresse = adresse;
+		this.tempsAccueil = tempsAccueil;
+		this.horraireAccueil = horraireAccueil;
+		this.periodeAdaptation = periodeAdaptation;
+		this.allergies = allergies;
+		this.numeroUrgence = numeroUrgence;
+		this.numeroMedecin = numeroMedecin;
+		this.photo = photo;
+	}
+	
+	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse,String horraireAccueil){
 		this.nom=nom;
 		this.prenom =prenom;
 		this.dateNaissance = dateNaissance;
 		this.adresse = adresse;
 		this.horraireAccueil = horraireAccueil;
 	}
+	public String getPeriodeAdaptation() {
+		return periodeAdaptation;
+	}
 
+	public void setPeriodeAdaptation(String periodeAdaptation) {
+		this.periodeAdaptation = periodeAdaptation;
+	}
+
+	public String getNumeroUrgence() {
+		return numeroUrgence;
+	}
+
+	public void setNumeroUrgence(String numeroUrgence) {
+		this.numeroUrgence = numeroUrgence;
+	}
 	public String getNom() {
 		return nom;
 	}
-
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
@@ -64,20 +95,20 @@ public class Enfant {
 		this.tempsAccueil = tempsAccueil;
 	}
 
-	public List<Creneau> getHorraireAccueil() {
+	public String getHorraireAccueil() {
 		return horraireAccueil;
 	}
 
-	public void setHorraireAccueil(List<Creneau> horraireAccueil) {
+	public void setHorraireAccueil(String horraireAccueil) {
 		this.horraireAccueil = horraireAccueil;
 	}
 
-	public List<String> getAllergies() {
+	public String getAllergies() {
 		return allergies;
 	}
 
-	public void setAllergies(List<String> allergies) {
-		this.allergies = allergies;
+	public void setAllergies(String allergies) {
+		this.allergies = this.allergies+" "+allergies;
 	}
 
 	public String getNumeroParents() {
