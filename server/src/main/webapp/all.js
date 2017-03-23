@@ -1,8 +1,8 @@
 function connection(login,mdp) {
 	$.ajax({
-		type : 'POST',
+		type : 'GET',
 		contentType : 'application/json',
-		url : "v1/user/",
+		url : "v1/user/"+login,
 		dataType : "json",
 		data : JSON.stringify({
 			"login":login,
