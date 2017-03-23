@@ -1,7 +1,19 @@
 @CHARSET "UTF-8";
 
+.containerVitrine{
+	margin-top:140px;
+	
+}
+.petitlogo{
+	width:95px;
+	height:50px;
+}
+.container h2{
+	
+	margin-top:60px;
+}
 .footer{
-position: absolute;
+
 right: 0;
 bottom: 0;
 left: 0;
