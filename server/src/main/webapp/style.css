@@ -17,7 +17,25 @@ table {
 }
 
 .h1 {
-	margin-left: -10%;
+	margin-left: -5%;
+}
+
+#container_parent{
+	margin-left: 15%;
+	margin-right: 15%;
+	width:70%;
+}
+
+#form_parent{
+	margin-left: 15%;
+	margin-right: 15%;
+	width:70%;
+}
+
+#connection{
+	width:50%;
+	margin-left: 25%;
+	margin-right: 25%;
 }
 
 /*************************************************** Tableau de bord ***************************************************/
