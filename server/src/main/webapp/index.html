@@ -17,53 +17,27 @@
 <body>
 	<div class="container">
 			<div class="page-header">
-		    	<h1>Inscription</h1>
 		    </div>
+        <img src="img/logo.jpg" alt="" class="img-circle" style="margin-bottom:30%;width:50%;position:absolute;">
 	    	<div class="row">
-	        	<div class="col-xs-6 col-xs-offset-3">
-					<div class="form-group">
-						<label for="login" class="control-label">Login</label>
-						<input type="text" class="form-control" id="login" name="login" required="true">
-					</div>
-					<div class="form-group">
-						<label for="password" class="control-label">Mot de passe</label>
-						<input type="password" class="form-control" id="password1" name="mdp1" value="">
-					</div>
-					<div class="form-group">
-						<label for="password" class="control-label">Répéter Mot de passe</label>
-						<input type="password" class="form-control" id="password2" name="mdp2" value="">
-					</div>
-					<div class="form-group">
-						<label for="sel1">Rôle</label><br /> <select class="form-control" name="role" id="role">
-							<option value="admin">Administrateur</option>
-							<option value="client">Parent</option>
-							<option value="client">Salarie</option>
-						</select>
-					</div>
-					<button type="submit" id="inscription" class="btn btn-success btn-block">Envoyer</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="page-header">
-		    	<h1>Connection</h1>
-		    </div>
-	    	<div class="row">
-	        	<div class="col-xs-6 col-xs-offset-3">
-					
-						<div class="form-group">
-							<label for="login" class="control-label">Login</label>
-							<input type="text" class="form-control" id="login" name="login" required="true">
-						</div>
+	        	<div class="col-xs-6" style="float:right;max-width:25%;">
+							<label for="login" class="control-label">Adresse Mail</label>
+							<input type="text" class="form-control" id="login" name="login" value="" placeholder="adresse mail">
 						<div class="form-group">
 							<label for="password" class="control-label">Mot de passe</label>
-							<input type="password" class="form-control" id="password1" name="mdp1" value="">
+							<input type="password" class="form-control" id="password" name="mdp" value="" placeholder="mot de passe">
 						</div>
-					<button type="submit" id="connection" class="btn btn-success btn-block">Connection</button>	
-				</div>
-			</div>
-		</div>
+
+						<button type="submit" id="connection" class="btn btn-success btn-block">Se Connecter</button>
+						<a href="inscription.html" class="btn btn-default btn-xs" style="margin-left:25%;">Créer un compte ?</a>
+					</div>
+				</div> 
+        <div class="row" style="padding-top:15%;padding-right:13%;">
+            <img src="/img/sujet01.jpg" alt="..." class="col-lg-2 col-lg-offset-2 col-lg-push-0 col-sm-4 col-sm-push-1 col-sm-offset-1 col-md-3 text-center col-md-offset-0">
+            <img src="/img/sujet02.jpg" alt="..." class="col-lg-2 col-lg-offset-2 col-lg-push-0 col-sm-4 col-sm-push-1 col-sm-offset-1 col-md-3 text-center col-md-offset-0">
+            <img src="/img/sujet03.jpg" alt="..." class="col-lg-2 col-lg-offset-2 col-lg-push-0 col-sm-4 col-sm-push-1 col-sm-offset-1 col-md-3 text-center col-md-offset-0">
+            <h1 class=".blockquote-reverse" style="margin-left:15%;color:#4baf68;font-size:23px;padding-top:15%;font-style:italic;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla.</h1>
+        </div>
 
     <script type="text/javascript">
 			$(document).ready(function() {
@@ -71,5 +45,14 @@
 			});
 
     </script>
+    <!-- footer project
+    <footer>
+        <div class="container" style="background-color:#3e3f42;">
+            <div class="row">
+                
+            </div>
+        </div>
+    </footer>
+    -->
 </body>
 </html>
