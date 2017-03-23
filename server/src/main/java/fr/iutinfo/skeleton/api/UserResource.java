@@ -24,14 +24,14 @@ public class UserResource {
         if (!tableExist("users")) {
             logger.debug("Create table users");
             dao.createUserTable();
-            dao.insert(new User( "toto", "toto",'p'));
-            dao.insert(new User("admin","admin",'a'));
+            dao.insert(new User( "toto", "toto","parent"));
+            dao.insert(new User("admin","admin","parent"));
         }
     }
 
     @POST
     public UserDto createUser(UserDto dto) {
-        User user = new User();
+        User user = new User(dto.getLogin(),"");
         user.initFromDto(dto);
         String login = dao.insert(user);
         dto.setLogin(login);

@@ -26,12 +26,12 @@ public class UserViews {
     @GET
     @Template(name = "detail")
     @Path("/{id}")
-    public User getDetail(@PathParam("id") String id) {
+    public User getDetail(@PathParam("login") String login) {
         User user = null;
-        if ("-1".equals(id)) {
+        if ("toto".equals(login)) {
             user = User.getAnonymousUser();
         } else {
-            user = dao.findById(Integer.parseInt(id));
+            user = dao.findById(login);
         }
         if (user == null) {
             throw new WebApplicationException(Response.Status.NOT_FOUND);

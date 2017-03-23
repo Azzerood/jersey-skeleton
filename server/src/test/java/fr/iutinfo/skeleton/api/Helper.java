@@ -19,59 +19,46 @@ public class Helper {
     }
 
     static User createUserWithName(String name) {
-        User user = new User(0, name);
+        User user = new User(name, "mdpTemporaire");
         return createUser(user);
     }
 
-    static User createUserWithAlias(String name, String alias) {
-        User user = new User(0, name, alias);
+    public static User createUserWithPassword(String name, String password) {
+        User user = new User(name, password);
         return createUser(user);
     }
 
-    static User createUserWithEmail(String name, String email) {
-        User user = new User(0, name);
-        user.setEmail(email);
-        return createUser(user);
-    }
+ 
 
-    public static User createUserWithPassword(String name, String passwd, String salt) {
-        User user = new User(0, name);
-        user.setSalt(salt);
-        user.setPassword(passwd);
-        logger.debug("createUserWithPassword Hash : " + user.getPasswdHash());
-        return createUser(user);
-    }
+  
 
     private static User createUser(User user) {
-        int id = dao.insert(user);
-        user.setId(id);
+        String login = dao.insert(user);
+        user.setLogin(login);
         return user;
     }
 
 
-    private static User createFullUSer(String name, String alias, String email, String paswword) {
-        User user = new User(0, name);
-        user.setAlias(alias);
-        user.setEmail(email);
-        user.setPassword(paswword);
-        int id = dao.insert(user);
-        user.setId(id);
+    private static User createFullUSer(String name,String password,String role) {
+        User user = new User(name,password,role);
+        
+        String id = dao.insert(user);
         return user;
     }
 
     static void createRms() {
-        createFullUSer("Richard Stallman", "RMS", "rms@fsf.org", "gnuPaswword");
+        createFullUSer("Richard Stallman", "RMS", "parent");
     }
 
     static User createRob() {
-        return createFullUSer("Robert Capillo", "rob", "rob@fsf.org", "paswword");
+        return createFullUSer("Robert Capillo", "rob", "parent");
     }
 
     static User createLinus() {
-        return createFullUSer("Linus Torvalds", "linus", "linus@linux.org", "paswword");
+        return createFullUSer("Linus Torvalds", "linus", "admin");
     }
 
     static User createIan() {
-        return createFullUSer("Ian Murdock", "debian", "ian@debian.org", "mot de passe");
+        return createFullUSer("Ian Murdock", "debian", "salarie");
     }
 }

@@ -10,17 +10,17 @@ public interface UserDao {
     @SqlUpdate("CREATE TABLE users (login    CHAR (20) PRIMARY KEY, password CHAR (20) NOT NULL, role     CHAR (1)  NOT NULL);")
     void createUserTable();
 
-    @SqlUpdate("insert into users (login) values (:login, :password)")
+    @SqlUpdate("insert into users (login,password,role) values (:login, :password, :role)")
     @GetGeneratedKeys
-    int insert(@BindBean() User user);
+    String insert(@BindBean() User user);
 
     @SqlQuery("select * from users where login = :login")
     @RegisterMapperFactory(BeanMapperFactory.class)
     User findByName(@Bind("login") String login);
 
-    @SqlQuery("select * from users where search like :name")
+    @SqlQuery("select * from users where search like :login")
     @RegisterMapperFactory(BeanMapperFactory.class)
-    List<User> search(@Bind("name") String name);
+    List<User> search(@Bind("login") String login);
 
     @SqlUpdate("drop table if exists users")
     void dropUserTable();

@@ -42,7 +42,7 @@ public class Main {
     private static void addUser() {
         UserDto user = new UserDto();
         user.setLogin(queryAndReadLine("Quel est ton nom ?"));
-        user.setRole( ( queryAndReadLine("Quel est ton mail ?").charAt(0)) );
+        user.setRole(  queryAndReadLine("Quel est ton rôle ?") );
         UsersProvider.addUser(user);
     }
 
