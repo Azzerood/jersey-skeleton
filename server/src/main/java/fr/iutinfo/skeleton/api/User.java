@@ -71,7 +71,7 @@ public class User implements Principal {
     }
     
     public boolean isGoodPassword(String password) {
-        return true;
+        return password.equals(this.password);
     }
 
     public void initFromDto(UserDto dto) {
