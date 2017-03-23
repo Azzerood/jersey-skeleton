@@ -1,5 +1,5 @@
 
-package fr.iutinfo.skeleton.api;
+package fr.iutinfo.skeleton.planning;
 
 import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;

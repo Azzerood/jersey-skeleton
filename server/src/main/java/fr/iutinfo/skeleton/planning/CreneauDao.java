@@ -1,10 +1,11 @@
 
-package fr.iutinfo.skeleton.api;
+package fr.iutinfo.skeleton.planning;
 
 import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
+import java.util.Date;
 import java.util.List;
 
 public interface CreneauDao {
