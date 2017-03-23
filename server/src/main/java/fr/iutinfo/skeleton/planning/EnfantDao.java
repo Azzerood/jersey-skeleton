@@ -8,10 +8,14 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 import java.util.List;
 
 public interface EnfantDao {
-    @SqlUpdate("CREATE TABLE enfants(nom CHAR(20), prenom CHAR(20), adresse CHAR(50));")
+    @SqlUpdate("CREATE TABLE enfants(id integer primary key autoincrement, nom CHAR(20), prenom CHAR(20), dateNaissance DATE, adresse CHAR(50),tempsAccueil char(20), horraireAccueil char(20),periodeAdaptation char(20), allergies char(100), numeroUrgence char(20), numeroMedecin char(20), photo char(30));")
     void createCreneauTable();
     
-    @SqlUpdate("insert into enfants(nom, prenom, adresse) values (:nom, :prenom, :adresse)")
+    @SqlUpdate("insert into enfants(nom, prenom,dateNaissance, adresse, tempsAccueil, horraireAccueil, periodeAdaptation, allergies, numeroUrgence, numeroMedecin, photo) values (:nom, :prenom, :dateNaissance, :adresse, :tempsAccueil, :horraireAccueil, :periodeAdaptation, :allergies, :numeroUrgence, :numeroMedecin, :photo)")
+    @GetGeneratedKeys
+    String insertAllInfo(@BindBean() Enfant enfant);
+    
+    @SqlUpdate("insert into enfants(nom, prenom,dateNaissance, adresse, horraireAccueil) values (:nom, :prenom, :dateNaissance, :adresse, :horraireAccueil)")
     @GetGeneratedKeys
     String insert(@BindBean() Enfant enfant);
     
