@@ -32,6 +32,6 @@ table{
 	border-width: 1px;
 	border-style: dotted;
 	border-color: black;
-	height:100%;
+	min-height:600px;
 	position:relative;
 }
