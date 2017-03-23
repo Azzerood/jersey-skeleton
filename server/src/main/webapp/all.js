@@ -6,35 +6,18 @@ function inscription(login,mdp1,mdp2,role) {
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
-		url : "v1/user/",
+		url : "v1/users/",
 		dataType : "json",
 		data : JSON.stringify({
-			"name" : login,
-			"alias" : mdp1,
-			"email" : role,
-
+			"login":login,
+			"password":mdp1,
+			"role":role,
 		}),
 		success : function(data, textStatus, jqXHR) {
 			console.log(data);
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
-			console.log('postUser error: ' + textStatus);
-		}
-	});
-
-	$.ajax
-	({
-		type: "GET",
-		url: "v1/user",
-		dataType: 'json',
-		beforeSend : function(req) {
-			req.setRequestHeader("Authorization", "Basic " + btoa($("#userlogin").val() + ":" + $("#passwdlogin").val()));
-		},
-		success: function (data) {
-			afficheUser(data);
-		},
-		error : function(jqXHR, textStatus, errorThrown) {
-			alert('error: ' + textStatus);
+			console.log("error: " + textStatus);
 		}
 	});
 

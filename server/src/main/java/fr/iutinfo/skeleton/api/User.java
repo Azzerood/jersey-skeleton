@@ -65,6 +65,11 @@ public class User implements Principal {
     public String toString() {
         return "<"+role+">"+login;
     }
+    
+    public boolean isGoodPassword(String password) {
+        return true;
+    }
+
 
 
     public void initFromDto(UserDto dto) {
@@ -76,7 +81,7 @@ public class User implements Principal {
     public UserDto convertToDto() {
         UserDto dto = new UserDto();
         dto.setLogin(dto.getLogin());
-        dto.setName(dto.getLogin());
+       // dto.setName(dto.getLogin());
         dto.setRole(dto.getRole());
         return dto;
     }
