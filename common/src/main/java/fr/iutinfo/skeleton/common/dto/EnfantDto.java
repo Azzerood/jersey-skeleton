@@ -16,6 +16,8 @@ public class EnfantDto implements Principal {
 	private String horraireAccueil;
 	private String periodeAdaptation;
 	private String allergies;
+	private String traitements;
+	private String personnes;
 	private String numeroUrgence;
 	private String numeroMedecin;
 	private String photo;
@@ -88,6 +90,22 @@ public class EnfantDto implements Principal {
 
 	public void setAllergies(String allergies) {
 		this.allergies = this.allergies+" "+allergies;
+	}
+
+	public String getTraitements() {
+		return traitements;
+	}
+
+	public void setTraitements(String traitements) {
+		this.traitements = traitements;
+	}
+
+	public String getPersonnes() {
+		return personnes;
+	}
+
+	public void setPersonnes(String personnes) {
+		this.personnes = personnes;
 	}
 
 	public String getNumeroParents() {

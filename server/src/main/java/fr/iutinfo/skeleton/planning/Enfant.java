@@ -15,13 +15,25 @@ public class Enfant {
 	private String horraireAccueil;
 	private String periodeAdaptation;
 	private String allergies;
+	private String traitements;
+	private String personnes;
 	private String numeroUrgence;
 	private String numeroMedecin;
 	private String photo;
 	
 	public Enfant(){}
+	
+
+	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse,String horraireAccueil){
+		this.nom=nom;
+		this.prenom =prenom;
+		this.dateNaissance = dateNaissance;
+		this.adresse = adresse;
+		this.horraireAccueil = horraireAccueil;
+	}
+	
 	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse, String tempsAccueil,
-			String horraireAccueil, String periodeAdaptation, String allergies, String numeroUrgence,
+			String horraireAccueil, String periodeAdaptation, String allergies, String traitements, String personnes, String numeroUrgence,
 			String numeroMedecin, String photo) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -34,15 +46,10 @@ public class Enfant {
 		this.numeroUrgence = numeroUrgence;
 		this.numeroMedecin = numeroMedecin;
 		this.photo = photo;
+		this.traitements = traitements;
+		this.personnes = personnes;
 	}
 	
-	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse,String horraireAccueil){
-		this.nom=nom;
-		this.prenom =prenom;
-		this.dateNaissance = dateNaissance;
-		this.adresse = adresse;
-		this.horraireAccueil = horraireAccueil;
-	}
 	public String getPeriodeAdaptation() {
 		return periodeAdaptation;
 	}
@@ -112,6 +119,26 @@ public class Enfant {
 	public void setAllergies(String allergies) {
 		this.allergies = this.allergies+" "+allergies;
 	}
+	
+	public String getTraitements() {
+		return traitements;
+	}
+
+
+	public void setTraitements(String traitements) {
+		this.traitements = traitements;
+	}
+
+
+	public String getPersonnes() {
+		return personnes;
+	}
+
+
+	public void setPersonnes(String personnes) {
+		this.personnes = personnes;
+	}
+
 
 	public String getNumeroParents() {
 		return numeroUrgence;

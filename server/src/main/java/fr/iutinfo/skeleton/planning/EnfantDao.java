@@ -8,10 +8,10 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 import java.util.List;
 
 public interface EnfantDao {
-    @SqlUpdate("CREATE TABLE enfants(id integer primary key autoincrement, nom CHAR(20), prenom CHAR(20), dateNaissance DATE, adresse CHAR(50),tempsAccueil char(20), horraireAccueil char(20),periodeAdaptation char(20), allergies char(100), numeroUrgence char(20), numeroMedecin char(20), photo char(30));")
+    @SqlUpdate("CREATE TABLE enfants(id integer primary key autoincrement, nom CHAR(20), prenom CHAR(20), dateNaissance DATE, adresse CHAR(50),tempsAccueil char(20), horraireAccueil char(20),periodeAdaptation char(20), allergies char(100), traitements char(50), personnes char(100),  numeroUrgence char(20), numeroMedecin char(20), photo char(30));")
     void createEnfantTable();
     
-    @SqlUpdate("insert into enfants(nom, prenom,dateNaissance, adresse, tempsAccueil, horraireAccueil, periodeAdaptation, allergies, numeroUrgence, numeroMedecin, photo) values (:nom, :prenom, :dateNaissance, :adresse, :tempsAccueil, :horraireAccueil, :periodeAdaptation, :allergies, :numeroUrgence, :numeroMedecin, :photo)")
+    @SqlUpdate("insert into enfants(nom, prenom,dateNaissance, adresse, tempsAccueil, horraireAccueil, periodeAdaptation, allergies, traitements, personnes, numeroUrgence, numeroMedecin, photo) values (:nom, :prenom, :dateNaissance, :adresse, :tempsAccueil, :horraireAccueil, :periodeAdaptation, :allergies, :traitements, :personnes,:numeroUrgence, :numeroMedecin, :photo)")
     @GetGeneratedKeys
     String insertAllInfo(@BindBean() Enfant enfant);
     
