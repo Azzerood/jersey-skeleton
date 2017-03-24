@@ -49,6 +49,35 @@ function checkCheck(inputs){
 	return res;
 }
 
+function postEnfant(CheckInput,FileInput,TextInput,DateInput,TelInput){
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : "",
+		dataType : "json",
+		data : JSON.stringify({
+			"nom":TextInput[0],
+			"prenom":TextInput[1],
+			"dateNaissance":TextInput[0],
+			"adresse":TextInput[3],
+			"tempsAccueil":TextInput[0],
+			"horraireAccueil":TextInput[0],
+			"periodeAdaptation":TextInput[1],
+			"allergies":TextInput[0],
+			"numeroUrgence":TextInput[3],
+			"numeroMedecin":TextInput[0],
+			"photo":TextInput[0],
+		}),
+		success : function(data, textStatus, jqXHR) {
+			console.log(data);		
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log("error: " + textStatus);
+		}
+	});
+}
+
+/*****************************************************************/
 function getUserBdd(name) {
 	getUserGeneric(name, "v1/user/");
 }

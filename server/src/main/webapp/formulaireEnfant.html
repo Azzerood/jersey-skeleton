@@ -39,11 +39,6 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="login" class="control-label">Age</label>
-							<input type="int" class="form-control" id="age" name="age" required="true">
-						</div>
-						
-						<div class="form-group">
 						<label for="login" class="control-label">Adresse :</label>
 						<input type="text" class="form-control" id="adresse" name="adresse">
 						</div>
@@ -89,7 +84,7 @@
 						
 						<div class="form-group">
 						<label for="login" class="control-label">Numéro du médecin :</label>
-						<input type="text" class="form-control" id="nmed" name="nmed" required="true">
+						<input type="tel" class="form-control" id="nmed" name="nmed" required="true">
 						</div>
 						
 								
@@ -124,28 +119,36 @@
 
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$("#inscription").click( function () { 
-					var inputs = document.getElementsByTagName('input');
+
+				$("#inscription").click(function() {
+					
+					var  inputs = $('.form-group > input');
 					
 					var CheckInput = [];
 					var FileInput = [];
 					var TextInput = [];
-					
-					for(var i = 0; i < inputs.length; i++) {
-					    if(listobj[i].type.toLowerCase() == 'checkbox') {
-					    	CheckInput.push(inputs[i]);
-					    }else if(listobj[i].type.toLowerCase() == 'text'){
-					    	FileInput.push(inputs[i]);
-					    }else if(listobj[i].type.toLowerCase() == 'file'){
-					    	TextInput.push(inputs[i]);
-					    }else if(){
-					    	
-					    }	
-					 }
+					var DateInput = [];
+					var TelInput = [];
+
+					for (var i = 0; i < inputs.length; i++) {
+						if (inputs[i].type.toLowerCase() == 'checkbox') {
+							CheckInput.push(inputs[i]);
+						} else if (inputs[i].type.toLowerCase() == 'file') {
+							FileInput.push(inputs[i]);
+						} else if (inputs[i].type.toLowerCase() == 'text') {
+							TextInput.push(inputs[i]);
+						} else if (inputs[i].type.toLowerCase() == 'tel') {
+							DateInput.push(inputs[i]);
+						} else if (inputs[i].type.toLowerCase() == 'date') {
+							TelInput.push(inputs[i]);
+						}
+					}
+					CheckInput = checkCheck(CheckInput);
+					console.log(TextInput);
+// 					postEnfant(CheckInput,FileInput,TextInput,DateInput,TelInput);
 				});
 			});
-
-    </script>
+		</script>
 		<!-- footer project
     <footer>
         <div class="container" style="background-color:#3e3f42;">
