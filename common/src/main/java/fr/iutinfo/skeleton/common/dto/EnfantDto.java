@@ -10,7 +10,7 @@ public class EnfantDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(EnfantDto.class);
     private String nom;
 	private String prenom;
-	private Calendar dateNaissance;
+	private String dateNaissance;
 	private String adresse;
 	private String tempsAccueil;
 	private String horraireAccueil;
@@ -52,11 +52,11 @@ public class EnfantDto implements Principal {
 		this.prenom = prenom;
 	}
 
-	public Calendar getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Calendar dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 

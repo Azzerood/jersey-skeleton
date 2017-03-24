@@ -1,14 +1,12 @@
 package fr.iutinfo.skeleton.planning;
 
-import java.util.Calendar;
-
 import fr.iutinfo.skeleton.common.dto.ParentDto;
 
 public class Parent {
 
 	private String nom;
 	private String prenom;
-	private Calendar dateNaissance;
+	private String dateNaissance;
 	private String adresse;
 	private String congés;
 	private String profession;
@@ -22,7 +20,7 @@ public class Parent {
 	public Parent(){}
 
 	
-	public Parent(String nom, String prenom, Calendar dateNaissance, String adresse, String numero) {
+	public Parent(String nom, String prenom, String dateNaissance, String adresse, String numero) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -32,7 +30,7 @@ public class Parent {
 	}
 
 
-	public Parent(String nom, String prenom, Calendar dateNaissance, String adresse, String congés, String profession,
+	public Parent(String nom, String prenom, String dateNaissance, String adresse, String congés, String profession,
 			String numeroCaf, String categorieCaf, String debutContrat, String finContrat, String typeContrat,
 			String numero) {
 		this.nom = nom;
@@ -70,12 +68,12 @@ public class Parent {
 	}
 
 
-	public Calendar getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
 
 
-	public void setDateNaissance(Calendar dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 

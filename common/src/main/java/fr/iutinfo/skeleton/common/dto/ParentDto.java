@@ -11,7 +11,7 @@ public class ParentDto implements Principal {
 
     private String nom;
 	private String prenom;
-	private Calendar dateNaissance;
+	private String dateNaissance;
 	private String adresse;
 	private String congés;
 	private String profession;
@@ -34,10 +34,10 @@ public class ParentDto implements Principal {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public Calendar getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
-	public void setDateNaissance(Calendar dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 	public String getAdresse() {

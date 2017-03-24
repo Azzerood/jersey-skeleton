@@ -53,7 +53,7 @@ function postEnfant(CheckInput,FileInput,TextInput,DateInput,TelInput){
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
-		url : "",
+		url : "/v1/enfant",
 		dataType : "json",
 		data : JSON.stringify({
 			"nom":TextInput[0],

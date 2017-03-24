@@ -31,10 +31,7 @@ public class ParentRessource {
 	private static ParentDao dao = getDbi().open(ParentDao.class);
 
 	public ParentRessource() throws Exception {
-		Calendar c = Calendar.getInstance();
-		c.set(Calendar.YEAR, 1969);
-		c.set(Calendar.MONTH, 5);
-		c.set(Calendar.DATE, 21);
+		String c = "16/03/1997";
 		if (!BDDFactory.tableExist("enfants")) {
 			logger.debug("Create table enfants");
 			dao.createParentTable();

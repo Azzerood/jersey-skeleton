@@ -18,8 +18,8 @@ import javax.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import fr.iutinfo.skeleton.api.BDDFactory;
+import static fr.iutinfo.skeleton.api.BDDFactory.getDbi;
+import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 import fr.iutinfo.skeleton.common.dto.CreneauDto;
 import fr.iutinfo.skeleton.common.dto.EnfantDto;
 
@@ -31,11 +31,8 @@ public class EnfantRessource {
 	private static EnfantDao dao = getDbi().open(EnfantDao.class);
 
 	public EnfantRessource() throws Exception {
-		Calendar c = Calendar.getInstance();
-		c.set(Calendar.YEAR, 1997);
-		c.set(Calendar.MONTH, 6);
-		c.set(Calendar.DATE, 21);
-		if (!BDDFactory.tableExist("enfants")) {
+		String c = "16/03/1997";
+		if (!tableExist("enfants")) {
 			logger.debug("Create table enfants");
 			dao.createEnfantTable();
 			dao.insert(new Enfant("Timothe","ruccart",c,"5 rue de la paix", "Lundi matin, Jeudi après-midi"));
