@@ -39,6 +39,11 @@
 						</div>
 						
 						<div class="form-group">
+						<label for="login" class="control-label">Date de naissance</label>
+						<input type="date" class="form-control" id="datenaissance" name="datenaissance">
+						</div>
+						
+						<div class="form-group">
 						<label for="login" class="control-label">Adresse :</label>
 						<input type="text" class="form-control" id="adresse" name="adresse">
 						</div>
@@ -138,13 +143,13 @@
 						} else if (inputs[i].type.toLowerCase() == 'text') {
 							TextInput.push(inputs[i]);
 						} else if (inputs[i].type.toLowerCase() == 'tel') {
-							DateInput.push(inputs[i]);
-						} else if (inputs[i].type.toLowerCase() == 'date') {
 							TelInput.push(inputs[i]);
+						} else if (inputs[i].type.toLowerCase() == 'date') {
+							DateInput.push(inputs[i]);
 						}
 					}
 					CheckInput = checkCheck(CheckInput);
-					console.log(TextInput);
+					console.log(CheckInput);
 // 					postEnfant(CheckInput,FileInput,TextInput,DateInput,TelInput);
 				});
 			});
