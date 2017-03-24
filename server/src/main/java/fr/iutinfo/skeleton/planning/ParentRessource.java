@@ -18,8 +18,8 @@ import javax.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import fr.iutinfo.skeleton.api.BDDFactory;
+import static fr.iutinfo.skeleton.api.BDDFactory.getDbi;
+import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 import fr.iutinfo.skeleton.common.dto.EnfantDto;
 import fr.iutinfo.skeleton.common.dto.ParentDto;
 
@@ -32,7 +32,7 @@ public class ParentRessource {
 
 	public ParentRessource() throws Exception {
 		String c = "16/03/1997";
-		if (!BDDFactory.tableExist("enfants")) {
+		if (!tableExist("enfants")) {
 			logger.debug("Create table enfants");
 			dao.createParentTable();
 			dao.insert(new Parent("toto","toto",c,"5 rue Moulinelle", "0615978596"));

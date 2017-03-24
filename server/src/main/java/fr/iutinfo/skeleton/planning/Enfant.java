@@ -1,7 +1,5 @@
 package fr.iutinfo.skeleton.planning;
 
-import java.util.Calendar;
-
 import fr.iutinfo.skeleton.common.dto.CreneauDto;
 import fr.iutinfo.skeleton.common.dto.EnfantDto;
 

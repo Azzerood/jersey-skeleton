@@ -30,14 +30,11 @@ public class CreneauResource {
 	private static CreneauDao dao = getDbi().open(CreneauDao.class);
 
 	public CreneauResource() throws Exception {
-		Calendar c = Calendar.getInstance();
-		c.set(Calendar.YEAR, 2017);
-		c.set(Calendar.MONTH, 3);
-		c.set(Calendar.DATE, 21);
+		String c ="10/03/1888";
 		if (!BDDFactory.tableExist("creneaux")) {
 			logger.debug("Create table creneaux");
 			dao.createCreneauTable();
-			dao.insert(new Creneau("previsionnel",c,"800", "1200", "Anais, théo")); //date, heureDebut, heureFin, listEnfant
+//			dao.insert(new Creneau("previsionnel",c,"800", "1200", "Anais, théo")); //date, heureDebut, heureFin, listEnfant
 		}
 	}
 

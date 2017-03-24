@@ -9,7 +9,7 @@ import java.util.Calendar;
 public class CreneauDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(CreneauDto.class);
     private String status= "previsionnel";
-	private Calendar date;
+	private String date;
 	private String heureDebut;
 	private String heureFin;
 	private String listEnfant;
@@ -24,10 +24,10 @@ public class CreneauDto implements Principal {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Calendar getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Calendar date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getHeureDebut() {

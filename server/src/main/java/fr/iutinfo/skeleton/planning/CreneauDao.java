@@ -13,7 +13,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface CreneauDao {
-    @SqlUpdate("CREATE TABLE creneaux(id integer primary key autoincrement, status char(20),date DATE, heureDebut INT, heureFin INT, listEnfant char(200); ")
+    @SqlUpdate("CREATE TABLE creneaux(id integer primary key autoincrement, status char(20),date char(20), heureDebut integer, heureFin integer, listEnfant char(200));")
     void createCreneauTable();
     
     @SqlUpdate("insert into creneaux(status,date, heureDebut, heureFin, listEnfant) values (:status, :date, :heureDebut, :heureFin, :listEnfant)")

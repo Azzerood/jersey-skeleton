@@ -9,7 +9,7 @@ import fr.iutinfo.skeleton.common.dto.CreneauDto;
 public class Creneau {
 
 	private String status = "previsionnel";
-	private Calendar date;
+	private String date;
 	private String heureDebut;
 	private String heureFin;
 	private String listEnfant;
@@ -17,16 +17,16 @@ public class Creneau {
 	public Creneau() {
 	}
 
-	public Creneau(String status, Calendar date, String heureDebut, String heureFin, String listEnfant)
-			throws Exception {
+	public Creneau(String status, String date, String heureDebut, String heureFin, String listEnfant) throws Exception {
 		if (Integer.parseInt(heureDebut) > 730 && Integer.parseInt(heureFin) < 1900) {
 			this.heureDebut = heureDebut;
 			this.heureFin = heureFin;
 			this.date = date;
 			this.listEnfant = listEnfant;
 			this.status = status;
+		}else{
+			throw new Exception("invalide heure crenau");
 		}
-		throw new Exception("invalide heure crenau");
 	}
 	
 	public String getStatus() {
@@ -40,11 +40,11 @@ public class Creneau {
 			throw new Exception("invalide status");
 	}
 
-	public Calendar getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(GregorianCalendar date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -70,10 +70,6 @@ public class Creneau {
 
 	public String getListEnfant() {
 		return listEnfant;
-	}
-
-	public void setDate(Calendar date) {
-		this.date = date;
 	}
 
 	public void initFromDto(CreneauDto dto) throws Exception {
