@@ -62,7 +62,7 @@ public class CreneauResource {
 	}
 
 	@GET
-	public List<CreneauDto> getAllUsers(@QueryParam("q") int id) throws Exception{
+	public List<CreneauDto> getAllCreneaux(@QueryParam("q") int id) throws Exception{
 
 		List<Creneau> creneau;
 		if (id == 0) {
