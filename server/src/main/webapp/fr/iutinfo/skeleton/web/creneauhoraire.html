@@ -12,18 +12,41 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- Code local -->
-    <script src="all.js"></script>
+
 </head>
 <body>
-<div>
 	<h1>Tableau de bord</h1>
-</div>
-
-<div>
-	<script>
-		
+    <script type="text/javascript">
+    var planning;
+    
+    function listerEnfants() {
+    	$.ajax({
+    		type : 'GET',
+    		contentType : 'application/json',
+    		url : "v1/enfant",
+    		dataType : "json",
+    		success : function(data, textStatus, jqXHR) {
+    			afficheEnfants(data);
+    			return data;
+    		},
+    		error : function(jqXHR, textStatus, errorThrown) {
+    			console.log("error: " + textStatus);
+    		}
+    	});
+    	return null;
+    	
+    }
+    
+    function afficheEnfants(data) {
+    	console.log(data);
+    	$("body").html(data.nom+ "," + data.prenom);
+    }
+    
+	$(document).ready( function () {
+	    	listerEnfants();	
+	    });
 	</script>
-</div>
+
 
 </body>
 </html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Formulaire salarié</title>
+<meta charset='utf-8'>
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<!-- bootstrap -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<!-- Code local -->
+<script src="all.js"></script>
+</head>
+<body>
+	<div class="container" id="container_parent">
+		<div class="page-header">
+			<h1>Formulaire salarié</h1>
+		</div>
+
+		<table id="form_salarie">
+			<tr>
+				<th><h1 class="h1">Salarié</h1></th>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="nom" class="control-label">Nom,
+						prénom</label><input type="text" class="form-control" name="nom"></td>
+
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="dateNaissance"
+					class="control-label">Date de naissance </label><input type="date"
+					class="form-control" name="dateNaissance"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="nationalite"
+					class="control-label">Nationalité </label><input type="text"
+					class="form-control" name="nationalite"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="adress" class="control-label">Adresse</label><input
+					type="text" class="form-control" name="adresse"></td>
+				<td class="cellule"><label for="cp" class="control-label">Code
+						postal </label><input type="text" class="form-control" name="cp"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="etatcivil"
+					class="control-label">Etat civil </label><select name="etatcivil">
+						<option value="celibataire">Célibataire</option>
+						<option value="marie">Marié(e)</option>
+						<option value="divorce">Divorcé(e)</option>
+				</select>
+				<td class="cellule"><label for="nbrEnfant"
+					class="control-label">Nombres d'enfants) </label><input
+					type="number" class="form-control" name="nbrEnfant"></td>
+			</tr>
+			<tr class="ligne">
+				<td class="cellule"><label for="numSecu" class="control-label">N°
+						de sécurité sociale </label><input type="text" class="form-control"
+					name="numSecu"></td>
+			</tr>
+			<tr class="ligne">
+
+			</tr>
+		</table>
+		<hr>
+		<form>
+			<input type="radio" name="typeContrat" value="cdd"> CDD
+			<input type="radio" name="typeContrat" value="cdi" checked>
+			CDI<br> <label for="dateSortie" class="control-label">Date
+				d'entrée </label><input type="date" class="form-control" name="dateEntree">
+			<label class="control-label">Date de sortie </label><input
+				type="date" class="form-control" name="dateSortie">  <label
+				for="renumeration" class="control-label">Rénumération par
+				mois(brut) </label><input type="text" class="form-control"
+				name="renumeration">
+							<input type="radio" name="temps" value="tempsPlein"> Temps plein
+			<input type="radio" name="temps" value="tempsPartiel" checked>
+			Temps partiel<br>
+		</form>
+
+
+
+		<button type="submit" id="connection"
+			class="btn btn-success btn-block">Enregistrer</button>
+		<a href="inscription.html" id="connection"
+			class="btn btn-default btn-block">Créer un compte !</a>
+
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#connection").click(function() {
+				toggle("cp");
+			});
+		});
+	</script>
+</body>
+</html>
