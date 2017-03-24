@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fr.univ_lille1.iut_info.brisseta.a133grandir">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="123Grandir"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LoginActivity"
+            android:label="123Grandir             ">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".admin_package.AdminActivity"
+            android:label="@string/title_activity_admin"
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.univ_lille1.iut_info.brisseta.a133grandir.LoginActivity" />
+        </activity>
+        <activity
+            android:name=".client_packge.Gallery"
+            android:label="@string/title_activity_gallery"
+            android:parentActivityName=".admin_package.AdminActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.univ_lille1.iut_info.brisseta.a133grandir.admin_package.AdminActivity" />
+        </activity>
+        <activity
+            android:name=".admin_package.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".admin_package.AdminActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.univ_lille1.iut_info.brisseta.a133grandir.admin_package.AdminActivity" />
+        </activity>
+        <activity
+            android:name=".MessageFlowActivity"
+            android:label="@string/title_activity_message_flow"
+            android:parentActivityName=".admin_package.AdminActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.univ_lille1.iut_info.brisseta.a133grandir.admin_package.AdminActivity" />
+        </activity>
+        <activity
+            android:name=".SendMessageActivity"
+            android:label="@string/title_activity_send_message"
+            android:parentActivityName=".admin_package.AdminActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.univ_lille1.iut_info.brisseta.a133grandir.admin_package.AdminActivity" />
+        </activity>
+        <activity
+            android:name=".ImagePickerActivity"
+            android:label="@string/title_activity_image_picker"
+            android:parentActivityName=".admin_package.AdminActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.univ_lille1.iut_info.brisseta.a133grandir.admin_package.AdminActivity" />
+        </activity>
+    </application>
+
+</manifest>
