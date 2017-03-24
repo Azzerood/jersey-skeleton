@@ -122,18 +122,31 @@
 			</div>
 		</div>
 
-    <script type="text/javascript">
+		<script type="text/javascript">
 			$(document).ready(function() {
 				$("#inscription").click( function () { 
 					var inputs = document.getElementsByTagName('input');
-					var cbCheck = checkCheck(inputs);
-					console.log(cbCheck);
 					
+					var CheckInput = [];
+					var FileInput = [];
+					var TextInput = [];
+					
+					for(var i = 0; i < inputs.length; i++) {
+					    if(listobj[i].type.toLowerCase() == 'checkbox') {
+					    	CheckInput.push(inputs[i]);
+					    }else if(listobj[i].type.toLowerCase() == 'text'){
+					    	FileInput.push(inputs[i]);
+					    }else if(listobj[i].type.toLowerCase() == 'file'){
+					    	TextInput.push(inputs[i]);
+					    }else if(){
+					    	
+					    }	
+					 }
 				});
 			});
 
     </script>
-    <!-- footer project
+		<!-- footer project
     <footer>
         <div class="container" style="background-color:#3e3f42;">
             <div class="row">
