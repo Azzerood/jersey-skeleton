@@ -1,14 +1,16 @@
 
 package fr.iutinfo.skeleton.planning;
 
-import org.skife.jdbi.v2.sqlobject.*;
+import java.util.Calendar;
+import java.util.List;
+
+import org.skife.jdbi.v2.sqlobject.Bind;
+import org.skife.jdbi.v2.sqlobject.BindBean;
+import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
+import org.skife.jdbi.v2.sqlobject.SqlQuery;
+import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
-
-import fr.iutinfo.skeleton.api.User;
-
-import java.util.Date;
-import java.util.List;
 
 public interface CreneauDao {
     @SqlUpdate("CREATE TABLE creneaux(id integer primary key autoincrement, status char(20),date DATE, heureDebut INT, heureFin INT, listEnfant char(200); ")
@@ -25,6 +27,14 @@ public interface CreneauDao {
     @SqlQuery("select * from creneaux order by date")
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Creneau> all();
+    
+    @SqlQuery("select * from creneaux where status = :status order by date")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    List<Creneau> selectByStatus(@Bind("status") String status);
+    
+    @SqlQuery("select * from creneaux where date BETWEEN :date1 AND :date2 order by date")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    List<Creneau> selectByDate(@Bind("date")Calendar date1, Calendar date2 );
     
     @SqlQuery("select * from creneaux where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)

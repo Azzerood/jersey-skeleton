@@ -2,9 +2,9 @@ package fr.iutinfo.skeleton.planning;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import fr.iutinfo.skeleton.common.dto.CreneauDto;
-import fr.iutinfo.skeleton.common.dto.UserDto;
 
 public class Creneau {
 
@@ -28,7 +28,7 @@ public class Creneau {
 		}
 		throw new Exception("invalide heure crenau");
 	}
-
+	
 	public String getStatus() {
 		return status;
 	}
