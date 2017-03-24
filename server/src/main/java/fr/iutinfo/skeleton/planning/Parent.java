@@ -169,18 +169,18 @@ public class Parent {
 	
 	
 	public void initFromDto(ParentDto dto) throws Exception {
-		this.setNom(getNom());
-		this.setPrenom(getPrenom());
-		this.setAdresse(getAdresse());
-		this.setDateNaissance(getDateNaissance());
-		this.setProfession(getProfession());
-		this.setCategorieCaf(getCategorieCaf());
-		this.setNumeroCaf(getNumeroCaf());
-		this.setDebutContrat(getDebutContrat());
-		this.setFinContrat(getFinContrat());
-		this.setCongés(getCongés());
-		this.setTypeContrat(getTypeContrat());
-		this.setNumero(getNumero());
+		this.setNom(dto.getNom());
+		this.setPrenom(dto.getPrenom());
+		this.setAdresse(dto.getAdresse());
+		this.setDateNaissance(dto.getDateNaissance());
+		this.setProfession(dto.getProfession());
+		this.setCategorieCaf(dto.getCategorieCaf());
+		this.setNumeroCaf(dto.getNumeroCaf());
+		this.setDebutContrat(dto.getDebutContrat());
+		this.setFinContrat(dto.getFinContrat());
+		this.setCongés(dto.getCongés());
+		this.setTypeContrat(dto.getTypeContrat());
+		this.setNumero(dto.getNumero());
 	 }
 	
 

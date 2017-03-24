@@ -147,18 +147,18 @@ public class Salarie {
 
 
 	public void initFromDto(SalarieDto dto) throws Exception {
-		this.setNom(getNom());
-		this.setPrenom(getPrenom());
-		this.setAdresse(getAdresse());
-		this.setDateNaissance(getDateNaissance());
-		this.setNationnalite(getNationnalite());
-		this.setDepartement(getDepartement());
-		this.setTypeContrat(getTypeContrat());
-		this.setTempsContrat(getTempsContrat());
-		this.setDebutContrat(getDebutContrat());
-		this.setFinContrat(getFinContrat());
-		this.setRenumeration(getRenumeration());
-		this.setNumeroSecu(getNumeroSecu());
+		this.setNom(dto.getNom());
+		this.setPrenom(dto.getPrenom());
+		this.setAdresse(dto.getAdresse());
+		this.setDateNaissance(dto.getDateNaissance());
+		this.setNationnalite(dto.getNationnalite());
+		this.setDepartement(dto.getDepartement());
+		this.setTypeContrat(dto.getTypeContrat());
+		this.setTempsContrat(dto.getTempsContrat());
+		this.setDebutContrat(dto.getDebutContrat());
+		this.setFinContrat(dto.getFinContrat());
+		this.setRenumeration(dto.getRenumeration());
+		this.setNumeroSecu(dto.getNumeroSecu());
 	}
 	
 

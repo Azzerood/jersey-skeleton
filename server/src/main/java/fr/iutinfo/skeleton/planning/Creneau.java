@@ -82,11 +82,11 @@ public class Creneau {
 	
 	public CreneauDto convertToDto()  {
 		CreneauDto dto = new CreneauDto();
-		dto.setDate(dto.getDate());
-		dto.setHeureDebut(dto.getHeureDebut());
-		dto.setHeureFin(dto.getHeureFin());
-		dto.setListEnfant(dto.getListEnfant());
-		dto.setStatus(dto.getStatus());
+		dto.setDate(getDate());
+		dto.setHeureDebut(getHeureDebut());
+		dto.setHeureFin(getHeureFin());
+		dto.setListEnfant(getListEnfant());
+		dto.setStatus(getStatus());
 		return dto;
 	}
 }

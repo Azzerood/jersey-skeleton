@@ -163,17 +163,17 @@ public class Enfant {
 	}
 	
 	public void initFromDto(EnfantDto dto) throws Exception {
-		this.setAdresse(getAdresse());
-		this.setAllergies(getAllergies());
-		this.setDateNaissance(getDateNaissance());
-		this.setHorraireAccueil(getHorraireAccueil());
-		this.setNom(getNom());
-		this.setNumeroMedecin(getNumeroMedecin());
-		this.setPeriodeAdaptation(getPeriodeAdaptation());
-		this.setNumeroUrgence(getNumeroUrgence());
-		this.setPhoto(getPhoto());
-		this.setTempsAccueil(getTempsAccueil());
-		this.setPrenom(getPrenom());
+		this.setAdresse(dto.getAdresse());
+		this.setAllergies(dto.getAllergies());
+		this.setDateNaissance(dto.getDateNaissance());
+		this.setHorraireAccueil(dto.getHorraireAccueil());
+		this.setNom(dto.getNom());
+		this.setNumeroMedecin(dto.getNumeroMedecin());
+		this.setPeriodeAdaptation(dto.getPeriodeAdaptation());
+		this.setNumeroUrgence(dto.getNumeroUrgence());
+		this.setPhoto(dto.getPhoto());
+		this.setTempsAccueil(dto.getTempsAccueil());
+		this.setPrenom(dto.getPrenom());
 	 }
 
 	public EnfantDto convertToDto(){
