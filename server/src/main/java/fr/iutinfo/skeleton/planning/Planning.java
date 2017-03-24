@@ -29,8 +29,8 @@ public class Planning {
 		if(mois>0 && mois <= 12)
 			 throw new Exception("invalide mois");
 		for (Creneau creneau : liste) {
-			if(creneau.getDate().get(Calendar.MONTH)+1== mois)
-				l.add(creneau);				
+//			if(creneau.getDate().get(Calendar.MONTH)+1== mois)
+//				l.add(creneau);				
 		}
 		return l;
 	}
@@ -40,8 +40,8 @@ public class Planning {
 		if(semaine>0 && semaine <= 52)
 			 throw new Exception("invalide semaine");
 		for (Creneau creneau : liste) {
-			if(creneau.getDate().get(Calendar.WEEK_OF_YEAR)== semaine)
-				l.add(creneau);				
+//			if(creneau.getDate().get(Calendar.WEEK_OF_YEAR)== semaine)
+//				l.add(creneau);				
 		}
 		return l;
 	}
@@ -51,8 +51,8 @@ public class Planning {
 		if(jour>0 && jour <= 366)
 			 throw new Exception("invalide semaine");
 		for (Creneau creneau : liste) {
-			if(creneau.getDate().get(Calendar.DAY_OF_YEAR)== jour)
-				l.add(creneau);				
+//			if(creneau.getDate().get(Calendar.DAY_OF_YEAR)== jour)
+//				l.add(creneau);				
 		}
 		return l;
 	}

@@ -31,6 +31,7 @@ public class BDDFactory {
         ResultSet tables = dbm.getTables(null, null, tableName, null);
         boolean exist = tables.next();
         tables.close();
+        System.out.println(exist);
         return exist;
     }
 }

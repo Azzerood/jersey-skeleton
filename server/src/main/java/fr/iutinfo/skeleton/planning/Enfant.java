@@ -1,7 +1,5 @@
 package fr.iutinfo.skeleton.planning;
 
-import java.util.Calendar;
-
 import fr.iutinfo.skeleton.common.dto.CreneauDto;
 import fr.iutinfo.skeleton.common.dto.EnfantDto;
 
@@ -9,7 +7,7 @@ public class Enfant {
 
 	private String nom;
 	private String prenom;
-	private Calendar dateNaissance;
+	private String dateNaissance;
 	private String adresse;
 	private String tempsAccueil;
 	private String horraireAccueil;
@@ -24,7 +22,7 @@ public class Enfant {
 	public Enfant(){}
 	
 
-	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse,String horraireAccueil){
+	public Enfant(String nom, String prenom, String dateNaissance, String adresse,String horraireAccueil){
 		this.nom=nom;
 		this.prenom =prenom;
 		this.dateNaissance = dateNaissance;
@@ -32,7 +30,7 @@ public class Enfant {
 		this.horraireAccueil = horraireAccueil;
 	}
 	
-	public Enfant(String nom, String prenom, Calendar dateNaissance, String adresse, String tempsAccueil,
+	public Enfant(String nom, String prenom, String dateNaissance, String adresse, String tempsAccueil,
 			String horraireAccueil, String periodeAdaptation, String allergies, String traitements, String personnes, String numeroUrgence,
 			String numeroMedecin, String photo) {
 		this.nom = nom;
@@ -80,11 +78,11 @@ public class Enfant {
 		this.prenom = prenom;
 	}
 
-	public Calendar getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Calendar dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 
