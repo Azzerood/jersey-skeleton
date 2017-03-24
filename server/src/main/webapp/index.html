@@ -322,27 +322,62 @@
 		</div>
     <div class = "planningDiv">
             <h1>Gestion des planings</h1>
-            <div class="container">
-                <div class="row">
-                    <div class='col-sm-6'>
-                        <div class="form-group">
-                            <div class='input-group date' id='datetimepicker2'>
-                                <input type='text' class="form-control" />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker2').datetimepicker({
-                            locale: 'ru'
-                        });
-                    });
-                </script>
-                </div>
-            </div>
+	<div class="container">
+		<div class ="saisiePlanning">
+		<label for="semainePlanning" class="control-label">Planning de la semaine</label>
+		<input type="week" id="semainePlanning">
+		</div>
+		<div class ="saisiePlanning">
+		<label for="typePlanning" class="control-label">Planning de la semaine</label>
+			<select name="typePlanning" id="typePlanning">
+			   <option value="previsionnel">Previsionnel</option>
+			   <option value="reel">Reel</option>
+		    </select>
+	   </div>
+		<div class = "zonePlanning">
+			<h2>Le planning</h2>
+			<canvas id="lundi" width="800" height="200">
+				<script>
+				  var canvas = document.getElementById("lundi");	
+					var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(0,0,0)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+			</canvas>
+			<canvas id="mardi" width="800" height="200">
+			<script>
+				  var canvas = document.getElementById("mardi");	
+					var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(80,120,220)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+			</canvas>
+			<canvas id="mercredi" width="800" height="200">
+			<script>
+				  var canvas = document.getElementById("mercredi");	
+				  var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(0,0,125)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+			</canvas>
+			<canvas id="jeudi" width="800" height="200">
+			<script>
+				  var canvas = document.getElementById("jeudi");	
+					var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(0,125,0)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+				</canvas>
+			<canvas id="vendredi" width="800" height="200">
+			<script>
+				  var canvas = document.getElementById("vendredi");	
+					var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(125,0,0)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+			</canvas>
+		</div>
+	</div>
         </div>
 		
     <script type="text/javascript">

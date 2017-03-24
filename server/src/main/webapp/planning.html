@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Jersey Skeleton</title>
+    <meta charset='utf-8'>
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="stylevitrine.css">
+
+    <!-- Code local -->
+    <script src="all.js"></script>
+    <script src="hideOnClick.js"></script>
+</head>
+<body>
+	<h1>Gestion des planings</h1>
+	<div class="container">
+		<div class ="saisiePlanning">
+		<label for="semainePlanning" class="control-label">Planning de la semaine</label>
+		<input type="week" id="semainePlanning">
+		</div>
+		<div class ="saisiePlanning">
+		<label for="typePlanning" class="control-label">Planning de la semaine</label>
+			<select name="typePlanning" id="typePlanning">
+			   <option value="previsionnel">Previsionnel</option>
+			   <option value="reel">Reel</option>
+		    </select>
+	   </div>
+		<div class = "zonePlanning">
+			<h2>Le planning</h2>
+			<canvas id="lundi" width="800" height="200">
+				<script>
+				  var canvas = document.getElementById("lundi");	
+					var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(0,0,0)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+			</canvas>
+			<canvas id="mardi" width="800" height="200">
+			<script>
+				  var canvas = document.getElementById("mardi");	
+					var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(80,120,220)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+			</canvas>
+			<canvas id="mercredi" width="800" height="200">
+			<script>
+				  var canvas = document.getElementById("mercredi");	
+				  var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(0,0,125)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+			</canvas>
+			<canvas id="jeudi" width="800" height="200">
+			<script>
+				  var canvas = document.getElementById("jeudi");	
+					var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(0,125,0)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+				</canvas>
+			<canvas id="vendredi" width="800" height="200">
+			<script>
+				  var canvas = document.getElementById("vendredi");	
+					var gfx = canvas.getContext("2d");
+					gfx.fillStyle = 'rgb(125,0,0)';
+					gfx.fillRect(0,0,canvas.width,canvas.height);
+				</script>
+			</canvas>
+		</div>
+	</div>
+</body>
