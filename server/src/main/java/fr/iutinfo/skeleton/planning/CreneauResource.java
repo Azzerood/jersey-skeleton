@@ -34,7 +34,7 @@ public class CreneauResource {
 		if (!BDDFactory.tableExist("creneaux")) {
 			logger.debug("Create table creneaux");
 			dao.createCreneauTable();
-//			dao.insert(new Creneau("previsionnel",c,"800", "1200", "Anais, théo")); //date, heureDebut, heureFin, listEnfant
+			dao.insert(new Creneau("previsionnel",c,"800", "1200", "Anais, théo")); //date, heureDebut, heureFin, listEnfant
 		}
 	}
 

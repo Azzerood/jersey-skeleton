@@ -107,7 +107,11 @@ public class Enfant {
 	}
 
 	public void setHorraireAccueil(String horraireAccueil) {
-		this.horraireAccueil = this.horraireAccueil+" "+horraireAccueil;
+		if(this.horraireAccueil.equals(null)){
+			this.horraireAccueil = horraireAccueil;
+		}else{
+			this.horraireAccueil = this.horraireAccueil + " " + horraireAccueil;
+		}
 	}
 
 	public String getAllergies() {
@@ -115,7 +119,11 @@ public class Enfant {
 	}
 
 	public void setAllergies(String allergies) {
-		this.allergies = this.allergies+" "+allergies;
+		if(this.allergies.equals(null)){
+			this.allergies = allergies;
+		}else{
+			this.allergies = this.allergies + " " + allergies;
+		}
 	}
 	
 	public String getTraitements() {
@@ -124,7 +132,11 @@ public class Enfant {
 
 
 	public void setTraitements(String traitements) {
-		this.traitements = traitements;
+		if(this.traitements.equals(null)){
+			this.traitements = traitements;
+		}else{
+			this.traitements = this.traitements + " " + traitements;
+		}
 	}
 
 
@@ -134,7 +146,11 @@ public class Enfant {
 
 
 	public void setPersonnes(String personnes) {
-		this.personnes = personnes;
+		if(this.personnes.equals(null)){
+			this.personnes = personnes;
+		}else{
+			this.personnes = this.personnes + " " + personnes;
+		}
 	}
 
 

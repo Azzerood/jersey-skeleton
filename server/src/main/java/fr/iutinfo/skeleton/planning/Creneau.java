@@ -65,7 +65,11 @@ public class Creneau {
 	}
 
 	public void setListEnfant(String listEnfant) {
-		this.listEnfant = this.listEnfant + " " + listEnfant;
+		if(this.listEnfant.equals(null)){
+			this.listEnfant = listEnfant;
+		}else{
+			this.listEnfant = this.listEnfant + " " + listEnfant;
+		}
 	}
 
 	public String getListEnfant() {
