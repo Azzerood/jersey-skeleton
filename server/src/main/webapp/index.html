@@ -76,113 +76,194 @@
 		</div>
 		<div class = "vitrineDiv">
             <nav class="navbar navbar-default navbar-fixed-top">
-                  <div class="container container-fluid">
-                    <div class="navbar-header">
+		<div class="container container-fluid">
+			<div class="navbar-header">
 
-                      <ul class="nav navbar-nav">
-                      <li><img class="petitlogo"src="img/logo.jpg"></li>
-                        <li><a href="#projet">Projet</a></li>
-                        <li><a href="#demarches">Démarche CAF</a></li>
-                        <li><a href="#simulation">Simulation CAF</a></li>
-                        <li><a href="#disponibilites">Disponibilité</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <button class="btn btn-sm align-middle btn-outline-secondary">Administrateur</button>
+				<ul class="nav navbar-nav">
+					<li><img class="petitlogo" src="img/logo.jpg"></li>
+					<li><a href="#projet">Projet</a></li>
+					<li><a href="#demarches">Démarche CAF</a></li>
+					<li><a href="#simulation">Simulation CAF</a></li>
+					<li><a href="#disponibilites">Disponibilité</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<button class="btn btn-sm align-middle btn-outline-secondary" id="boutonAdmin" onclick="afficherConnection();">Administrateur</button>
 
-                     </ul>
+				</ul>
 
 
-                    </div>
-                  </div>
-            </nav>
-			
-			
-			<div class = "containerVitrine">
-			
-				<div id = "projet" class = "ContentDisplay-impair">
-                    <div class ="container">
-                    <h2>Projet</h2>
-                    <p>ICI ON PARLE DU PROJET</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam neque massa, dapibus in tempus ac, sagittis a tortor.
-                            Maecenas sagittis id massa id tempus. Nullam dignissim porttitor orci, at scelerisque purus euismod quis. Donec fermentum,
-                            turpis non porta auctor, nibh arcu mollis diam, a pretium ligula enim in orci. Ut urna mauris, eleifend nec posuere eu, condimentum vitae est.
-                            Nullam pellentesque elit velit, quis ullamcorper sapien dictum at. Praesent porttitor, orci a consectetur eleifend, ex nisi convallis purus,
-                            ut varius eros tellus et quam. Ut accumsan aliquet arcu commodo malesuada. Nulla condimentum, lorem a dictum venenatis, lorem purus maximus nisi, 
-                            et iaculis libero dui nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce pulvinar justo
-                            vitae finibus congue. </p>
-                    </div>
-				</div>
-		
-				<div id = "demarches" class = "ContentDisplay-pair">
-					<div class ="container">
-						<h2>Démarche CAF</h2>
-						<p>ICI ON PARLE DES DEMARCHES CAF</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam neque massa, dapibus in tempus ac, sagittis a tortor.
-						Maecenas sagittis id massa id tempus. Nullam dignissim porttitor orci, at scelerisque purus euismod quis. Donec fermentum,
-						turpis non porta auctor, nibh arcu mollis diam, a pretium ligula enim in orci. Ut urna mauris, eleifend nec posuere eu, condimentum vitae est.
-						Nullam pellentesque elit velit, quis ullamcorper sapien dictum at. Praesent porttitor, orci a consectetur eleifend, ex nisi convallis purus,
-						ut varius eros tellus et quam. Ut accumsan aliquet arcu commodo malesuada. Nulla condimentum, lorem a dictum venenatis, lorem purus maximus nisi, 
-						et iaculis libero dui nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce pulvinar justo
-						vitae finibus congue. </p>
-					</div>
-				</div>
-				
-				<div id="simulation" class = "ContentDisplay-impair">
-					<div class ="container">
-						<h2>Simulation CAF</h2>
-						<p>ICI ON PARLE DES SIMULATION</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam neque massa, dapibus in tempus ac, sagittis a tortor.
-						Maecenas sagittis id massa id tempus. Nullam dignissim porttitor orci, at scelerisque purus euismod quis. Donec fermentum,
-						turpis non porta auctor, nibh arcu mollis diam, a pretium ligula enim in orci. Ut urna mauris, eleifend nec posuere eu, condimentum vitae est.
-						Nullam pellentesque elit velit, quis ullamcorper sapien dictum at. Praesent porttitor, orci a consectetur eleifend, ex nisi convallis purus,
-						ut varius eros tellus et quam. Ut accumsan aliquet arcu commodo malesuada. Nulla condimentum, lorem a dictum venenatis, lorem purus maximus nisi, 
-						et iaculis libero dui nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce pulvinar justo
-						vitae finibus congue. </p>
-					</div>
-				</div>
-				
-				<div id="disponibilites" class = "ContentDisplay-pair">
-					<div class ="container">
-						<h2>Disponibilité</h2>
-						<p>ICI ON PARLE DISPONIBILITES</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam neque massa, dapibus in tempus ac, sagittis a tortor.
-						Maecenas sagittis id massa id tempus. Nullam dignissim porttitor orci, at scelerisque purus euismod quis. Donec fermentum,
-						turpis non porta auctor, nibh arcu mollis diam, a pretium ligula enim in orci. Ut urna mauris, eleifend nec posuere eu, condimentum vitae est.
-						Nullam pellentesque elit velit, quis ullamcorper sapien dictum at. Praesent porttitor, orci a consectetur eleifend, ex nisi convallis purus,
-						ut varius eros tellus et quam. Ut accumsan aliquet arcu commodo malesuada. Nulla condimentum, lorem a dictum venenatis, lorem purus maximus nisi, 
-						et iaculis libero dui nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce pulvinar justo
-						vitae finibus congue. </p>
-					</div>
-				</div>
-				<div id="contact" class = "ContentDisplay-impair">
-					<div class ="container">
-						<h2>Contact</h2>
-						<p>Nous contacter</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam neque massa, dapibus in tempus ac, sagittis a tortor.
-						Maecenas sagittis id massa id tempus. Nullam dignissim porttitor orci, at scelerisque purus euismod quis. Donec fermentum,
-						turpis non porta auctor, nibh arcu mollis diam, a pretium ligula enim in orci. Ut urna mauris, eleifend nec posuere eu, condimentum vitae est.
-						Nullam pellentesque elit velit, quis ullamcorper sapien dictum at. Praesent porttitor, orci a consectetur eleifend, ex nisi convallis purus,
-						ut varius eros tellus et quam. Ut accumsan aliquet arcu commodo malesuada. Nulla condimentum, lorem a dictum venenatis, lorem purus maximus nisi, 
-						et iaculis libero dui nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce pulvinar justo
-						vitae finibus congue. </p>
-					</div>
-				</div>
-			
-			<div class = "footer">
-				<div class = "container">
-					<div class = "blockFooter" id ="reseaux">
-					<a target="_blank" href="https://www.facebook.com/1.2.3.grandir/">
-						<img src="img/logoFacebook.png"  alt="Lien Facebook" class="FooterLogo">
-					</a>
-					</div>
-					<div class = "blockFooter" id="adresse">
-					<p>Copyright 1,2,3 Grandir 2017</p>
-					<p>1, 2 ,3 Grandir</p>
-					<p>92 Rue de la Baillerie</p>
-					<p>59150 Wattrelos</p>
-					</div>
-				</div>
 			</div>
 		</div>
+	</nav>
+
+
+	<div class="containerVitrine">
+
+		<div id="projet" class="ContentDisplay-impair">
+			<div class="container">
+				<h2>Projet</h2>
+				<h3>Qui sommes-nous ?</h3>
+				<p>1,2,3, Grandir est un lieu d’accueil intermédiaire entre
+					accueil collectif en crèche et un accueil chez une assistante
+					maternelle, cet accueil permet ainsi l’accueil « personnalisé » des
+					enfants encadrés par des professionnels de la petite enfance.
+					<b>Ouvert de 7h30 à 19h00 du lundi au vendredi</b>.</p>
+
+				<p>C’est un lieu de vie pour les jeunes enfants (10 semaines à 6
+					ans). Les parents les confient à la journée ou sur un temps plus
+					court à une équipe de professionnels, qui veillent à leur
+					développement physique et affectif en toute sécurité. Ils
+					contribuent également à leur éducation tout en respectant
+					l’autorité parentale. En effet, les parents ont une place
+					primordiale et restent les premiers éducateurs de leur enfant. Ils
+					transmettent à leur enfant une culture, une histoire, des valeurs
+					qui leur sont propres.</p>
+				<h3>Notre engagement :</h3>
+				<p>L’équipe de 1,2,3, Grandir s’attache à
+					instaurer un climat de confiance, entretenir une relation
+					privilégiée avec les parents, rassurer, soutenir et encourager
+					chaque parent dans sa fonction parentale, permettre aux parents
+					d’intégrer, et de s’approprier les lieux. Nous veillons a assurer
+					la sécurité physique, affective et psychologique de tous les
+					enfants. Nous favorisons l’éveil, le bien-être et l’autonomie de
+					l’enfant ( motricité libre) et accompagner l’enfant dans ses
+					premiers pas vers la socialisation.</p>
+			</div>
+		</div>
+
+		<div id="demarches" class="ContentDisplay-pair">
+			<div class="container">
+				<h2>Démarche CAF</h2>
+				<p>Vous pouvez bénéficier du complément de libre choix de mode
+					de garde (cmg) si l’enfant est gardé au moins 16 heures dans le
+					mois. Vous devez prendre contact avec la CAF dont vous dépendez
+					pour faire cette demande et ceux-ci avant l’intégration de votre
+					enfant au sein de la micro-crèche.</p>
+			</div>
+		</div>
+
+		<div id="simulation" class="ContentDisplay-impair">
+			<div class="container">
+				<div class="simulation">
+					<div class="page-header">
+						<h1>Simulation</h1>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+
+							<div class="form-group">
+								<label for="login" class="control-label">Plafonds de
+									ressources 2014</label> <input type="text" class="form-control"
+									id="ressources" name="ressources" required="true">
+							</div>
+
+							<div class="form-group">
+								<label for="sel1">Nombres d'enfants à charge</label><br /> <select
+									class="form-control" name="roleInscription"
+									id="roleInscription">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="sel1">Nombre de journée(s)</label><br /> <select
+									class="form-control" name="roleInscription"
+									id="roleInscription">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="sel1">Nombre de demi-journée(s)</label><br /> <select
+									class="form-control" name="roleInscription"
+									id="roleInscription">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+							<button type="submit" id="inscription"
+								class="btn btn-success btn-block">Simuler</button>
+							<br>
+							<center>
+								<label for="sel1">Montant de l'estimation : 0 Euro</label>
+							</center>
+						</div>
+					</div>
+				</div>
+
+				<script type="text/javascript">
+					
+				</script>
+
+			</div>
+		</div>
+
+		<div id="disponibilites" class="ContentDisplay-pair">
+			<div class="container">
+				<h2>Disponibilité</h2>
+				<p>ICI ON PARLE DISPONIBILITES</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+					neque massa, dapibus in tempus ac, sagittis a tortor. Maecenas
+					sagittis id massa id tempus. Nullam dignissim porttitor orci, at
+					scelerisque purus euismod quis. Donec fermentum, turpis non porta
+					auctor, nibh arcu mollis diam, a pretium ligula enim in orci. Ut
+					urna mauris, eleifend nec posuere eu, condimentum vitae est. Nullam
+					pellentesque elit velit, quis ullamcorper sapien dictum at.
+					Praesent porttitor, orci a consectetur eleifend, ex nisi convallis
+					purus, ut varius eros tellus et quam. Ut accumsan aliquet arcu
+					commodo malesuada. Nulla condimentum, lorem a dictum venenatis,
+					lorem purus maximus nisi, et iaculis libero dui nec urna. Class
+					aptent taciti sociosqu ad litora torquent per conubia nostra, per
+					inceptos himenaeos. Fusce pulvinar justo vitae finibus congue.</p>
+			</div>
+		</div>
+		<div id="contact" class="ContentDisplay-impair">
+			<div class="container">
+				<h2>Contact</h2>
+				<p>Nous contacter</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+					neque massa, dapibus in tempus ac, sagittis a tortor. Maecenas
+					sagittis id massa id tempus. Nullam dignissim porttitor orci, at
+					scelerisque purus euismod quis. Donec fermentum, turpis non porta
+					auctor, nibh arcu mollis diam, a pretium ligula enim in orci. Ut
+					urna mauris, eleifend nec posuere eu, condimentum vitae est. Nullam
+					pellentesque elit velit, quis ullamcorper sapien dictum at.
+					Praesent porttitor, orci a consectetur eleifend, ex nisi convallis
+					purus, ut varius eros tellus et quam. Ut accumsan aliquet arcu
+					commodo malesuada. Nulla condimentum, lorem a dictum venenatis,
+					lorem purus maximus nisi, et iaculis libero dui nec urna. Class
+					aptent taciti sociosqu ad litora torquent per conubia nostra, per
+					inceptos himenaeos. Fusce pulvinar justo vitae finibus congue.</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container">
+			<div class="blockFooter" id="reseaux">
+				<a target="_blank" href="https://www.facebook.com/1.2.3.grandir/">
+					<img src="img/logoFacebook.png" alt="Lien Facebook"
+					class="FooterLogo">
+				</a>
+			</div>
+			<div class="blockFooter" id="adresse">
+				<p>Copyright 1,2,3 Grandir 2017</p>
+				<p>1, 2 ,3 Grandir</p>
+				<p>92 Rue de la Baillerie</p>
+				<p>59150 Wattrelos</p>
+			</div>
+		</div>
+	</div>
+
     </div>
 		<div class ="dashboardDiv">
 			<div class="page-header">

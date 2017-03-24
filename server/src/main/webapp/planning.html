@@ -21,11 +21,11 @@
 	<h1>Gestion des planings</h1>
 	<div class="container">
 		<div class ="saisiePlanning">
-		<label for="semainePlanning" class="control-label">Planning de la semaine</label>
-		<input type="week" id="semainePlanning">
+		<label for="semainePlanning" class="control-label">Planning de la journée</label>
+		<input type="date" id="semainePlanning">
 		</div>
 		<div class ="saisiePlanning">
-		<label for="typePlanning" class="control-label">Planning de la semaine</label>
+		<label for ="typePlanning" class="control-label">type de planning</label>
 			<select name="typePlanning" id="typePlanning">
 			   <option value="previsionnel">Previsionnel</option>
 			   <option value="reel">Reel</option>
@@ -33,43 +33,11 @@
 	   </div>
 		<div class = "zonePlanning">
 			<h2>Le planning</h2>
-			<canvas id="lundi" width="800" height="200">
+			<canvas id="planningJournee" width="1000" height="800">
 				<script>
-				  var canvas = document.getElementById("lundi");	
+				  var canvas = document.getElementById("planningJournee");	
 					var gfx = canvas.getContext("2d");
 					gfx.fillStyle = 'rgb(0,0,0)';
-					gfx.fillRect(0,0,canvas.width,canvas.height);
-				</script>
-			</canvas>
-			<canvas id="mardi" width="800" height="200">
-			<script>
-				  var canvas = document.getElementById("mardi");	
-					var gfx = canvas.getContext("2d");
-					gfx.fillStyle = 'rgb(80,120,220)';
-					gfx.fillRect(0,0,canvas.width,canvas.height);
-				</script>
-			</canvas>
-			<canvas id="mercredi" width="800" height="200">
-			<script>
-				  var canvas = document.getElementById("mercredi");	
-				  var gfx = canvas.getContext("2d");
-					gfx.fillStyle = 'rgb(0,0,125)';
-					gfx.fillRect(0,0,canvas.width,canvas.height);
-				</script>
-			</canvas>
-			<canvas id="jeudi" width="800" height="200">
-			<script>
-				  var canvas = document.getElementById("jeudi");	
-					var gfx = canvas.getContext("2d");
-					gfx.fillStyle = 'rgb(0,125,0)';
-					gfx.fillRect(0,0,canvas.width,canvas.height);
-				</script>
-				</canvas>
-			<canvas id="vendredi" width="800" height="200">
-			<script>
-				  var canvas = document.getElementById("vendredi");	
-					var gfx = canvas.getContext("2d");
-					gfx.fillStyle = 'rgb(125,0,0)';
 					gfx.fillRect(0,0,canvas.width,canvas.height);
 				</script>
 			</canvas>

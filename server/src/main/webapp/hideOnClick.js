@@ -46,7 +46,7 @@ $(document).ready(function() {
 		$(".planningDiv").hide();
 		$(".vitrineDiv").hide();
 	}
-	function afficherFormParent(){
+	function afficherFormParent(){ 
 		$(".connectionDiv").hide();
 		$(".inscriptionDiv").hide();
         $(".FormEnfant").hide();
@@ -62,7 +62,7 @@ $(document).ready(function() {
         $(".FormEnfant").hide();
 		$(".dashboardDiv").hide();
 		$(".FormParent").hide();
-		$(".planningDiv").show();
+		$(".planningDiv").show(); 
 		$(".vitrineDiv").hide();
 	}
 	function afficherPlanningDiv(){
@@ -85,17 +85,14 @@ $(document).ready(function() {
 	}
 
     $('#connection').click(function (event) {
-        $(".inscriptionDiv").hide();
-        $(".vitrineDiv").hide();
-        $(".connectionDiv").hide();
-        $(".FormEnfant").hide();
+        afficherDashboard();
     });
     
     $('#inscription').click(function (event) {
-        $(".FormEnfant").hide();
-        $(".vitrineDiv").hide();
-        $(".connectionDiv").hide();
-        $(".dashboardDiv").hide();
+       afficherDashboard();
+    });
+    $("#boutonAdmin").click(function(event){
+         afficherConnection();                 
     });
     
 });

@@ -21,6 +21,7 @@ padding: 1rem;
 margin-top:150px;
 width:100%;
 background-color: #8D8D8D;
+color:white;
 
 }
 .footer img{
@@ -47,10 +48,12 @@ display:inline-block;
 	width:100%;
 	background-color:#EDC4C4;
 	box-shadow: 10px 10px 5px 0px #B5B3B3;
+    padding-bottom:200px;
 }
 .ContentDisplay-impair{
 	background-color:white;
 	box-shadow: 10px 10px 5px -6px #B5B3B3;
+    padding-bottom: 200px;
 }
 containerBlockVitrine{
     max-width: 800px;
