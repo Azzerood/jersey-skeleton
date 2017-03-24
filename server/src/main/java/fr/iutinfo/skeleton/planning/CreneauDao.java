@@ -41,7 +41,12 @@ public interface CreneauDao {
     Creneau findById(@Bind("id") int id); 
 
     @SqlUpdate("delete from creneaux where id = :id")
+    @RegisterMapperFactory(BeanMapperFactory.class)
     void delete(@Bind("id") int id);
+    
+    @SqlUpdate("delete from creneaux")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    void deleteAll();
     
     @SqlUpdate("drop table if exists creneaux;")
     void dropCreneauTable();

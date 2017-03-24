@@ -20,59 +20,59 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.iutinfo.skeleton.api.BDDFactory;
-import fr.iutinfo.skeleton.common.dto.CreneauDto;
 import fr.iutinfo.skeleton.common.dto.EnfantDto;
+import fr.iutinfo.skeleton.common.dto.ParentDto;
 
-@Path("/enfant")
+@Path("/parent")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class EnfantRessource {
-	final static Logger logger = LoggerFactory.getLogger(EnfantRessource.class);
-	private static EnfantDao dao = getDbi().open(EnfantDao.class);
+public class ParentRessource {
+	final static Logger logger = LoggerFactory.getLogger(ParentRessource.class);
+	private static ParentDao dao = getDbi().open(ParentDao.class);
 
-	public EnfantRessource() throws Exception {
+	public ParentRessource() throws Exception {
 		Calendar c = Calendar.getInstance();
-		c.set(Calendar.YEAR, 1997);
-		c.set(Calendar.MONTH, 6);
+		c.set(Calendar.YEAR, 1969);
+		c.set(Calendar.MONTH, 5);
 		c.set(Calendar.DATE, 21);
 		if (!BDDFactory.tableExist("enfants")) {
 			logger.debug("Create table enfants");
-			dao.createEnfantTable();
-			dao.insert(new Enfant("Timothe","ruccart",c,"5 rue de la paix", "Lundi matin, Jeudi après-midi"));
+			dao.createParentTable();
+			dao.insert(new Parent("toto","toto",c,"5 rue Moulinelle", "0615978596"));
 		}
 	}
 
 	@POST
-	public EnfantDto createEnfant(EnfantDto dto) throws Exception {
-		Enfant enfant = new Enfant();
-		enfant.initFromDto(dto);
-		String nom = dao.insert(enfant);
+	public ParentDto createParent(ParentDto dto) throws Exception {
+		Parent parent = new Parent();
+		parent.initFromDto(dto);
+		String nom = dao.insert(parent);
 		dto.setNom(nom);
 		return dto;
 	}
 
 	@GET
 	@Path("/{id}")
-	public EnfantDto getEnfant(@PathParam("id") int id) throws Exception {
+	public ParentDto getEnfant(@PathParam("id") int id) throws Exception {
 		
-		Enfant enfant = dao.findById(id);
-		if (enfant == null) {
+		Parent parent = dao.findById(id);
+		if (parent == null) {
 			throw new WebApplicationException(404);
 		}
-		return enfant.convertToDto();
+		return parent.convertToDto();
 	}
 
 	@GET
-	public List<EnfantDto> getAllUsers(@QueryParam("q") int id) throws Exception{
+	public List<ParentDto> getAllUsers(@QueryParam("q") int id) throws Exception{
 
-		List<Enfant> enfant;
+		List<Parent> parent;
 		if (id == 0) {
-			enfant = dao.all();
+			parent = dao.all();
 		} else {
 			logger.debug("Search users with query: " + id);
-			enfant = dao.search(id);
+			parent = dao.search(id);
 		}
-		return enfant.stream().map(Enfant::convertToDto).collect(Collectors.toList());
+		return parent.stream().map(Parent::convertToDto).collect(Collectors.toList());
 	}
 
 	@DELETE

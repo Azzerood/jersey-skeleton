@@ -32,7 +32,12 @@ public interface EnfantDao {
     List<Enfant> all();
     
     @SqlUpdate("delete from enfants where id = :id")
+    @RegisterMapperFactory(BeanMapperFactory.class)
     void delete(@Bind("id") int id);
+    
+    @SqlUpdate("delete from enfants")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    void deleteAll();
     
     @SqlUpdate("drop table if exists enfants;")
     void dropCreneauTable();
