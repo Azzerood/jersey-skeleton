@@ -1,98 +1,85 @@
 $(document).ready(function() {
-		$(".connectionDiv").hide();
-		$(".inscriptionDiv").hide();
-        $(".FormEnfant").hide();
-		$(".dashboardDiv").hide();
-		$(".FormParent").hide();
-		$("FormEnfant").hide();
-		$(".planningDiv").hide();
+		$(".page").hide();
 		$(".vitrineDiv").show();
 		
 
 		
 	function afficherConnection(){
+		$(".page").hide();
 		$(".connectionDiv").show();
-		$(".inscriptionDiv").hide();
-        $(".FormEnfant").hide();
-		$(".dashboardDiv").hide();
-		$(".FormParent").hide();
-		$(".planningDiv").hide();
-		$(".vitrineDiv").hide();
+	
 	}
 	function afficherInscription(){
-		$(".connectionDiv").hide();
+		$(".page").hide();
 		$(".inscriptionDiv").show();
-        $(".FormEnfant").hide();
-		$(".dashboardDiv").hide();
-		$(".FormParent").hide();
-		$(".planningDiv").hide();
-		$(".vitrineDiv").hide();
+		
 	}
 	function afficherFormEnfant(){
-		$(".connectionDiv").hide();
-		$(".inscriptionDiv").hide();
+		$(".page").hide();
         $(".FormEnfant").show();
-		$(".dashboardDiv").hide();
-		$(".FormParent").hide();
-		$(".planningDiv").hide();
-		$(".vitrineDiv").hide();
+		
+	}
+	function afficherFormSalarie(){
+		$(".page").hide();
+		$(".FormSalarie").show();
 	}
 	function afficherDashboard(){
-		$(".connectionDiv").hide();
-		$(".inscriptionDiv").hide();
-        $(".FormEnfant").hide();
+		$(".page").hide();
 		$(".dashboardDiv").show();
-		$(".FormParent").hide();
-		$(".planningDiv").hide();
-		$(".vitrineDiv").hide();
 	}
 	function afficherFormParent(){ 
-		$(".connectionDiv").hide();
-		$(".inscriptionDiv").hide();
-        $(".FormEnfant").hide();
-		$(".dashboardDiv").hide();
+		$(".page").hide();
 		$(".FormParent").show();
-		$(".planningDiv").hide();
-		$(".vitrineDiv").hide();
+
 	}
 	
 	function afficherPlanningDiv(){
-		$(".connectionDiv").hide();
-		$(".inscriptionDiv").hide();
-        $(".FormEnfant").hide();
-		$(".dashboardDiv").hide();
-		$(".FormParent").hide();
+		$(".page").hide();
 		$(".planningDiv").show(); 
-		$(".vitrineDiv").hide();
 	}
 	function afficherPlanningDiv(){
-		$(".connectionDiv").hide();
-		$(".inscriptionDiv").hide();
-        $(".FormEnfant").hide();
-		$(".dashboardDiv").hide();
-		$(".FormParent").hide();
+		$(".page").hide();
 		$(".planningDiv").show();
-		$(".vitrineDiv").hide();
 	}
 	function afficherVitrineDiv(){
-		$(".connectionDiv").hide();
-		$(".inscriptionDiv").hide();
-        $(".FormEnfant").hide();
-		$(".dashboardDiv").hide();
-		$(".FormParent").hide();
-		$(".planningDiv").hide();
+		$(".page").hide();
 		$(".vitrineDiv").show();
+	}
+	function afficherPlanningDiv(){
+		$(".page").hide();
+		$(".planningDiv").show();
 	}
 
     $('#connection').click(function (event) {
         afficherDashboard();
     });
     
-    $('#inscription').click(function (event) {
+    $('#validerInscription').click(function (event) {
        afficherDashboard();
     });
     $("#boutonAdmin").click(function(event){
          afficherConnection();                 
     });
-    
+	$("#boutonInscription").click(function(event){
+		afficherInscription();
+	});
+    $("#boutonFormEnfant").click(function(event){
+		afficherFormEnfant();
+	});
+	$("#boutonFormParent").click(function(event){
+		afficherFormParent();
+	});
+	$(".backToDashboard").click(function(event){
+		afficherDashboard();
+	});
+	$(".backToSite").click(function(event){
+	afficherVitrineDiv();
+	});
+	$("#boutonVisualiserPlanning").click(function(even){
+	afficherPlanningDiv();
+	});
+	$("#boutonFormSalarie").click(function(even){
+	afficherFormSalarie();
+	});
+	
 });
