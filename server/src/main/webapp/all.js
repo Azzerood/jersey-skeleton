@@ -22,9 +22,9 @@ function inscription(login,mdp1,mdp2,role) {
 		url : "v1/user/",
 		dataType : "json",
 		data : JSON.stringify({
-			"login":loginInscription,
-			"password":mdpInscription1,
-			"role":roleInscription,
+			"login":login,
+			"password":mdp1,
+			"role":role,
 		}),
 		success : function(data, textStatus, jqXHR) {
 			console.log(data);		
