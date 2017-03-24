@@ -52,3 +52,9 @@ display:inline-block;
 	background-color:white;
 	box-shadow: 10px 10px 5px -6px #B5B3B3;
 }
+containerBlockVitrine{
+    max-width: 800px;
+    width:800px;
+    margin-right: auto; 
+    margin-left: auto;
+}
