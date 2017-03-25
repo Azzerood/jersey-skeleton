@@ -13,7 +13,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface CreneauDao {
-    @SqlUpdate("CREATE TABLE creneaux(id integer primary key autoincrement, status char(20),date char(20), heureDebut integer, heureFin integer, listEnfant char(200));")
+    @SqlUpdate("CREATE TABLE creneaux(id integer primary key autoincrement, status char(20),date char(10), heureDebut integer, heureFin integer, listEnfant char(200));")
     void createCreneauTable();
     
     @SqlUpdate("insert into creneaux(status,date, heureDebut, heureFin, listEnfant) values (:status, :date, :heureDebut, :heureFin, :listEnfant)")
@@ -32,9 +32,9 @@ public interface CreneauDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Creneau> selectByStatus(@Bind("status") String status);
     
-    @SqlQuery("select * from creneaux where date BETWEEN :date1 AND :date2 order by date")
+    @SqlQuery("select * from creneaux where date = :date1 order by date")
     @RegisterMapperFactory(BeanMapperFactory.class)
-    List<Creneau> selectByDate(@Bind("date")Calendar date1, Calendar date2 );
+    List<Creneau> selectByDate(@Bind("date")String date1 );
     
     @SqlQuery("select * from creneaux where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
@@ -43,6 +43,10 @@ public interface CreneauDao {
     @SqlUpdate("delete from creneaux where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     void delete(@Bind("id") int id);
+    
+    @SqlUpdate("UPDATE creneaux SET listEnfant = :enfants WHERE date = :date AND status = :status AND heureDebut = :heureDebut")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    void updateCreneaux(@Bind("status") String status, @Bind("date") String date, @Bind("heureDebut") String heureDebut, @Bind("enfants") String enfants);
     
     @SqlUpdate("delete from creneaux")
     @RegisterMapperFactory(BeanMapperFactory.class)

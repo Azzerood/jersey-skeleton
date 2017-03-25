@@ -45,15 +45,21 @@ public class CreneauResource {
 	public void initialiserPlanning(){
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
+		 Calendar cal = Calendar.getInstance();
+	    
 		for(int jour=0; jour <365 ; jour++){
 			for(int creneau = 800; creneau < 1800; creneau+=100){
 				try {
-					dao.insert(new Creneau("previsionnel",dateFormat.format(date),creneau,creneau+100,""  ));
+					dao.insert(new Creneau("previsionnel",dateFormat.format(date),creneau,creneau+100,"" ));
+					dao.insert(new Creneau("réel",dateFormat.format(date),creneau,creneau+100,""));
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
+			 cal.setTime(date);
+		     cal.add(Calendar.DATE, 1);
+		     date =  cal.getTime();
 		}
 	}
 
