@@ -10,15 +10,15 @@ public class Creneau {
 
 	private String status = "previsionnel";
 	private String date;
-	private String heureDebut;
-	private String heureFin;
+	private int heureDebut;
+	private int heureFin;
 	private String listEnfant;
 
 	public Creneau() {
 	}
 
-	public Creneau(String status, String date, String heureDebut, String heureFin, String listEnfant) throws Exception {
-		if (Integer.parseInt(heureDebut) > 730 && Integer.parseInt(heureFin) < 1900) {
+	public Creneau(String status, String date, int heureDebut, int heureFin, String listEnfant) throws Exception {
+		if (heureDebut > 800 && heureFin < 1900) {
 			this.heureDebut = heureDebut;
 			this.heureFin = heureFin;
 			this.date = date;
@@ -48,19 +48,19 @@ public class Creneau {
 		this.date = date;
 	}
 
-	public String getHeureDebut() {
+	public int getHeureDebut() {
 		return heureDebut;
 	}
 
-	public void setHeureDebut(String heureDebut) {
+	public void setHeureDebut(int heureDebut) {
 		this.heureDebut = heureDebut;
 	}
 
-	public String getHeureFin() {
+	public int getHeureFin() {
 		return heureFin;
 	}
 
-	public void setHeureFin(String heureFin) {
+	public void setHeureFin(int heureFin) {
 		this.heureFin = heureFin;
 	}
 

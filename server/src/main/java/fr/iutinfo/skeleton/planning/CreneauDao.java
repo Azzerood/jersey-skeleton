@@ -18,7 +18,7 @@ public interface CreneauDao {
     
     @SqlUpdate("insert into creneaux(status,date, heureDebut, heureFin, listEnfant) values (:status, :date, :heureDebut, :heureFin, :listEnfant)")
     @GetGeneratedKeys
-    String insert(@BindBean() Creneau creneau);
+    int insert(@BindBean() Creneau creneau);
     
     @SqlQuery("select * from creneaux where search like :id")
     @RegisterMapperFactory(BeanMapperFactory.class)

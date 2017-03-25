@@ -10,8 +10,8 @@ public class CreneauDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(CreneauDto.class);
     private String status= "previsionnel";
 	private String date;
-	private String heureDebut;
-	private String heureFin;
+	private int heureDebut;
+	private int heureFin;
 	private String listEnfant;
 	@Override
 	public String getName() {
@@ -30,17 +30,17 @@ public class CreneauDto implements Principal {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public String getHeureDebut() {
+	public int getHeureDebut() {
 		return heureDebut;
 	}
-	public void setHeureDebut(String heureDebut) {
-		this.heureDebut = heureDebut;
+	public void setHeureDebut(int i) {
+		this.heureDebut = i;
 	}
-	public String getHeureFin() {
+	public int getHeureFin() {
 		return heureFin;
 	}
-	public void setHeureFin(String heureFin) {
-		this.heureFin = heureFin;
+	public void setHeureFin(int i) {
+		this.heureFin = i;
 	}
 	public String getListEnfant() {
 		return listEnfant;

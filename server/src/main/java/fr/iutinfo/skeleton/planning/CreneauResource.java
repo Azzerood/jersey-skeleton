@@ -1,7 +1,10 @@
 package fr.iutinfo.skeleton.planning;
 import static fr.iutinfo.skeleton.api.BDDFactory.getDbi;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,7 +37,23 @@ public class CreneauResource {
 		if (!BDDFactory.tableExist("creneaux")) {
 			logger.debug("Create table creneaux");
 			dao.createCreneauTable();
-			dao.insert(new Creneau("previsionnel",c,"800", "1200", "Anais, théo")); //date, heureDebut, heureFin, listEnfant
+			initialiserPlanning();
+			//dao.insert(new Creneau("previsionnel",c,"800", "1200", "Anais, théo")); //date, heureDebut, heureFin, listEnfant
+		}
+	}
+	
+	public void initialiserPlanning(){
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = new Date();
+		for(int jour=0; jour <365 ; jour++){
+			for(int creneau = 800; creneau < 1800; creneau+=100){
+				try {
+					dao.insert(new Creneau("previsionnel",dateFormat.format(date),creneau,creneau+100,""  ));
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 
@@ -42,7 +61,7 @@ public class CreneauResource {
 	public CreneauDto createCreneau(CreneauDto dto) throws Exception {
 		Creneau creneau = new Creneau();
 		creneau.initFromDto(dto);
-		String heureDebut = dao.insert(creneau);
+		int heureDebut = dao.insert(creneau);
 		dto.setHeureDebut(heureDebut);
 		return dto;
 	}
