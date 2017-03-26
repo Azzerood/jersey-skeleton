@@ -9,10 +9,10 @@ import fr.iutinfo.skeleton.common.dto.CreneauDto;
 public class Creneau {
 
 	private String status = "previsionnel";
-	private String date;
+	private String date="";
 	private int heureDebut;
 	private int heureFin;
-	private String listEnfant;
+	private String listEnfant="";
 
 	public Creneau() {
 	}
@@ -34,11 +34,13 @@ public class Creneau {
 	}
 
 	public void setStatus(String status) throws Exception {
-		if (status.equals("previsionnel") || status.equals("reel"))
+	    if (status.equals("previsionnel") || status.equals("reel"))
 			this.status = status;
 		else
 			throw new Exception("invalide status");
+	    
 	}
+
 
 	public String getDate() {
 		return date;
