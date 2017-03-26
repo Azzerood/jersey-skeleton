@@ -95,16 +95,17 @@ public class CreneauResource {
 		}
 		return creneau.stream().map(Creneau::convertToDto).collect(Collectors.toList());
 	}
-    /*
+    
 	@GET
-	public List<CreneauDto> getAllCreneauxByDateAndStatus(@QueryParam("date") String date, @QueryParam("status") String status) throws Exception{
+	@Path("/{date}/{status}")
+	public List<CreneauDto> getAllCreneauxByDateAndStatus(@PathParam("date") String date, @PathParam("status") String status) throws Exception{
 
 		List<Creneau> creneau;
 		logger.debug("Search creneaux with date: " + date +" and status : "+status);
 		creneau = dao.selectByStatusAndDate(status, date);
 		return creneau.stream().map(Creneau::convertToDto).collect(Collectors.toList());
 	}
-    */
+    
 	@DELETE
 	@Path("/{id}")
 	public void deleteCreneau(@PathParam("id") int id) {
