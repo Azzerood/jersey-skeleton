@@ -48,9 +48,9 @@ public interface CreneauDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     void delete(@Bind("id") int id);
     
-    @SqlUpdate("UPDATE creneaux SET listEnfant = :enfants WHERE date = :date AND status = :status AND heureDebut = :heureDebut")
+    @SqlUpdate("UPDATE creneaux SET listEnfant = :enfants WHERE id = :id;")
     @RegisterMapperFactory(BeanMapperFactory.class)
-    void updateCreneaux(@Bind("status") String status, @Bind("date") String date, @Bind("heureDebut") String heureDebut, @Bind("enfants") String enfants);
+    void updateCreneau(@Bind("id") int id, @Bind("enfants") String enfants);
     
     @SqlUpdate("delete from creneaux")
     @RegisterMapperFactory(BeanMapperFactory.class)

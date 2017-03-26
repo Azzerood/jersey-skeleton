@@ -1,6 +1,5 @@
  var creneaux = [];
  var listeEnfants = [];
- var mydata = [];
  /*
  function creerCreneaux(){
   var enfants =["Paul","Luc","Camille","Théo","Eva","Julie","Alexandre","Mathieu"] ;
@@ -57,7 +56,7 @@
  }
  
  function recupererListeEnfants(){
-  
+    listeEnfants =[];
 	for(var cpt = 0 ; cpt < creneaux.length ; cpt++){
 		var noms = creneaux[cpt].listEnfant.split(";");
 		for(var name = 0 ; name<noms.length; name ++){
@@ -170,7 +169,7 @@ HTMLCanvasElement.prototype.relMouseCoords = relMouseCoords;
 			}
 			creneaux[idxCreneau].listEnfant = creneaux[idxCreneau].listEnfant.replace(";;",";");
 			while(creneaux[idxCreneau].listEnfant.startsWith(";")){
-					creneaux[idxCreneau].listEnfant = creneaux[idxCreneau].listEnfant.substring(1,creneaux[idxCreneau].enfants.length);
+					creneaux[idxCreneau].listEnfant = creneaux[idxCreneau].listEnfant.substring(1,creneaux[idxCreneau].listEnfant.length);
 			}
 		}
 	}
@@ -179,7 +178,9 @@ function chargerPlanning(){
     var date = $("#jourPlanning").val();
     var status = $("#typePlanning").val();
     creneaux= $.getCreneaux("v1/creneaux/"+date+"/"+status);
+    recupererListeEnfants();
     refreshAffichagePlanning();
+    
     
 }
 jQuery.extend({
@@ -193,6 +194,9 @@ jQuery.extend({
             async:false,
             success: function(data, textStatus, jqXHR) {
                 result = data;
+                console.log("----data---");
+                console.log(data);
+                console.log("----data---");
             },
             error : function(jqXHR, textStatus, errorThrown) {
 			     console.log("error get planning by date and status: " + textStatus);
@@ -201,3 +205,57 @@ jQuery.extend({
        return result;
     }
 })
+
+function updatePlanning(){
+    for(var cren = 0; cren < creneaux.length ; cren++){
+        var creneau = creneaux[cren];
+        var date = creneau.date;
+        var status= creneau.status;
+        var heureDebut = creneau.heureDebut;
+        var enfants = creneau.listEnfant;
+        var id = creneau.id;
+        var heureFin = creneau.heureFin;
+        $.ajax({
+            type : 'POST',
+            contentType : 'application/json',
+            url: "v1/creneaux/",
+            dataType: 'json',
+            async:false,
+            data : JSON.stringify({
+			"id":id,
+			"date":date,
+			"heureDebut":heureDebut,
+            "heureFin":heureFin,
+            "listEnfant":enfants,
+		}),
+            success: function(data, textStatus, jqXHR) {
+                console.log(id+" | "+date+" | "+heureDebut+" | "+heureFin+" | "+enfants);
+               console.log(data);	
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+			 console.log("error post planning by date and status: " + textStatus);
+            }
+        });
+       
+    }
+}
+
+function inscription(login,mdp1,mdp2,role) {
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : "v1/user/",
+		dataType : "json",
+		data : JSON.stringify({
+			"login":login,
+			"password":mdp1,
+			"role":role,
+		}),
+		success : function(data, textStatus, jqXHR) {
+			console.log(data);		
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log("error: " + textStatus);
+		}
+	});
+}

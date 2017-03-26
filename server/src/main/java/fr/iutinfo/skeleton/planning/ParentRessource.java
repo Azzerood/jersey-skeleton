@@ -50,7 +50,7 @@ public class ParentRessource {
 
 	@GET
 	@Path("/{id}")
-	public ParentDto getEnfant(@PathParam("id") int id) throws Exception {
+	public ParentDto getParent(@PathParam("id") int id) throws Exception {
 		
 		Parent parent = dao.findById(id);
 		if (parent == null) {
@@ -60,7 +60,7 @@ public class ParentRessource {
 	}
 
 	@GET
-	public List<ParentDto> getAllUsers(@QueryParam("q") int id) throws Exception{
+	public List<ParentDto> getAllParents(@QueryParam("q") int id) throws Exception{
 
 		List<Parent> parent;
 		if (id == 0) {
@@ -74,7 +74,7 @@ public class ParentRessource {
 
 	@DELETE
 	@Path("/{id}")
-	public void deleteEnfant(@PathParam("id") int id) {
+	public void deleteParent(@PathParam("id") int id) {
 		dao.delete(id);
 	}
 

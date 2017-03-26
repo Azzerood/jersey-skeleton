@@ -9,6 +9,7 @@ import java.util.Calendar;
 public class CreneauDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(CreneauDto.class);
     private String status= "previsionnel";
+    private int id;
 	private String date;
 	private int heureDebut;
 	private int heureFin;
@@ -18,6 +19,12 @@ public class CreneauDto implements Principal {
 		// TODO Auto-generated method stub
 		return null;
 	}
+    public int getId(){
+	return id;
+    }
+    public void setId(int id){
+	this.id = id;
+    }
 	public String getStatus() {
 		return status;
 	}

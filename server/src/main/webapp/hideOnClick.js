@@ -9,7 +9,9 @@ $(document).ready(function() {
     $("#loadPlanning").click(function(event){
        chargerPlanning();       
     });
-		
+    $("#savePlanning").click(function(event){
+       updatePlanning(); 
+    });
 	function afficherConnection(){
 		$(".page").hide();
 		$(".connectionDiv").show();

@@ -7,7 +7,7 @@ import java.util.List;
 import fr.iutinfo.skeleton.common.dto.CreneauDto;
 
 public class Creneau {
-
+        private int id;
 	private String status = "previsionnel";
 	private String date="";
 	private int heureDebut;
@@ -67,23 +67,25 @@ public class Creneau {
 	}
 
 	public void setListEnfant(String listEnfant) {
-		if(this.listEnfant.equals(null)){
-			this.listEnfant = listEnfant;
-		}else{
-			this.listEnfant = this.listEnfant + " " + listEnfant;
-		}
+	    this.listEnfant = listEnfant;
 	}
 
 	public String getListEnfant() {
 		return listEnfant;
 	}
-
+    public int getId(){
+	return id;
+    }
+    public void setId(int id){
+	this.id = id;
+    }
 	public void initFromDto(CreneauDto dto) throws Exception {
 		this.setDate(dto.getDate());
 		this.setHeureDebut(dto.getHeureDebut());;
 		this.setHeureFin(dto.getHeureFin());
 		this.setListEnfant(dto.getListEnfant());
 		this.setStatus(dto.getStatus());
+		setId(dto.getId());
 	}
 	
 	public CreneauDto convertToDto()  {
@@ -93,6 +95,7 @@ public class Creneau {
 		dto.setHeureFin(getHeureFin());
 		dto.setListEnfant(getListEnfant());
 		dto.setStatus(getStatus());
+		dto.setId(id);
 		return dto;
 	}
 }

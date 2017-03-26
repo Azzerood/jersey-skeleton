@@ -62,7 +62,7 @@ public class CreneauResource {
 		     date =  cal.getTime();
 		}
 	}
-
+    /*
 	@POST
 	public CreneauDto createCreneau(CreneauDto dto) throws Exception {
 		Creneau creneau = new Creneau();
@@ -71,6 +71,13 @@ public class CreneauResource {
 		dto.setHeureDebut(heureDebut);
 		return dto;
 	}
+    */
+       @POST
+       public void UpdateCreneauxJournee(CreneauDto c)throws Exception{
+	   logger.debug("Update du créneau d'id "+c.getId()+" avec les enfants "+c.getListEnfant() );
+	   dao.updateCreneau(c.getId(),c.getListEnfant());
+	   
+       }
 
 	@GET
 	@Path("/{id}")
