@@ -36,6 +36,10 @@ public interface CreneauDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Creneau> selectByDate(@Bind("date")String date1 );
     
+    @SqlQuery("select * from creneaux where status = :status AND date = :date")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    List<Creneau> selectByStatusAndDate(@Bind("status") String status, @Bind("date")String date );
+    
     @SqlQuery("select * from creneaux where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     Creneau findById(@Bind("id") int id); 
