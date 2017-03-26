@@ -45,12 +45,14 @@
 	for(var cpt=0; cpt <creneaux.length ;cpt++){
 		var heure = creneaux[cpt].heureDebut;
 		gfx.font = "10px Arial";
-		gfx.fillText(heure/100+"h"+"00",105+cpt*100,30)
+		gfx.fillText(Math.trunc(heure/100)+"h"+heure%100,105+cpt*100,30)
 		gfx.beginPath();
 		gfx.moveTo(100+cpt*100,canvas.height)
 		gfx.lineTo(100+cpt*100,0);
 		gfx.stroke();
 	}
+     gfx.font = "10px Arial";
+     gfx.fillText("18h30",1100,30);
 	
  }
  
@@ -151,12 +153,12 @@ HTMLCanvasElement.prototype.relMouseCoords = relMouseCoords;
 			creneaux[cren].listEnfant = creneaux[cren].listEnfant.replace(ancien,nouveau);
 		}
 	}
-	function changerNom( idx){
+	function changerNom(idx){
 		var person = prompt("Entrez le nom de l'enfant", listeEnfants[idx]);
-		if(idx<listeEnfants.length){
-			changerNomDansCreneaux(listeEnfants[idx],person);
-			listeEnfants[idx] = person;
-		}
+           
+        changerNomDansCreneaux(listeEnfants[idx],person);
+        listeEnfants[idx] = person;
+			
 	}
 	function changerPresence(idxEnfant, idxCreneau){
 		if(idxEnfant < listeEnfants.length){
