@@ -1,6 +1,7 @@
  var creneaux = [];
  var listeEnfants = [];
- 
+ var mydata = [];
+ /*
  function creerCreneaux(){
   var enfants =["Paul","Luc","Camille","Théo","Eva","Julie","Alexandre","Mathieu"] ;
 	var creneauTest = new Object();
@@ -32,6 +33,7 @@
 	refreshAffichagePlanning();
 	
  }
+ */
  function dessinerCasePlanning(){
 	var canvas = document.getElementById("planningJournee");	
 	var gfx = canvas.getContext("2d");
@@ -55,7 +57,7 @@
  function recupererListeEnfants(){
   
 	for(var cpt = 0 ; cpt < creneaux.length ; cpt++){
-		var noms = creneaux[cpt].enfants.split(";");
+		var noms = creneaux[cpt].listEnfant.split(";");
 		for(var name = 0 ; name<noms.length; name ++){
 			if(  listeEnfants.indexOf(noms[name]) ===-1  && noms[name] != ""){
 				listeEnfants.push(noms[name]);
@@ -63,7 +65,6 @@
 		}
 	}
 	listeEnfants.sort();
-	console.log(listeEnfants);
  }
  function placerEnfantsPlanning(){
 	var canvas = document.getElementById("planningJournee");	
@@ -73,7 +74,7 @@
 	for(var enfant = 0; enfant < 20 ; enfant ++){
 		gfx.font = "10px Arial";
 		if( listeEnfants[enfant] != undefined){
-		gfx.fillText(listeEnfants[enfant],10,40+(enfant+1)*30 );
+		  gfx.fillText(listeEnfants[enfant],10,40+(enfant+1)*30 );
 		}
 		
 		gfx.beginPath();
@@ -97,13 +98,11 @@
 	creneaux.sort(compare);
 	console.log(creneaux);
 	for(var creneau = 0; creneau<creneaux.length ; creneau ++){
-		if(creneaux.enfants !== ""){
-			var enfantsDuCreneau = creneaux[creneau].enfants.split(";");
-			console.log("enfants présents à "+creneaux[creneau].heureDebut+"h: "+creneaux[creneau].enfants);
+		if(creneaux[creneau].listEnfant !== ""){
+			var enfantsDuCreneau = creneaux[creneau].listEnfant.split(";");
 			for(var enfant = 0; enfant < enfantsDuCreneau.length ; enfant++){
 				var idx = listeEnfants.indexOf(enfantsDuCreneau[enfant]);
 				if(idx >-1){
-				
 				gfx.fillStyle = 'green';
 				gfx.fillRect(100+creneau*100,50+idx*30,100,30 );
 				}
@@ -149,13 +148,12 @@ HTMLCanvasElement.prototype.relMouseCoords = relMouseCoords;
 	}
 	function changerNomDansCreneaux(ancien, nouveau){
 		for(var cren =0; cren < creneaux.length ; cren ++){
-			creneaux[cren].enfants = creneaux[cren].enfants.replace(ancien,nouveau);
+			creneaux[cren].listEnfant = creneaux[cren].listEnfant.replace(ancien,nouveau);
 		}
 	}
 	function changerNom( idx){
-		var person = prompt("Please enter your name", listeEnfants[idx]);
-		console.log(person);
-		if(idx<listeEnfant.length){
+		var person = prompt("Entrez le nom de l'enfant", listeEnfants[idx]);
+		if(idx<listeEnfants.length){
 			changerNomDansCreneaux(listeEnfants[idx],person);
 			listeEnfants[idx] = person;
 		}
@@ -163,14 +161,41 @@ HTMLCanvasElement.prototype.relMouseCoords = relMouseCoords;
 	function changerPresence(idxEnfant, idxCreneau){
 		if(idxEnfant < listeEnfants.length){
 			var name = listeEnfants[idxEnfant];
-			if( creneaux[idxCreneau].enfants.indexOf(name) !== -1 ){
-				creneaux[idxCreneau].enfants = creneaux[idxCreneau].enfants.replace(name,"");
+			if( creneaux[idxCreneau].listEnfant.indexOf(name) !== -1 ){
+				creneaux[idxCreneau].listEnfant = creneaux[idxCreneau].listEnfant.replace(name,"");
 			}else{
-				creneaux[idxCreneau].enfants += ";"+name;
+				creneaux[idxCreneau].listEnfant += ";"+name;
 			}
-			creneaux[idxCreneau].enfants = creneaux[idxCreneau].enfants.replace(";;",";");
-			while(creneaux[idxCreneau].enfants.startsWith(";")){
-					creneaux[idxCreneau].enfants = creneaux[idxCreneau].enfants.substring(1,creneaux[idxCreneau].enfants.length);
+			creneaux[idxCreneau].listEnfant = creneaux[idxCreneau].listEnfant.replace(";;",";");
+			while(creneaux[idxCreneau].listEnfant.startsWith(";")){
+					creneaux[idxCreneau].listEnfant = creneaux[idxCreneau].listEnfant.substring(1,creneaux[idxCreneau].enfants.length);
 			}
 		}
 	}
+    
+function chargerPlanning(){
+    var date = $("#jourPlanning").val();
+    var status = $("#typePlanning").val();
+    creneaux= $.getCreneaux("v1/creneaux/"+date+"/"+status);
+    refreshAffichagePlanning();
+    
+}
+jQuery.extend({
+    getCreneaux: function(url){
+        var result = null;
+        $.ajax({
+            url: url,
+            type: 'GET',
+            contentType : 'application/json',
+            dataType: 'json',
+            async:false,
+            success: function(data, textStatus, jqXHR) {
+                result = data;
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+			     console.log("error get planning by date and status: " + textStatus);
+            }
+        });
+       return result;
+    }
+})

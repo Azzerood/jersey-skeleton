@@ -1,11 +1,14 @@
 $(document).ready(function() {
 		$(".page").hide();
 		$(".vitrineDiv").show();
-    creerCreneaux();
-    dessinerCasePlanning();
+    //creerCreneaux();
+    //dessinerCasePlanning();
     $("#planningJournee").click(function(event){
 		 onClickCanvas(this,event);
 		});
+    $("#loadPlanning").click(function(event){
+       chargerPlanning();       
+    });
 		
 	function afficherConnection(){
 		$(".page").hide();
