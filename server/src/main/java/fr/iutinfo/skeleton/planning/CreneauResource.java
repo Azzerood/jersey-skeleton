@@ -95,6 +95,7 @@ public class CreneauResource {
 		}
 		return creneau.stream().map(Creneau::convertToDto).collect(Collectors.toList());
 	}
+    /*
 	@GET
 	public List<CreneauDto> getAllCreneauxByDateAndStatus(@QueryParam("date") String date, @QueryParam("status") String status) throws Exception{
 
@@ -103,7 +104,7 @@ public class CreneauResource {
 		creneau = dao.selectByStatusAndDate(status, date);
 		return creneau.stream().map(Creneau::convertToDto).collect(Collectors.toList());
 	}
-
+    */
 	@DELETE
 	@Path("/{id}")
 	public void deleteCreneau(@PathParam("id") int id) {
