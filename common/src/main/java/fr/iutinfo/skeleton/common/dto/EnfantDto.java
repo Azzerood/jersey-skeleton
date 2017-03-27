@@ -7,8 +7,8 @@ import java.security.Principal;
 import java.util.Calendar;
 
 public class EnfantDto implements Principal {
-    final static Logger logger = LoggerFactory.getLogger(EnfantDto.class);
-    private String nom;
+	final static Logger logger = LoggerFactory.getLogger(EnfantDto.class);
+	private String nom;
 	private String prenom;
 	private String dateNaissance;
 	private String adresse;
@@ -21,7 +21,7 @@ public class EnfantDto implements Principal {
 	private String numeroUrgence;
 	private String numeroMedecin;
 	private String photo;
-	
+
 	public String getPeriodeAdaptation() {
 		return periodeAdaptation;
 	}
@@ -89,11 +89,9 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setAllergies(String allergies) {
-		if(("").equals(this.allergies)){
-			this.allergies = allergies;
-		}else{
-			this.allergies = this.allergies + " " + allergies;
-		}
+
+		this.allergies = allergies;
+
 	}
 
 	public String getTraitements() {
@@ -101,11 +99,9 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setTraitements(String traitements) {
-		if(("").equals(this.traitements)){
-			this.traitements = traitements;
-		}else{
-			this.traitements = this.traitements + " " + traitements;
-		}
+
+		this.traitements = traitements;
+
 	}
 
 	public String getPersonnes() {
@@ -113,11 +109,9 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setPersonnes(String personnes) {
-		if(("").equals(this.personnes)){
-			this.personnes = personnes;
-		}else{
-			this.personnes = this.personnes + " " + personnes;
-		}
+
+		this.personnes = personnes;
+
 	}
 
 	public String getNumeroParents() {
