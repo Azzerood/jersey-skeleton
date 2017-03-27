@@ -20,7 +20,6 @@
 <script src="all.js"></script>
 <script src="hideOnClick.js"></script>
 <script src="planning.js"></script>
-
 </head>
 <body>
 	<div class="connectionDiv page">
@@ -195,6 +194,7 @@
 								<div class="form-group">
 									<label for="sel1">Nombre de journée(s)</label><br /> <select
 										class="form-control" name="roleInscription" id="nbJournee">
+										<option value="0">0</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -205,6 +205,7 @@
 								<div class="form-group">
 									<label for="sel1">Nombre de demi-journée(s)</label><br /> <select
 										class="form-control" name="roleInscription" id="nbDemiJournee">
+										<option value="0">0</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -215,9 +216,11 @@
 								<button type="submit" id="boutonSimulation"
 									class="btn btn-success btn-block">Simuler</button>
 								<br>
-								<center>
-									<label for="sel1">Montant de l'estimation : 0 Euro</label>
-								</center>
+									<label for="sel1" id="categorie"></label><br>
+									<label for="sel1" id="montantJ"></label>
+									<label for="sel1" id="montantDJ"></label>
+									<label for="sel1" id="montant"></label>
+									<label for="sel1" id="aide"></label>
 							</div>
 						</div>
 					</div>
@@ -675,8 +678,7 @@
 
 	<script type="text/javascript">
 			$(document).ready(function() {
-				$("#inscription").click( function () { inscription( $('#loginInscription').val() , $('#passwordInscription1').val() , $('#passwordInscription2').val() , $('#roleInscription').val()) } );
-				$("#boutonSimulation)").click( function () { simulation( $('#ressources2014').val() , $('#enfantsCharge').val() , $('#nbJournee').val() , $('#nbDemiJournee').val()) } );
+				$("#inscription").click( function () { inscription( $('#loginInscription').val() , $('#passwordInscription1').val() , $('#passwordInscription2').val() , $('#roleInscription').val()) } );                      
 			});
     </script>
 	<!-- footer project
