@@ -26,13 +26,60 @@ jQuery.extend({
 
 function loadParents(){
     fichesParents = $.getParents("v1/parent")
-    if(fichesParents = null){
-        fichesParents = [];
-    }
 }
+
+function refreshChamps(){
+    var par = fichesParents[id];
+    if(par !== undefined){
+        $("#nomEnfant").val(par.nomEnfant) ;
+        $("#prenomEnfant").val(par.prenomEnfant) ;
+        $("#nomA").val(par.nomA);
+        $("#prenomA").val(par.prenomA);
+        $("#dateNaissanceA").val(par.dateNaissanceA);
+        $("#adresseA").val(par.adresseA);
+        $("#congesA").val(par.congesA);
+        $("#professionA").val(par.professionA);
+        $("#numeroA").val(par.numeroA);
+        $("#numeroCafA").val(par.numeroCafA);
+        $("#categorieCafA").val(par.categorieCafA) ;
+        $("#nomB").val(par.nomB);
+        $("#prenomB").val(par.prenomB);
+        $("#dateNaissanceB").val(par.dateNaissanceB);
+        $("#adresseB").val(par.adresseB);
+        $("#congesB").val(par.congesB);
+        $("#professionB").val(par.professionB);
+        $("#numeroB").val(par.numeroB);
+        $("#numeroCafB").val(par.numeroCafB);
+        $("#categorieCafB").val(par.categorieCafB) ;
+        $("#dureeContrat").val(par.dureeContrat);
+        $("#typeContrat").val(par.typeContrat);
+    }else{
+        $("#nomEnfant").val("") ;
+        $("#prenomEnfant").val("") ;
+        $("#nomA").val("");
+        $("#prenomA").val("");
+        $("#dateNaissanceA").val("");
+        $("#adresseA").val("");
+        $("#congesA").val("");
+        $("#professionA").val("");
+        $("#numeroCafA").val("");
+        $("#categorieCafA").val("") ;
+        $("#nomB").val("");
+        $("#prenomB").val("");
+        $("#dateNaissanceB").val("");
+        $("#adresseB").val("");
+        $("#congesB").val("");
+        $("#professionB").val("");
+        $("#numeroCafB").val("");
+        $("#categorieCafB").val("") ;
+        $("#dureeContrat").val("");
+        $("#typeContrat").val("");
+    }
+}   
+
 function saveParents(){
         var nomEnfant =$("#nomEnfant").val() ;
-    console.log(nomEnfant);
+    console.log("nom de l'enfant: "+nomEnfant);
         var prenomEnfant =$("#prenomEnfant").val() ;
         var nomA = $("#nomA").val();
         var prenomA = $("#prenomA").val();
@@ -40,6 +87,7 @@ function saveParents(){
         var adresseA = $("#adresseA").val();
         var congesA = $("#congesA").val();
         var professionA = $("#professionA").val();
+        var numeroA = $("#numeroA").val();
         var numeroCafA = $("#numeroCafA").val();
         var categorieCafA =$("#categorieCafA").val() ;
         var nomB = $("#nomB").val();
@@ -48,6 +96,7 @@ function saveParents(){
         var adresseB = $("#adresseB").val();
         var congesB = $("#congesB").val();
         var professionB = $("#professionB").val();
+        var numeroB = $("#numeroB").val();
         var numeroCafB = $("#numeroCafB").val();
         var categorieCafB =$("#categorieCafB").val() ;
         var dureeContrat = $("#dureeContrat").val();
@@ -57,10 +106,11 @@ function saveParents(){
              $.ajax({
             type : 'POST',
             contentType : 'application/json',
-            url: "v1/parent/",
+            url: "v1/parent/"+id,
             dataType: 'json',
             async:false,
             data : JSON.stringify({
+            "id":id,
             "nomEnfant":nomEnfant,
             "prenomEnfant":prenomEnfant,
             "nomA" : nomA,
@@ -68,6 +118,7 @@ function saveParents(){
             "dateNaissanceA" : dateNaissanceA,
             "adresseA" : adresseA,
             "congesA" : congesA,
+            "numeroA":numeroA,
             "professionA" :professionA ,
             "numeroCafA" : numeroCafA,
             "categorieCafA" : categorieCafA,
@@ -77,6 +128,7 @@ function saveParents(){
             "adresseB" : adresseB,
             "congesB" : congesB,
             "professionB" :professionB ,
+            "numeroB": numeroB,
             "numeroCafB" : numeroCafB,
             "categorieCafB" : categorieCafB,
             "dureeContrat" : dureeContrat,
@@ -93,10 +145,11 @@ function saveParents(){
             $.ajax({
             type : 'POST',
             contentType : 'application/json',
-            url: "v1/parent/"+id,
+            url: "v1/parent/",
             dataType: 'json',
             async:false,
             data : JSON.stringify({
+                "id":id,
             "nomEnfant":nomEnfant,
             "prenomEnfant":prenomEnfant,
             "nomA" : nomA,
@@ -119,7 +172,7 @@ function saveParents(){
             "typeContrat" : typeContrat,
 		}),
             success: function(data, textStatus, jqXHR) {
-               console.log(data);	
+               console.log("post réussi ");	
             },
             error : function(jqXHR, textStatus, errorThrown) {
 			 console.log("error post fiche: " + textStatus);
@@ -134,13 +187,17 @@ function decrementerIdParent(){
     if(id>1){
         id -=1;
     }
-    console.log("(-)id:"+id);
+     $("#idParent").text(id);
+   refreshChamps();
 }
 function incrementerIdParent(){
-    if(fichesParents != null && id < fichesParents.length){
+       console.log("fiche parents");
+    console.log(fichesParents);
+    if(fichesParents != null && id<= fichesParents.length  ){
         id +=1;
     }
-    console.log("(+)id:"+id);
+    $("#idParent").text(id);
+    refreshChamps();
 }
 
     
