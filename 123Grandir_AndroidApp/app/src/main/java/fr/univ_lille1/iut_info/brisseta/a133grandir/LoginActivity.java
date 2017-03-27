@@ -90,6 +90,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         getLoaderManager().initLoader(0, null, this);
     }
     public void onConnect(View view){
+        // verif si admin -> admin activity
         Intent intent = new Intent(LoginActivity.this, AdminActivity.class);//passage a l'autre java //TODO
         startActivity(intent);
     }

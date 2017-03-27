@@ -1,4 +1,4 @@
-package fr.univ_lille1.iut_info.brisseta.a133grandir.client_packge;
+package fr.univ_lille1.iut_info.brisseta.a133grandir.client_package;
 
 import android.content.ClipData;
 import android.content.Context;

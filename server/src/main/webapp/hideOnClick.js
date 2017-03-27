@@ -12,6 +12,9 @@ $(document).ready(function() {
     $("#savePlanning").click(function(event){
        updatePlanning(); 
     });
+    
+    $("#boutonSimulation").click( function () { simulation( $('#ressources2014').val() , $('#enfantsCharge').val() , $('#nbJournee').val() , $('#nbDemiJournee').val()) } );
+       
 	function afficherConnection(){
 		$(".page").hide();
 		$(".connectionDiv").show();
