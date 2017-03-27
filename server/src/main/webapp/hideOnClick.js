@@ -1,8 +1,8 @@
 $(document).ready(function() {
 		$(".page").hide();
 		$(".vitrineDiv").show();
-    //creerCreneaux();
-    //dessinerCasePlanning();
+    // creerCreneaux();
+    // dessinerCasePlanning();
     $("#planningJournee").click(function(event){
 		 onClickCanvas(this,event);
 		});
@@ -14,8 +14,35 @@ $(document).ready(function() {
     });
     
     $("#boutonSimulation").click( function () { simulation( $('#ressources2014').val() , $('#enfantsCharge').val() , $('#nbJournee').val() , $('#nbDemiJournee').val()) } );
-       
-   
+
+    $("#validerEnfant").click(function() {
+		
+		var  inputs = $('.form-group > input');
+		
+		var CheckInput = [];
+		var FileInput = [];
+		var TextInput = [];
+		var DateInput = [];
+		var TelInput = [];
+
+		for (var i = 0; i < inputs.length; i++) {
+			if (inputs[i].type.toLowerCase() == 'checkbox') {
+				CheckInput.push(inputs[i]);
+			} else if (inputs[i].type.toLowerCase() == 'file') {
+				FileInput.push(inputs[i]);
+			} else if (inputs[i].type.toLowerCase() == 'text') {
+				TextInput.push(inputs[i]);
+			} else if (inputs[i].type.toLowerCase() == 'tel') {
+				TelInput.push(inputs[i]);
+			} else if (inputs[i].type.toLowerCase() == 'date') {
+				DateInput.push(inputs[i]);
+			}
+		}
+		CheckInput = checkCheck(CheckInput);
+		
+			postEnfant(CheckInput,FileInput,TextInput,DateInput,TelInput);
+	});
+});
 	function afficherConnection(){
 		$(".page").hide();
 		$(".connectionDiv").show();
