@@ -15,6 +15,7 @@ public class ParentDto implements Principal {
 	private String prenomA;
 	private String dateNaissanceA;
 	private String adresseA;
+	private String numeroA;
 	private String congesA;
 	private String professionA;
 	private String numeroCafA;
@@ -23,6 +24,7 @@ public class ParentDto implements Principal {
 	private String prenomB;
 	private String dateNaissanceB;
 	private String adresseB;
+	private String numeroB;
 	private String congesB;
 	private String professionB;
 	private String numeroCafB;
@@ -327,5 +329,33 @@ public class ParentDto implements Principal {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+
+
+	public String getNumeroA() {
+		return numeroA;
+	}
+
+
+
+
+	public void setNumeroA(String numeroA) {
+		this.numeroA = numeroA;
+	}
+
+
+
+
+	public String getNumeroB() {
+		return numeroB;
+	}
+
+
+
+
+	public void setNumeroB(String numeroB) {
+		this.numeroB = numeroB;
 	}
 }

@@ -10,6 +10,7 @@ public class Parent {
 	private String prenomA;
 	private String dateNaissanceA;
 	private String adresseA;
+	private String numeroA;
 	private String congesA;
 	private String professionA;
 	private String numeroCafA;
@@ -18,6 +19,7 @@ public class Parent {
 	private String prenomB;
 	private String dateNaissanceB;
 	private String adresseB;
+	private String numeroB;
 	private String congesB;
 	private String professionB;
 	private String numeroCafB;
@@ -50,6 +52,8 @@ public class Parent {
 		this.setNomEnfant(dto.getPrenomEnfant());
 		this.setDureeContrat(dto.getDureeContrat());
 		this.setTypeContrat(dto.getTypeContrat());
+		this.setNumeroA(dto.getNumeroA());
+		this.setNumeroB(dto.getNumeroB());
 		
 	 }
 	
@@ -75,6 +79,8 @@ public class Parent {
 		dto.setNomEnfant(getPrenomEnfant());
 		dto.setDureeContrat(getDureeContrat());
 		dto.setTypeContrat(getTypeContrat());
+		dto.setNumeroA(getNumeroA());
+		dto.setNumeroB(getNumeroB());
 		return dto;
 	}
 
@@ -366,6 +372,34 @@ public class Parent {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+
+
+	public String getNumeroA() {
+		return numeroA;
+	}
+
+
+
+
+	public void setNumeroA(String numeroA) {
+		this.numeroA = numeroA;
+	}
+
+
+
+
+	public String getNumeroB() {
+		return numeroB;
+	}
+
+
+
+
+	public void setNumeroB(String numeroB) {
+		this.numeroB = numeroB;
 	}
     
 }             
