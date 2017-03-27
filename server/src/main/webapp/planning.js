@@ -1,5 +1,7 @@
  var creneaux = [];
- var listeEnfants = [];
+var listeEnfants = [];
+var enfantsMatin = [];
+var enfantsAprem = [];
  /*
  function creerCreneaux(){
   var enfants =["Paul","Luc","Camille","Théo","Eva","Julie","Alexandre","Mathieu"] ;
@@ -114,6 +116,9 @@
 	
 	
  }
+
+
+
  function refreshAffichagePlanning(){
 	var canvas = document.getElementById("planningJournee");	
 	var gfx = canvas.getContext("2d");
@@ -122,7 +127,12 @@
 	colorierPresence();
 	dessinerCasePlanning();
 	placerEnfantsPlanning();
-	
+    compterEnfantsParDemiJournee();
+     console.log("Enfants de l'aprem");
+     console.log(enfantsAprem);
+	 console.log("Enfants du matin");
+     console.log(enfantsMatin);
+     afficherSalarieNecessaire();
  }
  function relMouseCoords(canvas, event){
      var rect = canvas.getBoundingClientRect();
@@ -205,6 +215,41 @@ jQuery.extend({
        return result;
     }
 })
+
+function compterEnfantsParDemiJournee(){
+    enfantsAprem = [];
+    enfantsMatin = [];
+    for(var idxC = 0; idxC < creneaux.length ;idxC++){
+        if(creneaux[idxC].heureDebut<1200){
+            var enf = creneaux[idxC].listEnfant.split(";");
+            for(var idxE = 0; idxE < enf.length; idxE++){
+                if(enfantsMatin.indexOf(enf[idxE]) ==-1  && enf[idxE] !== ""){
+                    enfantsMatin.push(enf[idxE]); 
+                }
+            }
+        }else{
+            if(creneaux[idxC].heureDebut>1300){
+             var enf = creneaux[idxC].listEnfant.split(";");
+                for(var idxE = 0; idxE < enf.length; idxE++){
+                    if(enfantsAprem.indexOf(enf[idxE]) ==-1  && enf[idxE] !== "" ){
+                        enfantsAprem.push(enf[idxE]); 
+                    }
+                }000
+            }
+        }
+        
+    }
+}
+function afficherSalarieNecessaire(){
+     var remplissageMatin = Math.ceil((enfantsMatin.length/10*100));
+    var remplissageAprem = Math.ceil((enfantsAprem.length/10*100));
+    var matin = "<p><strong>Matin: </strong>Nombre d'enfants présents : "+enfantsMatin.length+"  Adultes nécessaire: "+Math.ceil(enfantsMatin.length/3)+" Taux d'occupation : "+remplissageMatin+"%</p>";
+    var aprem = "<p><strong>Aprem: </strong>Nombre d'enfants présents : "+enfantsAprem.length+"  Adultes nécessaire: "+Math.ceil(enfantsAprem.length/3)+" Taux d'occupation : "+remplissageAprem+"%</p>";
+ 
+    $("#statPlanning").empty();
+    $("#statPlanning").append(aprem);
+    $("#statPlanning").append(matin);
+}
 
 function updatePlanning(){
     for(var cren = 0; cren < creneaux.length ; cren++){

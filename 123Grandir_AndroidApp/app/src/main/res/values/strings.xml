@@ -185,4 +185,5 @@
     <string name="title_activity_message_flow">MessageFlowActivity</string>
     <string name="title_activity_send_message">SendMessageActivity</string>
     <string name="title_activity_image_picker">ImagePickerActivity</string>
+    <string name="title_activity_client_actvity">ClientActvity</string>
 </resources>

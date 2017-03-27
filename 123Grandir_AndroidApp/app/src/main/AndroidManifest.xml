@@ -32,7 +32,7 @@
                 android:value="fr.univ_lille1.iut_info.brisseta.a133grandir.LoginActivity" />
         </activity>
         <activity
-            android:name=".client_packge.Gallery"
+            android:name=".client_package.Gallery"
             android:label="@string/title_activity_gallery"
             android:parentActivityName=".admin_package.AdminActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -74,6 +74,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="fr.univ_lille1.iut_info.brisseta.a133grandir.admin_package.AdminActivity" />
+        </activity>
+        <activity
+            android:name=".client_package.ClientActvity"
+            android:label="@string/title_activity_client_actvity"
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.univ_lille1.iut_info.brisseta.a133grandir.LoginActivity" />
         </activity>
     </application>
 
