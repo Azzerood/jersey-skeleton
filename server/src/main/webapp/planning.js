@@ -306,6 +306,8 @@ function inscription(login,mdp1,mdp2,role) {
 	});
 }
 
+
+
 function loadDisponibilites(){
     var status = "previsionnel";
     var year = "2017";
