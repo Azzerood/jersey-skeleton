@@ -50,25 +50,30 @@ function checkCheck(inputs){
 }
 
 function postEnfant(CheckInput,FileInput,TextInput,DateInput,TelInput){
+	var temp = "";
+	for(var i = 0 ; i < CheckInput.length ; i++){
+		temp = temp + " " + CheckInput[i];
+	}
+	console.log(temp);
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
 		url : "/v1/enfant",
 		dataType : "json",
 		data : JSON.stringify({
-			"nom":TextInput[0],
-			"prenom":TextInput[1],
-			"dateNaissance":DateInput[0],
-			"adresse":TextInput[2],
-			"tempsAccueil":TextInput[3],
-			"horraireAccueil":TextInput[0],
-			"periodeAdaptation":CheckInput+"",
-			"allergies":TextInput[4],
-			"traitements":TextInput[5],
-			"personne":(TextInput[6] + "" + TextInput[7] + "" + TextInput[8]),
-			"numeroUrgence":TelInput[1],
-			"numeroMedecin":TelInput[0],
-			"photo":FileInput[0],
+			"nom":TextInput[0].value,
+			"prenom":TextInput[1].value,
+			"dateNaissance":DateInput[0].value,
+			"adresse":TextInput[2].value,
+			"tempsAccueil":TextInput[3].value,
+			"horraireAccueil":temp,
+			"periodeAdaptation":DateInput[1].value,
+			"allergies":TextInput[4].value,
+			"traitements":TextInput[5].value,
+			"personne":(TextInput[6].value + "" + TextInput[7].value + "" + TextInput[8].value),
+			"numeroUrgence":TelInput[1].value,
+			"numeroMedecin":TelInput[0].value,
+			"photo":FileInput[0].value,
 		}),
 		success : function(data, textStatus, jqXHR) {
 			console.log(data);		

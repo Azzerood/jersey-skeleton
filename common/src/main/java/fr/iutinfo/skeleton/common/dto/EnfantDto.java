@@ -81,7 +81,7 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setHorraireAccueil(String horraireAccueil) {
-		this.horraireAccueil = this.horraireAccueil+" "+horraireAccueil;
+		this.horraireAccueil = horraireAccueil;
 	}
 
 	public String getAllergies() {
@@ -89,7 +89,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setAllergies(String allergies) {
-		this.allergies = this.allergies+" "+allergies;
+		if(("").equals(this.allergies)){
+			this.allergies = allergies;
+		}else{
+			this.allergies = this.allergies + " " + allergies;
+		}
 	}
 
 	public String getTraitements() {
@@ -97,7 +101,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setTraitements(String traitements) {
-		this.traitements = traitements;
+		if(("").equals(this.traitements)){
+			this.traitements = traitements;
+		}else{
+			this.traitements = this.traitements + " " + traitements;
+		}
 	}
 
 	public String getPersonnes() {
@@ -105,7 +113,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setPersonnes(String personnes) {
-		this.personnes = personnes;
+		if(("").equals(this.personnes)){
+			this.personnes = personnes;
+		}else{
+			this.personnes = this.personnes + " " + personnes;
+		}
 	}
 
 	public String getNumeroParents() {

@@ -1,5 +1,6 @@
 package fr.iutinfo.skeleton.planning;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import fr.iutinfo.skeleton.common.dto.CreneauDto;
 import fr.iutinfo.skeleton.common.dto.EnfantDto;
 
@@ -18,9 +19,9 @@ public class Enfant {
 	private String numeroUrgence;
 	private String numeroMedecin;
 	private String photo;
-	
+
 	public Enfant(){}
-	
+
 
 	public Enfant(String nom, String prenom, String dateNaissance, String adresse,String horraireAccueil){
 		this.nom=nom;
@@ -29,7 +30,7 @@ public class Enfant {
 		this.adresse = adresse;
 		this.horraireAccueil = horraireAccueil;
 	}
-	
+
 	public Enfant(String nom, String prenom, String dateNaissance, String adresse, String tempsAccueil,
 			String horraireAccueil, String periodeAdaptation, String allergies, String traitements, String personnes, String numeroUrgence,
 			String numeroMedecin, String photo) {
@@ -47,7 +48,7 @@ public class Enfant {
 		this.traitements = traitements;
 		this.personnes = personnes;
 	}
-	
+
 	public String getPeriodeAdaptation() {
 		return periodeAdaptation;
 	}
@@ -107,11 +108,7 @@ public class Enfant {
 	}
 
 	public void setHorraireAccueil(String horraireAccueil) {
-		if(this.horraireAccueil.equals(null)){
-			this.horraireAccueil = horraireAccueil;
-		}else{
-			this.horraireAccueil = this.horraireAccueil + " " + horraireAccueil;
-		}
+		this.horraireAccueil = horraireAccueil;
 	}
 
 	public String getAllergies() {
@@ -119,24 +116,16 @@ public class Enfant {
 	}
 
 	public void setAllergies(String allergies) {
-		if(this.allergies.equals(null)){
-			this.allergies = allergies;
-		}else{
-			this.allergies = this.allergies + " " + allergies;
-		}
+		this.allergies = allergies;
 	}
-	
+
 	public String getTraitements() {
 		return traitements;
 	}
 
 
 	public void setTraitements(String traitements) {
-		if(this.traitements.equals(null)){
-			this.traitements = traitements;
-		}else{
-			this.traitements = this.traitements + " " + traitements;
-		}
+		this.traitements = traitements;
 	}
 
 
@@ -146,11 +135,7 @@ public class Enfant {
 
 
 	public void setPersonnes(String personnes) {
-		if(this.personnes.equals(null)){
-			this.personnes = personnes;
-		}else{
-			this.personnes = this.personnes + " " + personnes;
-		}
+		this.personnes = personnes;
 	}
 
 
@@ -177,34 +162,40 @@ public class Enfant {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	
+
 	public void initFromDto(EnfantDto dto) throws Exception {
-		this.setAdresse(dto.getAdresse());
-		this.setAllergies(dto.getAllergies());
-		this.setDateNaissance(dto.getDateNaissance());
-		this.setHorraireAccueil(dto.getHorraireAccueil());
-		this.setNom(dto.getNom());
-		this.setNumeroMedecin(dto.getNumeroMedecin());
-		this.setPeriodeAdaptation(dto.getPeriodeAdaptation());
-		this.setNumeroUrgence(dto.getNumeroUrgence());
 		this.setPhoto(dto.getPhoto());
-		this.setTempsAccueil(dto.getTempsAccueil());
+		this.setNom(dto.getNom());
 		this.setPrenom(dto.getPrenom());
-	 }
+		this.setDateNaissance(dto.getDateNaissance());
+		this.setAdresse(dto.getAdresse());
+		this.setHorraireAccueil(dto.getHorraireAccueil());
+		this.setTempsAccueil(dto.getTempsAccueil());
+		this.setPeriodeAdaptation(dto.getPeriodeAdaptation());
+		this.setNumeroMedecin(dto.getNumeroMedecin());
+		this.setAllergies(dto.getAllergies());
+		this.setTraitements(dto.getTraitements());
+		this.setNumeroUrgence(dto.getNumeroUrgence());
+		this.setPersonnes(dto.getPersonnes());
+	}
 
 	public EnfantDto convertToDto(){
 		EnfantDto dto = new EnfantDto();
-		dto.setAdresse(getAdresse());
-		dto.setAllergies(getAllergies());
-		dto.setDateNaissance(getDateNaissance());
-		dto.setHorraireAccueil(getHorraireAccueil());
-		dto.setNom(getNom());
-		dto.setNumeroMedecin(getNumeroMedecin());
-		dto.setPeriodeAdaptation(getPeriodeAdaptation());
-		dto.setNumeroUrgence(getNumeroUrgence());
+
 		dto.setPhoto(getPhoto());
-		dto.setTempsAccueil(getTempsAccueil());
+		dto.setNom(getNom());
 		dto.setPrenom(getPrenom());
+		dto.setDateNaissance(getDateNaissance());
+		dto.setAdresse(getAdresse());
+		dto.setHorraireAccueil(getHorraireAccueil());
+		dto.setTempsAccueil(getTempsAccueil());
+		dto.setPeriodeAdaptation(getPeriodeAdaptation());
+		dto.setNumeroMedecin(getNumeroMedecin());
+		dto.setAllergies(getAllergies());
+		dto.setTraitements(getTraitements());
+		dto.setNumeroUrgence(getNumeroUrgence());
+		dto.setPersonnes(getPersonnes());	
+
 		return dto;
 	}
 }

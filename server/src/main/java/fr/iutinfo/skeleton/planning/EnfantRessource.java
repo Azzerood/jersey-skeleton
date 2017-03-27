@@ -60,7 +60,7 @@ public class EnfantRessource {
 	}
 
 	@GET
-	public List<EnfantDto> getAllUsers(@QueryParam("q") int id) throws Exception{
+	public List<EnfantDto> getAllEnfant(@QueryParam("q") int id) throws Exception{
 
 		List<Enfant> enfant;
 		if (id == 0) {
