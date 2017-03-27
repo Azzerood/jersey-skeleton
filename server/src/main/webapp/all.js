@@ -85,6 +85,117 @@ function postEnfant(CheckInput,FileInput,TextInput,DateInput,TelInput){
 }
 
 /*****************************************************************/
+function simulation(ressources2014, enfantsCharge, nbJournee, nbDemiJournee) {
+
+	var tabA = [ 20509, 23420, 26331, 29242, 32153, 35064, 37975 ];
+	var tabB = [ 45575, 52044, 58513, 64982, 71451, 77920, 84389 ];
+	var categorie;
+	var aide = 0;
+	var montantJ = 0;
+	var montantDJ = 0;
+	var montant = 0;
+
+	// calcul de la catégorie
+	if (ressources2014 < tabA[enfantsCharge - 1])
+		categorie = "A";
+	else if (ressources2014 < tabB[enfantsCharge - 1])
+		categorie = "B";
+	else
+		categorie = "C";
+
+	$("#categorie").text("Vous êtes catégorie " + categorie);
+	//$("#montant").text("Montant de l'estimation : "+ 0+"€");
+	
+	
+	//montant de l'aide + montant horraire selon le nombre de journées   
+	if (nbJournee == 1) {
+		if (categorie == "A") {
+			aide = 311, 95;
+			montantJ = 9 ;
+		}
+		if (categorie == "B") {
+			aide = 326, 40;
+			montantJ = 9.4;
+		}
+		if (categorie == "C") {
+			aide = 340;
+			montantJ = 9.8;
+		}
+	}
+	if (nbJournee == 2) {
+		if (categorie == "A") {
+			aide = 583, 10;
+			montantJ = 8.4;
+		}
+		if (categorie == "B") {
+			aide = 611, 15;
+			montantJ = 8.8;
+		}
+		if (categorie == "C") {
+			aide = 610, 93;
+			montantJ = 9.2;
+		}
+	}
+	if (nbJournee == 3) {
+		if (categorie == "A") {
+			aide = 791, 35;
+			montantJ = 7.6; 
+		}
+		if (categorie == "B") {
+			aide = 727, 29;
+			montantJ = 8;
+		}
+		if (categorie == "C") {
+			aide = 610, 93;
+			montantJ = 8.4;
+		}
+	}
+	if (nbJournee == 4) {
+		if (categorie == "A") {
+			aide = 843, 69;
+			montantJ = 6.8;
+		}
+		if (categorie == "B") {
+			aide = 727, 29;
+			montantJ = 7.2;
+		}
+		if (categorie == "C") {
+			aide = 610, 93;	
+			montantJ = 7.6;
+		}
+	}
+	if (nbJournee == 5) {
+		if (categorie == "A") {
+			aide = 843, 69;
+			montantJ = 6.1;
+		}
+		if (categorie == "B") {
+			aide = 727, 29;
+			montantJ = 6.4;
+		}
+		if (categorie == "C") {
+			aide = 610, 93;
+			montantJ = 6.8;
+		}
+	}
+	if(nbJournee != 0){
+		$("#montantJ").text("Montant horraire par journée : " + montantJ + "€/H");
+		$("#aide").text("Aide mensuelle maximum: " + aide + "€");
+	}
+	
+	//montant horraire en demi-journée
+	
+	if(nbDemiJournee != 0){
+		if(categorie == "A")
+			montantDJ = 9.1;
+		if(categorie == "B")
+			montantDJ = 9.6;
+		if(categorie == "C")
+			montantDJ = 9.9;
+
+		$("#montantDJ").text("Montant horraire par demi-journée : " + montantDJ + "€/H");	
+	}
+}
 function getUserBdd(name) {
 	getUserGeneric(name, "v1/user/");
 }
