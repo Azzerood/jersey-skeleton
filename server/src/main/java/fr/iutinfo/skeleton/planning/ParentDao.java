@@ -9,17 +9,14 @@ import java.util.Calendar;
 import java.util.List;
 
 public interface ParentDao {
-    @SqlUpdate("CREATE TABLE parents(id integer primary key autoincrement, nomA CHAR(20), prenomA CHAR(20), dateNaissanceA CHAR(20), adresseA CHAR(50),congesA CHAR(20), professionA CHAR(20), numeroCafA CHAR(20), categorieCafA CHAR(20),numeroA CHAR(20),nomB CHAR(20), prenomB CHAR(20), dateNaissanceB CHAR(20), adresseB CHAR(50),congesB CHAR(20), professionB CHAR(20), numeroCafB CHAR(20), categorieCafB CHAR(20),numeroB CHAR(20), dureeContrat CHAR(50), typeContrat CHAR(20), ;")
+    @SqlUpdate("CREATE TABLE parents(id integer primary key autoincrement,nomEnfant CHAR(20),prenomEnfant CHAR(20), nomA CHAR(20), prenomA CHAR(20), dateNaissanceA CHAR(20), adresseA CHAR(50),congesA CHAR(20), professionA CHAR(20), numeroCafA CHAR(20), categorieCafA CHAR(20),numeroA CHAR(20),nomB CHAR(20), prenomB CHAR(20), dateNaissanceB CHAR(20), adresseB CHAR(50),congesB CHAR(20), professionB CHAR(20), numeroCafB CHAR(20), categorieCafB CHAR(20),numeroB CHAR(20), dureeContrat CHAR(50), typeContrat CHAR(20) ;")
     void createParentTable();
 
-    @SqlUpdate("insert into parents(nom, prenom,dateNaissance, adresse, numero) values (:nom, :prenom, :dateNaissance, :adresse, :numero)")
+    @SqlUpdate("insert into parents(nomEnfant,prenomEnfant , nomA CHAR, prenomA, dateNaissanceA, adresseA,congesA , professionA , numeroCafA , categorieCafA ,numeroA ,nomB , prenomB, dateNaissanceB , adresseB ,congesB, professionB, numeroCafB , categorieCafB ,numeroB , dureeContrat, typeContrat) values (:nomEnfant,:prenomEnfant , :nomA , :prenomA, :dateNaissanceA, :adresseA,:congesA , :professionA , :numeroCafA , :categorieCafA ,:numeroA ,:nomB , :prenomB, :dateNaissanceB , :adresseB ,:congesB, :professionB, :numeroCafB , :categorieCafB ,:numeroB , :dureeContrat, :typeContrat)")
     @GetGeneratedKeys
     String insert(@BindBean() Parent parent);
     
-    @SqlUpdate("insert into parents(nom, prenom, dateNaissance, adresse, dateNaissance, conge, profession, numeroCaf, categorieCaf, debutContrat, finContrat, typeContrat, numero) values (:nom, :prenom, :dateNaissance, :adresse, :dateNaissance, :conge, :profession, :numeroCaf, :categorieCaf, :debutContrat, :finContrat, :typeContrat, :numero)")
-    @GetGeneratedKeys
-    String insertAll(@BindBean() Parent parent);
-
+    
     @SqlQuery("select * from parents where nom = :nom AND prenom = :prenom")
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Parent> search(@BindBean() int id);

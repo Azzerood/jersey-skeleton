@@ -33,9 +33,9 @@ public class ParentRessource {
 	public ParentRessource() throws Exception {
 		String c = "16/03/1997";
 		if (!tableExist("enfants")) {
-			logger.debug("Create table enfants");
+			logger.debug("Create table parents");
 			dao.createParentTable();
-			dao.insert(new Parent("toto","toto",c,"5 rue Moulinelle", "0615978596"));
+			
 		}
 	}
 
@@ -44,7 +44,6 @@ public class ParentRessource {
 		Parent parent = new Parent();
 		parent.initFromDto(dto);
 		String nom = dao.insert(parent);
-		dto.setNom(nom);
 		return dto;
 	}
 
