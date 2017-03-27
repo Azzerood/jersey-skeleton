@@ -98,11 +98,9 @@ $(document).ready(function() {
 	afficherFormSalarie();
 	});
     $("#toDisponibilites").click(function(event){
-       console.log("To dispo");
 	   afficherDisponibilites();
 	});
      $("#loadDisponibilites").click(function(event){
-       console.log("load dispo");
 	    loadDisponibilites();
 	});
     

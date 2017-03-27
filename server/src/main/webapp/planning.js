@@ -313,8 +313,8 @@ function loadDisponibilites(){
     var status = "previsionnel";
     var year = date.split("-")[0];
     var month = date.split("-")[1];
-    dispo = $.getDisponibilites("v1/creneaux/"+status+"/"+year+"/"+month);
-    var dispoParJour = TrierParJour(dispo);
+    dispos = $.getDisponibilites("v1/creneaux/"+status+"/"+year+"/"+month);
+    var dispoParJour = TrierParJour(dispos);
     console.log(dispoParJour);
     /*
     for(var jour = 0; jour < dispoTrie[0].length; jour++){
@@ -325,23 +325,24 @@ function loadDisponibilites(){
     */
 }
 
-function TrierParJour(creneaux){
+function TrierParJour(c){
     var jours = [];
     
-    for(var idx ; idx<creneaux; idx++){
-        console.log(creneaux[idx]); 
-        var j = creneaux[idx].date.split("-")[2];
+    for(var idx ; idx<c; idx++){
+        console.log(c[idx]); 
+        var j = c[idx].date.split("-")[2];
         console.log("jour numéro: "+j);
         if(jours.indexOf( j) ==-1){
           jours.push(j); 
         }
     }
     console.log("nb de jours: "+jours.length);
-var res = [jours.length];
-    for(var idx ; idx<creneaux; idx++){
+    var res = [jours.length];
+    for(var idx ; idx<c.length; idx++){
         res[idx]= [];
-        var j = creneaux[idx].date.split("-")[2];
-        res[jours.indexOf(j)].push(creneaux[idx]);
+        var j = c[idx].date.split("-")[2];
+        res[jours.indexOf(j)].push(c[idx]);
+        res[jours.indexOf(j)].push(c[idx]);
     }
     console.log(res);
     return res;
