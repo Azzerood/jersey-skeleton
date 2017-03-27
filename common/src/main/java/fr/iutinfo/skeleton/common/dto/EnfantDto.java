@@ -27,7 +27,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setPeriodeAdaptation(String periodeAdaptation) {
-		this.periodeAdaptation = periodeAdaptation;
+		if(periodeAdaptation == null){
+			this.periodeAdaptation = "";
+		}else{
+			this.periodeAdaptation = periodeAdaptation;
+		}
 	}
 
 	public String getNumeroUrgence() {
@@ -35,7 +39,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setNumeroUrgence(String numeroUrgence) {
-		this.numeroUrgence = numeroUrgence;
+		if(numeroUrgence == null){
+			this.numeroUrgence = "";
+		}else{
+			this.numeroUrgence = numeroUrgence;
+		}
 	}
 	public String getNom() {
 		return nom;
@@ -73,7 +81,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setTempsAccueil(String tempsAccueil) {
-		this.tempsAccueil = tempsAccueil;
+		if(tempsAccueil == null){
+			this.tempsAccueil = "";
+		}else{
+			this.tempsAccueil = tempsAccueil;
+		}
 	}
 
 	public String getHorraireAccueil() {
@@ -89,9 +101,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setAllergies(String allergies) {
-
-		this.allergies = allergies;
-
+		if(allergies == null){
+			this.allergies = "";
+		}else{
+			this.allergies = allergies;
+		}
 	}
 
 	public String getTraitements() {
@@ -99,9 +113,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setTraitements(String traitements) {
-
-		this.traitements = traitements;
-
+		if(traitements == null){
+			this.traitements = "";
+		}else{
+			this.traitements = traitements;
+		}
 	}
 
 	public String getPersonnes() {
@@ -109,17 +125,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setPersonnes(String personnes) {
-
-		this.personnes = personnes;
-
-	}
-
-	public String getNumeroParents() {
-		return numeroUrgence;
-	}
-
-	public void setNumeroParents(String numeroUrgence) {
-		this.numeroUrgence = numeroUrgence;
+		if(personnes == null){
+			this.personnes = "";
+		}else{
+			this.personnes = personnes;
+		}
 	}
 
 	public String getNumeroMedecin() {
@@ -127,7 +137,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setNumeroMedecin(String numeroMedecin) {
-		this.numeroMedecin = numeroMedecin;
+		if(numeroMedecin == null){
+			this.numeroMedecin = "";
+		}else{
+			this.numeroMedecin = numeroMedecin;
+		}
 	}
 
 	public String getPhoto() {
@@ -135,7 +149,11 @@ public class EnfantDto implements Principal {
 	}
 
 	public void setPhoto(String photo) {
-		this.photo = photo;
+		if(photo == null){
+			this.photo = "";
+		}else{
+			this.photo = photo;
+		}
 	}
 
 	@Override
