@@ -5,6 +5,8 @@ import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
+import fr.iutinfo.skeleton.common.dto.ParentDto;
+
 import java.util.Calendar;
 import java.util.List;
 
