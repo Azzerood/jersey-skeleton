@@ -6,7 +6,8 @@
 }
 .petitlogo{
 	width:95px;
-	height:50px;
+	height:40px;
+    max-height: 40px;
 }
 .container h2{
 	
@@ -37,7 +38,8 @@ display:inline-block;
 #nav {
    background: #f0f;
    margin: 0 auto;
-   height: 500px;
+   height: 50px;
+    max-height: 50px;
    min-width: 980px;
    max-width: 2048px;
    position: fixed;
