@@ -90,10 +90,44 @@ function saveParents(){
             }
         });
         }else{
-            
+            $.ajax({
+            type : 'POST',
+            contentType : 'application/json',
+            url: "v1/parent/"+id,
+            dataType: 'json',
+            async:false,
+            data : JSON.stringify({
+            "nomEnfant":nomEnfant,
+            "prenomEnfant":prenomEnfant,
+            "nomA" : nomA,
+            "prenomA" :prenomA,
+            "dateNaissanceA" : dateNaissanceA,
+            "adresseA" : adresseA,
+            "congesA" : congesA,
+            "professionA" :professionA ,
+            "numeroCafA" : numeroCafA,
+            "categorieCafA" : categorieCafA,
+            "nomB" : nomB,
+            "prenomB" :prenomB,
+            "dateNaissanceB" : dateNaissanceB,
+            "adresseB" : adresseB,
+            "congesB" : congesB,
+            "professionB" :professionB ,
+            "numeroCafB" : numeroCafB,
+            "categorieCafB" : categorieCafB,
+            "dureeContrat" : dureeContrat,
+            "typeContrat" : typeContrat,
+		}),
+            success: function(data, textStatus, jqXHR) {
+               console.log(data);	
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+			 console.log("error post fiche: " + textStatus);
+            }
+        });
         }
        
-
+        loadParents();
        
 }
 function decrementerIdParent(){
