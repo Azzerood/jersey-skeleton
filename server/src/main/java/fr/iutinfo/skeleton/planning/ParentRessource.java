@@ -31,8 +31,7 @@ public class ParentRessource {
 	private static ParentDao dao = getDbi().open(ParentDao.class);
 
 	public ParentRessource() throws Exception {
-		String c = "16/03/1997";
-		if (!tableExist("enfants")) {
+		if (!tableExist("parents")) {
 			logger.debug("Create table parents");
 			dao.createParentTable();
 			
@@ -70,6 +69,15 @@ public class ParentRessource {
 		}
 		return parent.stream().map(Parent::convertToDto).collect(Collectors.toList());
 	}
+    @POST
+    @Path("/{id}")
+    public void updateParent(@PathParam("id") int id, ParentDto parent)throws Exception{
+
+	  dao.update(parent);
+	
+
+    }
+    
 
 	@DELETE
 	@Path("/{id}")

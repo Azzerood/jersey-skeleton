@@ -73,6 +73,7 @@ $(document).ready(function() {
 	function afficherFormParent(){ 
 		$(".page").hide();
 		$(".FormParent").show();
+        loadParents();
 
 	}
 	
@@ -130,6 +131,14 @@ $(document).ready(function() {
      $("#loadDisponibilites").click(function(event){
 	    loadDisponibilites();
 	});
-    
+    $("#nextParent").click(function(event){
+       incrementerIdParent()      
+    });
+    $("#previousParent").click(function(event){
+       decrementerIdParent()      
+    });
+    $("#saveParent").click(function(event){
+         saveParents();
+    });
 	
 });

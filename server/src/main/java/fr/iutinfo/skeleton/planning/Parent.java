@@ -22,7 +22,7 @@ public class Parent {
 	private String professionB;
 	private String numeroCafB;
 	private String categorieCafB;
-	private String dureeCntrat;
+	private String dureeContrat;
 	private String typeContrat;
 
 	public Parent(){}
@@ -48,8 +48,8 @@ public class Parent {
 		this.setCategorieCafB(dto.getCategorieCafB());
 		this.setPrenomEnfant(dto.getPrenomEnfant());
 		this.setNomEnfant(dto.getPrenomEnfant());
-		this.setDureeCntrat(dto.getDureeCntrat());
-		this.setTypeContrat(dto.getDureeCntrat());
+		this.setDureeContrat(dto.getDureeContrat());
+		this.setTypeContrat(dto.getTypeContrat());
 		
 	 }
 	
@@ -73,8 +73,8 @@ public class Parent {
 		dto.setCategorieCafB(getCategorieCafB());
 		dto.setPrenomEnfant(getPrenomEnfant());
 		dto.setNomEnfant(getPrenomEnfant());
-		dto.setDureeCntrat(getDureeCntrat());
-		dto.setTypeContrat(getDureeCntrat());
+		dto.setDureeContrat(getDureeContrat());
+		dto.setTypeContrat(getTypeContrat());
 		return dto;
 	}
 
@@ -305,15 +305,15 @@ public class Parent {
 
 
 
-	public String getDureeCntrat() {
-		return dureeCntrat;
+	public String getDureeContrat() {
+		return dureeContrat;
 	}
 
 
 
 
-	public void setDureeCntrat(String dureeCntrat) {
-		this.dureeCntrat = dureeCntrat;
+	public void setDureeContrat(String dureeContrat) {
+		this.dureeContrat = dureeContrat;
 	}
 
 

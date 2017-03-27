@@ -20,6 +20,7 @@
 <script src="all.js"></script>
 <script src="hideOnClick.js"></script>
 <script src="planning.js"></script>
+<script src="parents.js"></script>
 </head>
 <body>
 	<div class="connectionDiv page">
@@ -484,71 +485,81 @@
 			<h1>Formulaire parents</h1>
 		</div>
 		<div class="container ">
-			<label for="nom" class="control-label">Nom, prénom de
-				l'enfant</label> <input type="text" class="form-control" name="nomEnfant">
-
-
+            <div>
+            <button class=" btn btn-sm"id="previousParent">Precédent</button>
+            <label id="idParent">1</label>
+             <button class=" btn btn-sm" id="nextParent">Suivant</button>
+            </div>
+			<label for="nom" class="control-label">Nom de l'enfant</label> <input type="text" class="form-control" id="nomEnfant">
+            <label for="nom" class="control-label">Prénom de l'enfant</label> <input type="text" class="form-control" id="prenomEnfant">
+            
 			<table id="form_parent">
 				<tr>
 					<th><h1 class="h1">Parent A</h1></th>
 					<th><h1 class="h1">Parent B</h1></th>
 				</tr>
 				<tr class="ligne">
-					<td class="cellule"><label for="nom" class="control-label">Nom,
-							prénom</label><input type="text" class="form-control" name="nomA"></td>
-					<td class="cellule"><label for="nom" class="control-label">Nom,
-							prénom</label><input type="text" class="form-control" name="nomB"></td>
+					<td class="cellule"><label for="nom" class="control-label">Nom</label><input type="text" class="form-control" id="nomA"></td>
+					<td class="cellule"><label for="nom" class="control-label">Nom</label><input type="text" class="form-control" id="nomB"></td>
+				</tr>
+                <tr class="ligne">
+					<td class="cellule"><label for="nom" class="control-label">
+							Prénom</label><input type="text" class="form-control" id="prenomA"></td>
+					<td class="cellule"><label for="nom" class="control-label">
+							Prénom</label><input type="text" class="form-control" id="prenomB"></td>
 				</tr>
 				<tr class="ligne">
 					<td class="cellule"><label for="adress" class="control-label">Adresse</label><input
-						type="text" class="form-control" name="adresseA"></td>
+						type="text" class="form-control" id="adresseA"></td>
 					<td class="cellule"><label for="adress" class="control-label">Adresse</label><input
-						type="text" class="form-control" name="adresseB"></td>
+						type="text" class="form-control" id="adresseB"></td>
 				</tr>
 				<tr class="ligne">
 					<td class="cellule"><label for="cp" class="control-label">Code
-							postal </label><input type="text" class="form-control" name="cpA"></td>
+							postal </label><input type="text" class="form-control" id="cpA"></td>
 					<td class="cellule"><label for="cp" class="control-label">Code
-							postal </label><input type="text" class="form-control" name="cpB"></td>
+							postal </label><input type="text" class="form-control" id="cpB"></td>
 				</tr>
 				<tr class="ligne">
 					<td class="cellule"><label for="numero" class="control-label">N°
 							de téléphone </label><input type="text" class="form-control"
-						name="telephoneA"></td>
+						id="numeroA"></td>
 					<td class="cellule"><label for="numero" class="control-label">N°
 							de téléphone </label><input type="text" class="form-control"
-						name="telephoneB"></td>
+						id="numeroB"></td>
 				</tr>
 				<tr class="ligne">
-					<td class="cellule"><label for="mail" class="control-label">Adresse
-							Mail</label><input type="text" class="form-control" name="mailA"></td>
-					<td class="cellule"><label for="mail" class="control-label">Adresse
-							Mail</label><input type="text" class="form-control" name="mailB"></td>
+					<td class="cellule"><label for="mail" class="control-label"> Date de naissance</label><input type="date" class="form-control" id="dateNaissanceA"></td>
+					<td class="cellule"><label for="mail" class="control-label"> Date de naissance</label><input type="date" class="form-control" id="dateNaissanceB"></td>
 				</tr>
 
 				<tr class="ligne">
 					<td class="cellule"><label for="prof" class="control-label">Profession
-					</label><input type="text" class="form-control" name="professionA"></td>
+					</label><input type="text" class="form-control" id="professionA"></td>
 					<td class="cellule"><label for="prof" class="control-label">Profession
-					</label><input type="text" class="form-control" name="professionB"></td>
+					</label><input type="text" class="form-control" id="professionB"></td>
+				</tr>
+                <tr class="ligne">
+					<td class="cellule"><label for="numero" class="control-label">Congés</label><input type="text" class="form-control" id="congesA"></td>
+					<td class="cellule"><label for="numero" class="control-label">Congés</label><input type="text" class="form-control" id="congesB"></td>
 				</tr>
 				<tr class="ligne">
 					<td class="cellule"><label for="numero" class="control-label">N°
-							de CAF </label><input type="text" class="form-control" name="numeroCAFA"></td>
+							de CAF </label><input type="text" class="form-control" id="numeroCAFA"></td>
 					<td class="cellule"><label for="numero" class="control-label">N°
-							de CAF </label><input type="text" class="form-control" name="numeroCAFB"></td>
+							de CAF </label><input type="text" class="form-control" id="numeroCAFB"></td>
 				</tr>
 				<tr class="ligne">
 					<td class="cellule"><label for="categorieCAF"
 						class="control-label">Categorie CAF </label><select
-						name="categorieCAFA">
+						id="categorieCAFA">
 							<option value="catA">A</option>
 							<option value="catB">B</option>
 							<option value="catC">C</option>
 					</select></td>
 					<td class="cellule"><label for="categorieCAF"
 						class="control-label">Categorie CAF </label><select
-						name="categorieCAFB">
+						id="categorieCAFB">
 							<option value="catA">A</option>
 							<option value="catB">B</option>
 							<option value="catC">C</option>
@@ -559,16 +570,15 @@
 				<tr>
 					<td class="cellule"><label for="dureeContrat"
 						class="control-label">Durée du contrat </label><input type="text"
-						class="form-control" name="dureeContrat"></td>
+						class="form-control" id="dureeContrat"></td>
 					<td class="cellule"><label for="typeContrat"
 						class="control-label">Type de contrat </label><input type="text"
-						class="form-control" name="typeContrat"></td>
+						class="form-control" id="typeContrat"></td>
 				</tr>
 
 			</table>
 
-			<button type="submit" class="btn btn-success btn-block">Enregistrer
-				la fiche</button>
+			<button type="submit" class="btn btn-success btn-block" id="saveParent">Enregistrer la fiche</button>
 			<button class="btn btn-default btn-block backToDashboard">Retour
 				au tableau de bord</button>
 		</div>

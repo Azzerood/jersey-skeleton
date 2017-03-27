@@ -27,7 +27,7 @@ public class ParentDto implements Principal {
 	private String professionB;
 	private String numeroCafB;
 	private String categorieCafB;
-	private String dureeCntrat;
+	private String dureeContrat;
 	private String typeContrat;	
 
 	
@@ -256,15 +256,15 @@ public class ParentDto implements Principal {
 
 
 
-	public String getDureeCntrat() {
-		return dureeCntrat;
+	public String getDureeContrat() {
+		return dureeContrat;
 	}
 
 
 
 
-	public void setDureeCntrat(String dureeCntrat) {
-		this.dureeCntrat = dureeCntrat;
+	public void setDureeContrat(String dureeContrat) {
+		this.dureeContrat = dureeContrat;
 	}
 
 
