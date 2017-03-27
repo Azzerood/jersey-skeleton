@@ -15,6 +15,7 @@ $(document).ready(function() {
     
     $("#boutonSimulation").click( function () { simulation( $('#ressources2014').val() , $('#enfantsCharge').val() , $('#nbJournee').val() , $('#nbDemiJournee').val()) } );
        
+   
 	function afficherConnection(){
 		$(".page").hide();
 		$(".connectionDiv").show();
@@ -30,6 +31,10 @@ $(document).ready(function() {
         $(".FormEnfant").show();
 		
 	}
+    function afficherDisponibilites(){
+        $(".page").hide();
+		$(".disponibilitesDiv").show();
+    }
 	function afficherFormSalarie(){
 		$(".page").hide();
 		$(".FormSalarie").show();
@@ -92,5 +97,14 @@ $(document).ready(function() {
 	$("#boutonFormSalarie").click(function(even){
 	afficherFormSalarie();
 	});
+    $("#toDisponibilites").click(function(event){
+       console.log("To dispo");
+	   afficherDisponibilites();
+	});
+     $("#loadDisponibilites").click(function(event){
+       console.log("load dispo");
+	    loadDisponibilites();
+	});
+    
 	
 });

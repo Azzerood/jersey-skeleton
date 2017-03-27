@@ -2,6 +2,7 @@
 var listeEnfants = [];
 var enfantsMatin = [];
 var enfantsAprem = [];
+var dispo = [];
  /*
  function creerCreneaux(){
   var enfants =["Paul","Luc","Camille","Théo","Eva","Julie","Alexandre","Mathieu"] ;
@@ -234,7 +235,7 @@ function compterEnfantsParDemiJournee(){
                     if(enfantsAprem.indexOf(enf[idxE]) ==-1  && enf[idxE] !== "" ){
                         enfantsAprem.push(enf[idxE]); 
                     }
-                }000
+                }
             }
         }
         
@@ -304,3 +305,36 @@ function inscription(login,mdp1,mdp2,role) {
 		}
 	});
 }
+
+
+
+function loadDisponibilites(){
+    var status = "previsionnel";
+    var year = "2017";
+    var month = "03";
+    console.log("On recup les dispo");
+    dispo = getDisponibilites("v1/creneaux/"+status+"/"+year+"/"+month);
+    console.log(dispo);
+}
+
+jQuery.extend({
+    getDisponibilites: function(url){
+        var result = null;
+        $.ajax({
+            url: url,
+            type: 'GET',
+            contentType : 'application/json',
+            dataType: 'json',
+            async:false,
+            success: function(data, textStatus, jqXHR) {
+                result = data;
+                
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+			     console.log("error get planning of month : " + textStatus);
+            }
+        });
+       return result;
+    }
+})
+
