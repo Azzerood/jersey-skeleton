@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public interface ParentDao {
-    @SqlUpdate("CREATE TABLE parents(id integer primary key autoincrement, nom CHAR(20), prenom CHAR(20), dateNaissance CHAR(20), adresse CHAR(50),conge CHAR(20), profession CHAR(20), numeroCaf CHAR(20), categorieCaf CHAR(20), debutContrat CHAR(20), finContrat CHAR(20), typeContrat CHAR(20), numero CHAR(20);")
+    @SqlUpdate("CREATE TABLE parents(id integer primary key autoincrement, nomA CHAR(20), prenomA CHAR(20), dateNaissanceA CHAR(20), adresseA CHAR(50),congesA CHAR(20), professionA CHAR(20), numeroCafA CHAR(20), categorieCafA CHAR(20),numeroA CHAR(20),nomB CHAR(20), prenomB CHAR(20), dateNaissanceB CHAR(20), adresseB CHAR(50),congesB CHAR(20), professionB CHAR(20), numeroCafB CHAR(20), categorieCafB CHAR(20),numeroB CHAR(20), dureeContrat CHAR(50), typeContrat CHAR(20), ;")
     void createParentTable();
 
     @SqlUpdate("insert into parents(nom, prenom,dateNaissance, adresse, numero) values (:nom, :prenom, :dateNaissance, :adresse, :numero)")
