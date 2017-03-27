@@ -42,8 +42,12 @@ public interface CreneauDao {
     
     @SqlQuery("select * from creneaux where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
-    Creneau findById(@Bind("id") int id); 
-
+    Creneau findById(@Bind("id") int id);
+    
+    @SqlQuery("select * from creneaux where status = :status AND date LIKE :date;")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    List<Creneau> getAllCreneauxOfMonth(@Bind("status") String status, @Bind("date")String date );
+    
     @SqlUpdate("delete from creneaux where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     void delete(@Bind("id") int id);
