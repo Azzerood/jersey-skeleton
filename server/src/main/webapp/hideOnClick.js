@@ -42,7 +42,7 @@ $(document).ready(function() {
 		
 			postEnfant(CheckInput,FileInput,TextInput,DateInput,TelInput);
 	});
-});
+
 	function afficherConnection(){
 		$(".page").hide();
 		$(".connectionDiv").show();
