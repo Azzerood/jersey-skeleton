@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Messages">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_sync_black_24dp"
                 android:title="Voir" />
             <item
                 android:id="@+id/nav_send"
@@ -17,11 +18,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Envoyer photo" />
+            android:icon="@android:drawable/ic_media_play"
+            android:title="Envoyer photo"
+            tools:icon="@drawable/ic_menu_camera" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@android:drawable/ic_media_play"
             android:title="Envoyer video" />
         <item
             android:id="@+id/nav_manage"
