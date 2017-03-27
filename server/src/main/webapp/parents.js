@@ -1,6 +1,9 @@
 var fichesParents =[];
 var id = 1;
+/*REQUETE POUR TEST L'AFFICHAGE/SAUVEGARDE
+insert into parents(nomEnfant,prenomEnfant , nomA , prenomA, dateNaissanceA, adresseA,congesA , professionA , numeroCafA , categorieCafA ,numeroA ,nomB , prenomB, dateNaissanceB , adresseB ,congesB, professionB, numeroCafB , categorieCafB ,numeroB , dureeContrat, typeContrat) values("Pekin","Camille","Pekin","Lu","1985-03-25","4 rue des legendes","pas de conges","policier","1543458547","A","0612345678","Pekin","Lucy","1985-06-20","4 rue des legendes","20 septrembre au 1 octobre","Documentaliste","54143443548738","0687654321","A","4 mois","5jours semaine");
 
+*/
 jQuery.extend({
     getParents: function(url){
         var result = null;
@@ -106,7 +109,7 @@ function saveParents(){
              $.ajax({
             type : 'POST',
             contentType : 'application/json',
-            url: "v1/parent/"+id,
+            url: "v1/parent/",
             dataType: 'json',
             async:false,
             data : JSON.stringify({
@@ -145,7 +148,7 @@ function saveParents(){
             $.ajax({
             type : 'POST',
             contentType : 'application/json',
-            url: "v1/parent/",
+            url: "v1/parent/"+id,
             dataType: 'json',
             async:false,
             data : JSON.stringify({
