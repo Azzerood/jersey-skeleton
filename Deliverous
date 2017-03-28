@@ -1,6 +1,6 @@
 java:
   image: tclavier/jersey-skeleton
   ports:
-  - ip: A.X.Y.Z
+  - ip: 217.182.217.149
     container_port: 8080
     host_port: 80
