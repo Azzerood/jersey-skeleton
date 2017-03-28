@@ -244,12 +244,12 @@ function compterEnfantsParDemiJournee(){
 function afficherSalarieNecessaire(){
      var remplissageMatin = Math.ceil((enfantsMatin.length/10*100));
     var remplissageAprem = Math.ceil((enfantsAprem.length/10*100));
-    var matin = "<p><strong>Matin: </strong>Nombre d'enfants présents : "+enfantsMatin.length+"  Adultes nécessaire: "+Math.ceil(enfantsMatin.length/3)+" Taux d'occupation : "+remplissageMatin+"%</p>";
-    var aprem = "<p><strong>Aprem: </strong>Nombre d'enfants présents : "+enfantsAprem.length+"  Adultes nécessaire: "+Math.ceil(enfantsAprem.length/3)+" Taux d'occupation : "+remplissageAprem+"%</p>";
+    var matin = "<p><strong>Matin: </p><p></strong>Nombre d'enfants présents : "+enfantsMatin.length+"</p><p>Adultes nécessaire: "+Math.ceil(enfantsMatin.length/3)+"</p><p> Taux d'occupation : "+remplissageMatin+"%</p>";
+    var aprem = "<p><strong>Apres-midi </p><p></strong>Nombre d'enfants présents : "+enfantsAprem.length+"</p><p>  Adultes nécessaire: "+Math.ceil(enfantsAprem.length/3)+"</p><p> Taux d'occupation : "+remplissageAprem+"%</p>";
  
     $("#statPlanning").empty();
-    $("#statPlanning").append(aprem);
     $("#statPlanning").append(matin);
+    $("#statPlanning").append(aprem);
 }
 
 function updatePlanning(){

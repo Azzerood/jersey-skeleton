@@ -199,7 +199,7 @@ function simulation(ressources2014, enfantsCharge, nbJournee, nbDemiJournee) {
 			montant -= aide;
 		
 		$("#categorie").text("Vous êtes catégorie " + categorie);
-		$("#montant").text("Restant dûe : "+Math.ceil(montant)+"€ par mois");	
+		$("#montant").text("Restant dû : "+Math.ceil(montant)+"€ par mois");	
 }
 function getUserBdd(name) {
 	getUserGeneric(name, "v1/user/");
