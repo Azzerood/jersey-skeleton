@@ -82,7 +82,7 @@ function refreshChamps(){
 
 function saveParents(){
         var nomEnfant =$("#nomEnfant").val() ;
-    console.log("nom de l'enfant: "+nomEnfant);
+        console.log("nom de l'enfant: "+nomEnfant);
         var prenomEnfant =$("#prenomEnfant").val() ;
         var nomA = $("#nomA").val();
         var prenomA = $("#prenomA").val();
@@ -109,7 +109,7 @@ function saveParents(){
              $.ajax({
             type : 'POST',
             contentType : 'application/json',
-            url: "v1/parent/",
+            url: "v1/parent/"+id,
             dataType: 'json',
             async:false,
             data : JSON.stringify({
