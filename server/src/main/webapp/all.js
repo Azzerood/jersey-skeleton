@@ -186,18 +186,22 @@ function simulation(ressources2014, enfantsCharge, nbJournee, nbDemiJournee) {
 				montantDJ = 9.6;
 			if (categorie == "C")
 				montantDJ = 9.9;
-		}
-		console.log("nbJournee: "+ nbJournee);
-		console.log("nbDemiJournee: "+ nbDemiJournee);
-		console.log("aide: "+ aide);
-		
+		}		
 
 		montant = (nbDemiJournee*6*montantDJ + nbJournee*10*montantJ) * 4;
 		montantMini = montant * 0.15;
 		
 		if(montant - aide > montantMini)
 			montant -= aide;
+		else
+			montant = montantMini;
 		
+/*
+		console.log("nbJournee: "+ nbJournee);
+		console.log("nbDemiJournee: "+ nbDemiJournee);
+		console.log("montant : "+montant);
+		console.log("aide: "+ aide);
+*/		
 		$("#categorie").text("Vous êtes catégorie " + categorie);
 		$("#montant").text("Restant dû : "+Math.ceil(montant)+"€ par mois");	
 }
