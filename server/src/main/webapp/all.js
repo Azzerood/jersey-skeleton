@@ -199,7 +199,7 @@ function simulation(ressources2014, enfantsCharge, nbJournee, nbDemiJournee) {
 			montant -= aide;
 		
 		$("#categorie").text("Vous êtes catégorie " + categorie);
-		$("#montant").text("Montant de l'estimation : "+Math.ceil(montant)+"€");	
+		$("#montant").text("Restant dûe : "+Math.ceil(montant)+"€ par mois");	
 }
 function getUserBdd(name) {
 	getUserGeneric(name, "v1/user/");
