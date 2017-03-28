@@ -43,7 +43,7 @@ public class EnfantRessource {
 	public EnfantDto createEnfant(EnfantDto dto) throws Exception {
 		Enfant enfant = new Enfant();
 		enfant.initFromDto(dto);
-		String nom = dao.insert(enfant);
+		String nom = dao.insertAllInfo(enfant);
 		dto.setNom(nom);
 		return dto;
 	}
