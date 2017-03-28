@@ -344,124 +344,108 @@
 	</div>
 	<div class="FormEnfant page">
 		<div class="page-header">
-			<h1>Fiche Enfant</h1>
-		</div>
-		<div class="row">
-			<div class="col-xs-6 col-xs-offset-3">
-
-				<div class="form-group">
-					<label for="login" class="control-label">Photo de l'enfant:</label>
-					<input type="file" class="form-control" id="photo" name="photo">
+		    	<h1>Fiche Enfant</h1>
+		    </div>
+	    	<div class="row">
+	        	<div class="col-xs-6 col-xs-offset-3">
+					
+						<div class="form-group">
+							<label for="login" class="control-label">Photo de l'enfant:</label>
+							<input type="file" class="form-control" id="photo" name="photo">
+						</div>
+					
+						<div class="form-group">
+							<label for="login" class="control-label">Nom</label>
+							<input type="text" class="form-control" id="nom" name="nom" required="true">
+						</div>
+						
+						<div class="form-group">
+							<label for="login" class="control-label">Prenom</label>
+							<input type="texte" class="form-control" id="prenom" name="prenom" required ="true">
+						</div>
+						
+						<div class="form-group">
+						<label for="login" class="control-label">Date de naissance</label>
+						<input type="date" class="form-control" id="datenaissance" name="datenaissance">
+						</div>
+						
+						<div class="form-group">
+						<label for="login" class="control-label">Adresse :</label>
+						<input type="text" class="form-control" id="adresse" name="adresse">
+						</div>
+						
+						<div class="form-group">
+						<label for="login" class="control-label">Horaire d'accueil :</label>
+						</div>
+						
+						<div class="form-group">
+						<input type="checkbox" id="cb1" value="Lundi matin">Lundi matin 
+						<input type="checkbox" id="cb2" value="Lundi après-midi">Lundi après-midi
+						</div>
+						
+						<div class="form-group">
+						<input type="checkbox" id="cb3" value="Mardi matin">Mardi matin 
+						<input type="checkbox" id="cb4" value="Mardi après-midi">Mardi après-midi
+						</div>
+						
+						<div class="form-group"> 
+						<input type="checkbox" id="cb5" value="Mercredi matin">Mercredi matin 
+						<input type="checkbox" id="c6" value="Mercredi après-midi">Mercredi après-midi
+						</div> 
+						
+						<div class="form-group">
+						<input type="checkbox" id="cb7" value="Jeudi matin">Jeudi matin 
+						<input type="checkbox" id="cb8" value="Jeudi aprés-midi">Jeudi après-midi
+						</div>
+						
+						<div class="form-group"> 
+						<input type="checkbox" id="cb9" value="Vendredi matin">Vendredi matin 
+						<input type="checkbox" id="cb10" value="Vendredi aprés-midi">Vendredi après-midi 
+						</div>
+						
+						<div class="form-group">
+						<label for="login" class="control-label">Temps d'accueil :</label>
+						<input type="text" class="form-control" id="taccueil" name="taccueil">
+						</div>
+						
+						<div class="form-group">
+						<label for="login" class="control-label">Date d'adaptation limite (période ou l'enfant pleure,se fais pipi dessus etc) :</label>
+						<input type="date" class="form-control" id="périodeadap" name="periodeadap">
+						</div>
+						
+						<div class="form-group">
+						<label for="login" class="control-label">Numéro du médecin :</label>
+						<input type="tel" class="form-control" id="nmed" name="nmed" required="true">
+						</div>
+						
+								
+						<div class="form-group">
+						<label for="login" class="control-label">Allergie :</label>
+						<input type="text" class="form-control" id="allergie" name="allergie">
+						</div>
+						
+						<div class="form-group">
+						<label for="login" class="control-label">Traitement :</label>
+						<input type="text" class="form-control" id="traitement" name="traitement">
+						</div>
+						
+						<div class="form-group">
+						<label for="login" class="control-label">Numéro d'urgence :</label>
+						<input type="tel" class="form-control" id="nurgence" name="nurgence">
+						</div>
+				
+						<div class="form-group">
+						<label for="login" class="control-label">Personnes habilitées à reprendre l'enfant :</label>
+						<input type="text" class="form-control" id="pers1" name="pers1" required="true">
+						<input type="text" class="form-control" id="pers2" name="pers2">
+						<input type="text" class="form-control" id="pers3" name="pers3">
+						</div>
+						
+				<button type="submit" id="validerEnfant" class="btn btn-success btn-block">Envoyer</button>
+				<a href="index.html" class="btn btn-default btn-block">Retour au menu</a>
+					
 				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Nom</label> <input
-						type="text" class="form-control" id="nom" name="nom"
-						required="true">
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Prenom</label> <input
-						type="texte" class="form-control" id="prenom" name="prenom"
-						required="true">
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Age</label> <input
-						type="int" class="form-control" id="age" name="age"
-						required="true">
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Adresse :</label> <input
-						type="text" class="form-control" id="adresse" name="adresse">
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Horaire d'accueil
-						:</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" id="cb1" value="Mardi matin">Lundi
-					matin <input type="checkbox" id="cb2" value="Mardi après-midi">Lundi
-					après-midi
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" id="cb3" value="Mardi matin">Mardi
-					matin <input type="checkbox" id="cb4" value="Mardi après-midi">Mardi
-					après-midi
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" id="c5" value="Mercredi matin">Mercredi
-					matin <input type="checkbox" id="c6" value="Mercredi après-midi">Mercredi
-					après-midi
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" id="cb7" value="Jeudi matin">Jeudi
-					matin <input type="checkbox" id="cb8" value="Jeudi aprés-midi">Jeudi
-					après-midi
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" id="cb9" value="Vendredi matin">Vendredi
-					matin <input type="checkbox" id="cb10" value="Vendredi aprés-midi">Vendredi
-					après-midi
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Temps d'accueil :</label>
-					<input type="text" class="form-control" id="taccueil"
-						name="taccueil">
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Date d'adaptation
-						limite :</label> <input type="date" class="form-control" id="périodeadap"
-						name="periodeadap">
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Numéro du médecin
-						:</label> <input type="text" class="form-control" id="nmed" name="nmed"
-						required="true">
-				</div>
-
-
-				<div class="form-group">
-					<label for="login" class="control-label">Allergie :</label> <input
-						type="text" class="form-control" id="allergie" name="allergie">
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Traitement :</label> <input
-						type="text" class="form-control" id="traitement" name="traitement">
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Numéro d'urgence :</label>
-					<input type="tel" class="form-control" id="nurgence"
-						name="nurgence">
-				</div>
-
-				<div class="form-group">
-					<label for="login" class="control-label">Personnes
-						habilitées à reprendre l'enfant :</label> <input type="text"
-						class="form-control" id="pers1" name="pers1" required="true">
-					<input type="text" class="form-control" id="pers2" name="pers2">
-					<input type="text" class="form-control" id="pers3" name="pers3">
-				</div>
-
-				<button type="submit" id="validerEnfant"
-					class="btn btn-success btn-block">Envoyer</button>
-				<button class="btn btn-default btn-block backToDashboard">Retour
-					au tableau de bord</button>
-
 			</div>
-		</div>
 	</div>
 
 
