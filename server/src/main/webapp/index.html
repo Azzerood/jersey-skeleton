@@ -54,7 +54,8 @@
 			<img src="img/sujet03.jpg" alt="..."
 				class="col-lg-2 col-lg-offset-2 col-lg-push-0 col-sm-4 col-sm-push-1 col-sm-offset-1 col-md-3 text-center col-md-offset-0">
 			<h1 class=".blockquote-reverse"
-				style="margin-left: 15%; color: #4baf68; font-size: 23px; padding-top: 15%; font-style: italic;">Partager c'est grandir</h1>
+				style="margin-left: 15%; color: #4baf68; font-size: 23px; padding-top: 15%; font-style: italic;">Partager
+				c'est grandir</h1>
 		</div>
 	</div>
 	<div class="inscriptionDiv page">
@@ -215,9 +216,8 @@
 								</div>
 								<button type="submit" id="boutonSimulation"
 									class="btn btn-success btn-block">Simuler</button>
-								<br>
-									<label for="sel1" id="categorie"></label><br>
-									<label for="sel1" id="montant"></label>
+								<br> <label for="sel1" id="categorie"></label><br> <label
+									for="sel1" id="montant"></label>
 							</div>
 						</div>
 					</div>
@@ -309,11 +309,13 @@
 						class="btn btn-default" role="button">
 						<strong>Plannings</strong><br> <span>Visualisez vos
 							planning</span>
-                        </button>
+					</button>
 				</div>
 				<div class="btn btn-default btn-lg btn-fill">
-					<button href="" id="toDisponibilites"class="btn btn-default toDisponibilites" role="button">
-						<strong>Disponibilités</strong><br> <span>Visualiser les disponibilités par mois</span>
+					<button href="" id="toDisponibilites"
+						class="btn btn-default toDisponibilites" role="button">
+						<strong>Disponibilités</strong><br> <span>Visualiser
+							les disponibilités par mois</span>
 					</button>
 				</div>
 				<div class="btn btn-default btn-lg btn-fill">
@@ -325,19 +327,21 @@
 			</div>
 		</div>
 	</div>
-    
-    <div class="disponibilitesDiv page">
-        <div class="page-header">
-            <h2>Disponibilités</h2>
-        </div>
-        <div class ="container">
-            <input id="monthDisponibilites" type="month">
-            <label>Mois à visualiser</label>
-            <button class="btn btn-primary btn-sm" id="loadDisponibilites">Charger les disponibilités</button>
-            <canvas id="canvasDisponibilites" width="1100px" height="1600"></canvas>
-            <button class="btn btn-default btn-block backToDashboard">Retourau tableau de bord</button>
-        </div>
-    </div>
+
+	<div class="disponibilitesDiv page">
+		<div class="page-header">
+			<h2>Disponibilités</h2>
+		</div>
+		<div class="container">
+			<input id="monthDisponibilites" type="month"> <label>Mois
+				à visualiser</label>
+			<button class="btn btn-primary btn-sm" id="loadDisponibilites">Charger
+				les disponibilités</button>
+			<canvas id="canvasDisponibilites" width="1100px" height="1600"></canvas>
+			<button class="btn btn-default btn-block backToDashboard">Retourau
+				tableau de bord</button>
+		</div>
+	</div>
 	<div class="FormEnfant page">
 		<div class="page-header">
 			<h1>Fiche Enfant</h1>
@@ -467,24 +471,28 @@
 			<h1>Formulaire parents</h1>
 		</div>
 		<div class="container ">
-            <div>
-            <button class=" btn btn-sm"id="previousParent">Precédent</button>
-            <label id="idParent">1</label>
-             <button class=" btn btn-sm" id="nextParent">Suivant</button>
-            </div>
-			<label for="nom" class="control-label">Nom de l'enfant</label> <input type="text" class="form-control" id="nomEnfant">
-            <label for="nom" class="control-label">Prénom de l'enfant</label> <input type="text" class="form-control" id="prenomEnfant">
-            
+			<div>
+				<button class=" btn btn-sm" id="previousParent">Precédent</button>
+				<label id="idParent">1</label>
+				<button class=" btn btn-sm" id="nextParent">Suivant</button>
+			</div>
+			<label for="nom" class="control-label">Nom de l'enfant</label> <input
+				type="text" class="form-control" id="nomEnfant"> <label
+				for="nom" class="control-label">Prénom de l'enfant</label> <input
+				type="text" class="form-control" id="prenomEnfant">
+
 			<table id="form_parent">
 				<tr>
 					<th><h1 class="h1">Parent A</h1></th>
 					<th><h1 class="h1">Parent B</h1></th>
 				</tr>
 				<tr class="ligne">
-					<td class="cellule"><label for="nom" class="control-label">Nom</label><input type="text" class="form-control" id="nomA"></td>
-					<td class="cellule"><label for="nom" class="control-label">Nom</label><input type="text" class="form-control" id="nomB"></td>
+					<td class="cellule"><label for="nom" class="control-label">Nom</label><input
+						type="text" class="form-control" id="nomA"></td>
+					<td class="cellule"><label for="nom" class="control-label">Nom</label><input
+						type="text" class="form-control" id="nomB"></td>
 				</tr>
-                <tr class="ligne">
+				<tr class="ligne">
 					<td class="cellule"><label for="nom" class="control-label">
 							Prénom</label><input type="text" class="form-control" id="prenomA"></td>
 					<td class="cellule"><label for="nom" class="control-label">
@@ -497,12 +505,18 @@
 						type="text" class="form-control" id="adresseB"></td>
 				</tr>
 				<tr class="ligne">
-					<td class="cellule"><label for="numero" class="control-label">N°de téléphone </label><input type="text" class="form-control" id="numeroA"></td>
-					<td class="cellule"><label for="numero" class="control-label">N°de téléphone </label><input type="text" class="form-control" id="numeroB"></td>
+					<td class="cellule"><label for="numero" class="control-label">N°de
+							téléphone </label><input type="text" class="form-control" id="numeroA"></td>
+					<td class="cellule"><label for="numero" class="control-label">N°de
+							téléphone </label><input type="text" class="form-control" id="numeroB"></td>
 				</tr>
 				<tr class="ligne">
-					<td class="cellule"><label for="mail" class="control-label"> Date de naissance</label><input type="date" class="form-control" id="dateNaissanceA"></td>
-					<td class="cellule"><label for="mail" class="control-label"> Date de naissance</label><input type="date" class="form-control" id="dateNaissanceB"></td>
+					<td class="cellule"><label for="mail" class="control-label">
+							Date de naissance</label><input type="date" class="form-control"
+						id="dateNaissanceA"></td>
+					<td class="cellule"><label for="mail" class="control-label">
+							Date de naissance</label><input type="date" class="form-control"
+						id="dateNaissanceB"></td>
 				</tr>
 
 				<tr class="ligne">
@@ -511,9 +525,11 @@
 					<td class="cellule"><label for="prof" class="control-label">Profession
 					</label><input type="text" class="form-control" id="professionB"></td>
 				</tr>
-                <tr class="ligne">
-					<td class="cellule"><label for="numero" class="control-label">Congés</label><input type="text" class="form-control" id="congesA"></td>
-					<td class="cellule"><label for="numero" class="control-label">Congés</label><input type="text" class="form-control" id="congesB"></td>
+				<tr class="ligne">
+					<td class="cellule"><label for="numero" class="control-label">Congés</label><input
+						type="text" class="form-control" id="congesA"></td>
+					<td class="cellule"><label for="numero" class="control-label">Congés</label><input
+						type="text" class="form-control" id="congesB"></td>
 				</tr>
 				<tr class="ligne">
 					<td class="cellule"><label for="numero" class="control-label">N°
@@ -550,7 +566,8 @@
 
 			</table>
 
-			<button type="submit" class="btn btn-success btn-block" id="saveParent">Enregistrer la fiche</button>
+			<button type="submit" class="btn btn-success btn-block"
+				id="saveParent">Enregistrer la fiche</button>
 			<button class="btn btn-default btn-block backToDashboard">Retour
 				au tableau de bord</button>
 		</div>
@@ -562,6 +579,9 @@
 			<h1>Formulaire salarié</h1>
 		</div>
 		<div class="container">
+			<button class=" btn btn-sm" id="previousParent">Precédent</button>
+			<label id="idSalarie">1</label>
+			<button class=" btn btn-sm" id="nextParent">Suivant</button>
 			<table id="form_salarie">
 				<tr>
 					<th><h1 class="h1">Salarié</h1></th>
@@ -657,7 +677,7 @@
 					le planning</button>
 				<div class="zonePlanning">
 					<h2>Le planning</h2>
-                    <div id ="statPlanning"></div>
+					<div id="statPlanning"></div>
 					<canvas id="planningJournee" width="1100" height="650">
 				
 			</canvas>
