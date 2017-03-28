@@ -1,5 +1,5 @@
 java:
-  image: tclavier/jersey-skeleton
+  image: reinlinr/jersey-skeleton
   ports:
   - ip: 217.182.217.149
     container_port: 8080
