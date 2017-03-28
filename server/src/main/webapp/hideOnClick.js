@@ -16,8 +16,8 @@ $(document).ready(function() {
     $("#boutonSimulation").click( function () { simulation( $('#ressources2014').val() , $('#enfantsCharge').val() , $('#nbJournee').val() , $('#nbDemiJournee').val()) } );
     $("#validerEnfant").click(function() {
 					
-					var  inputs = $('.form-group > input');
-					
+					var  inputs = $('#form_enfant > input');
+					console.log(inputs);
 					var CheckInput = [];
 					var FileInput = [];
 					var TextInput = [];
